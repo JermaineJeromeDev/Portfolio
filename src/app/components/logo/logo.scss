@@ -1,0 +1,26 @@
+@use '../../../styles/variables' as *;
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 150px;      
+    flex-shrink: 0;    
+    cursor: pointer;
+    transition: transform 125ms ease-out;
+
+    &__link {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__svg {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
