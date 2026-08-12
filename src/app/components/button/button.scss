@@ -59,12 +59,12 @@
         border: 1px solid var(--clr-primary-1); 
         font-weight: var(--fw-normal); 
 
-        &:hover:not(:disabled) {
+        &:hover:not(.btn--active):not(:disabled) {
             background-color: var(--clr-primary-2); 
             border-color: var(--clr-primary-2);
         }
 
-        &:active:not(:disabled) {
+        &:active:not(.btn--active):not(:disabled) {
             background-color: var(--txt-primary); 
             border-color: var(--txt-primary);
             color: var(--clr-primary-2); 
@@ -100,6 +100,12 @@
             border-color: var(--clr-primary-1);
             font-weight: var(--fw-bold);
             cursor: default; 
+
+            &:hover {
+                background-color: var(--clr-primary-1);
+                border-color: var(--clr-primary-1);
+                color: var(--txt-primary);
+            }
         }
     }
     
