@@ -1,6 +1,14 @@
 @use '../../../../../styles/variables' as *;
 @use '../../../../../styles/mixins' as *;
 
+:host {
+    display: none;
+
+    @include respond-to(md) {
+        display: block;
+    }
+}
+
 .menu {
     position: fixed;
     top: 0;

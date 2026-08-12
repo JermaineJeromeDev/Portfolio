@@ -9,14 +9,24 @@ import { MenuOverlayComponent } from './components/menu-overlay/menu-overlay';
   standalone: true,
   imports: [CommonModule, LogoComponent, ButtonComponent, MenuOverlayComponent],
   templateUrl: './header.html',
-  styleUrls: ['./header.scss']
+  styleUrls: ['./header.scss'],
+  host: {
+    '(window:resize)': 'onWindowResize()'
+  }
 })
 export class HeaderComponent {
   isMenuOpen = false;
   currentLang = 'EN'; 
+  private readonly mobileMenuMaxWidth = 768;
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  onWindowResize(): void {
+    if (window.innerWidth > this.mobileMenuMaxWidth && this.isMenuOpen) {
+      this.isMenuOpen = false;
+    }
   }
 
   changeLanguage(lang: string): void {
