@@ -1,0 +1,46 @@
+:root {
+    --bg-dark-1: #1a2743;
+    --bg-dark-2: #27334b;
+    --bg-dark-3: #141d2f;
+
+    --bg-primary: radial-gradient(
+        circle at top right,
+        var(--bg-dark-2) 0%,
+        var(--bg-dark-1) 50%,
+        var(--bg-dark-3) 100%
+    );
+
+    --clr-primary-1: #70e61c;
+    --clr-primary-2: #9747ff;
+    --clr-secondary: #1cdae6;
+
+    --txt-primary: #ffffff;
+    --txt-secondary: #94a3b8;
+
+    --fs-hero-title: 45px;
+    --fs-hero-title-mobile: 34px;
+    --fs-hero-sub: 29px;
+    --fs-hero-sub-mobile: 25px;
+    --fs-hero-prefix: 32px;
+    --fs-hero-prefix-mobile: 28px;
+    --fs-section-title: 24px;
+    --fs-contact-sub: 23px;
+    --fs-body: 16px;
+    --fs-label: 14px;
+
+    // --fs-hero-title: clamp(34px, 6vw, 128px);
+    // --fs-hero-sub: clamp(20px, 3.5vw, 64px); 
+    // --fs-hero-prefix: clamp(24px, 4.5vw, 90px);
+
+    --lh-standard: 1.2;
+
+    --fw-bold: 700;
+    --fw-medium: 500;
+    --fw-regular: 400;
+}
+
+// Media Queries hinzufügen
+
+// Global Wrapper Styles
+
+// Contentbegrenzung und Zentrierung
