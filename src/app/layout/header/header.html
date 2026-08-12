@@ -1,0 +1,18 @@
+<header class="header">
+    <div class="header__container">
+        <div class="header__logo-container">
+            <img src="logo.png" class="header__logo-brand" alt="Logo">
+            <app-logo (click)="scrollToTop()" class="header__logo"></app-logo>
+        </div>
+        <button class="header__toggle" [class.header__toggle--open]="isMenuOpen" (click)="toggleMenu()"
+            aria-label="Menü öffnen/schließen">
+            <span class="header__line header__line--top"></span>
+            <span class="header__line header__line--middle"></span>
+            <span class="header__line header__line--bottom"></span>
+        </button>
+    </div>
+
+    <app-menu-overlay [isOpen]="isMenuOpen" (menuClosed)="isMenuOpen = false"
+        (languageChanged)="changeLanguage($event)">
+    </app-menu-overlay>
+</header>
