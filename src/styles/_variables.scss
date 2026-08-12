@@ -28,6 +28,7 @@
 
     --font-family: 'Poppins', sans-serif;
     --fw-normal: 400;
+    --fw-semi-bold: 600;
     --fw-bold: 700;
     --line-height-tight: 1.2;
     --line-height-base: 1.5;
@@ -50,8 +51,14 @@
     --shadow-bottom: 0px 8px 12px -6px rgba(0, 0, 0, 0.4);
 
     --container-content-md: 1440px; 
-
-    $breakpoint-mobile: 430px;
-    $breakpoint-tablet: 768px;
-    $breakpoint-desktop: 1200px;
 }
+
+$breakpoint-xsm: 375px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-tablet: 768px; 
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-desktop: 1200px;
+$breakpoint-xxl: 1440px;
+$breakpoint-rotate: 622px;
