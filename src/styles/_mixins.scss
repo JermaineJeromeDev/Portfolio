@@ -42,4 +42,3 @@
 @mixin landscape-mobile {
     @media (max-height: $breakpoint-rotate) { @content; }
 }
-
