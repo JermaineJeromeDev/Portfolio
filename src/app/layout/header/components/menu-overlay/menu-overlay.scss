@@ -76,7 +76,7 @@
 
     &__lang {
         font-family: var(--font-family);
-        font-size: clamp(1.125rem, calc(1rem + 0.45vw), 23px);
+        font-size: 23px;
         font-weight: var(--fw-normal); 
         line-height: 1.2;
         color: var(--txt-primary); 
@@ -100,7 +100,8 @@
 
     &__divider {
         font-family: var(--font-family);
-        font-size: clamp(1.125rem, calc(1rem + 0.45vw), 23px);
+        font-size: 23px;
+        font-weight: var(--fw-normal);
         color: var(--txt-primary); 
         margin: 0 12px;
         user-select: none;
