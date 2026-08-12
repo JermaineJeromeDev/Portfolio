@@ -1,20 +1,21 @@
 <div class="menu" [class.menu--open]="isOpen">
-    <div class="menu__header">
-        <app-logo class="menu__logo-wrapper"></app-logo>
+    <div class="menu__header content-wrapper">
+        <app-logo class="menu__logo-wrapper" (click)="closeMenu()"></app-logo>
     </div>
 
     <nav class="menu__nav">
         <ul class="menu__list">
             <li class="menu__item"><a href="#about" class="menu__link" (click)="closeMenu()">About me</a></li>
-            <li class="menu__item"><a href="#skills" class="menu__link menu__link--active"
-                    (click)="closeMenu()">Skills</a></li>
+            <li class="menu__item"><a href="#skills" class="menu__link" (click)="closeMenu()">Skills</a></li>
             <li class="menu__item"><a href="#portfolio" class="menu__link" (click)="closeMenu()">Portfolio</a></li>
             <li class="menu__item"><a href="#contact" class="menu__link" (click)="closeMenu()">Contact</a></li>
 
             <li class="menu__item menu__item--languages">
-                <span class="menu__lang menu__lang--active" (click)="selectLanguage('EN')">EN</span>
+                <span class="menu__lang" [class.menu__lang--active]="currentLang === 'EN'"
+                    (click)="selectLanguage('EN')">EN</span>
                 <span class="menu__divider">/</span>
-                <span class="menu__lang" (click)="selectLanguage('DE')">DE</span>
+                <span class="menu__lang" [class.menu__lang--active]="currentLang === 'DE'"
+                    (click)="selectLanguage('DE')">DE</span>
             </li>
         </ul>
     </nav>

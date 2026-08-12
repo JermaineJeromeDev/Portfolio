@@ -11,6 +11,7 @@ import { LogoComponent } from './../../../../components/logo/logo';
 })
 export class MenuOverlayComponent {
   @Input() isOpen = false;
+  @Input() currentLang = 'EN';
   @Output() menuClosed = new EventEmitter<void>();
   @Output() languageChanged = new EventEmitter<string>();
 
