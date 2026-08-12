@@ -9,8 +9,8 @@
     height: 100vh;
     background-color: rgba(20, 29, 47, 0.92);
     z-index: 999;
-    display: flex;
-    flex-direction: column;
+    
+    @include flexbox(column, flex-start, normal, 0);
 
     transform: translateX(100%);
     opacity: 0;
@@ -23,11 +23,17 @@
         pointer-events: auto;
     }
 
-    &__header {
-        display: flex;
-        align-items: center;
-        padding: 37px 25px 0;
+        &__header {
+        @include flexbox(row, flex-start, center, 0);
+        width: 100%;
+        @include global_content_wrapper(); 
+        
+        padding-top: 37px; 
         box-sizing: border-box;
+
+        @include respond-to(md) {
+            padding-top: 40px; 
+        }
     }
 
     &__logo-wrapper {
@@ -38,42 +44,45 @@
 
     &__nav {
         flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexbox(row, center, center, 0);
         margin-top: -60px;
     }
 
     &__list {
         list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 29px;
+        @include flexbox(column, center, center, 29px);
         padding: 0;
         margin: 0;
     }
 
     &__item {
         height: 32px;
-        display: flex;
-        align-items: center;
+        @include flexbox(row, center, center, 0);
         overflow: visible;
+
+        &--languages {
+            @include flexbox(row, center, center, 0);
+            margin-top: 14px;
+        }
     }
 
     &__lang {
-        font-family: 'Poppins', sans-serif;
-        font-size: 23px;
-        font-weight: var(--fw-regular);
+        font-family: var(--font-family);
+        font-size: clamp(1.125rem, calc(1rem + 0.45vw), 23px);
+        font-weight: var(--fw-normal); 
         line-height: 1.2;
-        color: var(--txt-primary);
+        color: var(--txt-primary); 
         cursor: pointer;
         user-select: none;
         transition: opacity 100ms ease;
 
+        &:hover {
+            color: var(--clr-primary-1);
+        }
+
         &--active {
             color: var(--clr-primary-1); 
-            font-weight: var(--fw-bold); 
+            font-weight: var(--fw-semi-bold); 
         }
 
         &:active {
@@ -82,36 +91,29 @@
     }
 
     &__divider {
-        font-family: 'Poppins', sans-serif;
-        font-size: 23px;
+        font-family: var(--font-family);
+        font-size: clamp(1.125rem, calc(1rem + 0.45vw), 23px);
         color: var(--txt-primary); 
         margin: 0 12px;
         user-select: none;
     }
 
     &__link {
-        font-family: 'Poppins', sans-serif;
-        font-weight: var(--fw-regular);
-        font-size: 23px;
+        font-family: var(--font-family);
+        font-weight: var(--fw-normal);
+        font-size: clamp(1.3rem, calc(1.08rem + 0.55vw), 23px); 
         line-height: 1.2;
         color: var(--txt-primary);
         text-decoration: none;
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        gap: 6px;    
+        @include flexbox(column, center, center, 6px);
+        transition: color 100ms ease;
+
+        &:hover {
+            color: var(--clr-primary-1);
+        }
 
         &--active {
             color: var(--clr-primary-1); 
-
-            &::after {
-                content: '';
-                display: block; 
-                width: 60px;   
-                height: 3px;   
-                background-color: var(--clr-primary-2) !important;
-                border-radius: 2px;
-            }
         }
 
         &:active {
