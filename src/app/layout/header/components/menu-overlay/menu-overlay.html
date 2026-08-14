@@ -1,6 +1,11 @@
 <div class="menu" [class.menu--open]="isOpen">
-    <div class="menu__header content-wrapper">
-        <app-logo class="menu__logo-wrapper" (click)="closeMenu()"></app-logo>
+    <div class="menu__header">
+        <app-logo class="menu__logo-wrapper"></app-logo>
+
+        <button class="menu__close" type="button" aria-label="Menü schließen" (click)="closeMenu()">
+            <span class="menu__close-line menu__close-line--top"></span>
+            <span class="menu__close-line menu__close-line--bottom"></span>
+        </button>
     </div>
 
     <nav class="menu__nav">

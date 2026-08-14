@@ -2,27 +2,40 @@
 @use '../../../styles/mixins' as *;
 
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     z-index: 1000;
-    
-    background-color: var(--bg-dark-3);
-    backdrop-filter: blur(65px);
-    -webkit-backdrop-filter: blur(65px); 
-    padding-top: 37px;
-    padding-bottom: clamp(20px, 4vw, 37px); 
-    transition: background-color 0.3s linear, backdrop-filter 0.3s linear, -webkit-backdrop-filter 0.3s linear;
+    background: transparent;
+    padding: 0;
 
-    @include respond-to(md) {
-        padding-bottom: clamp(20px, 4vw, 37px); 
+    &__layout-wrapper {
+        width: min(100%, 1440px);
+        margin: 0 auto;
+        padding-top: 37px;
+        padding-right: 100px;
+        padding-bottom: 37px;
+        padding-left: 100px;
+        box-sizing: border-box;
+        background-color: var(--bg-dark-3);
+        backdrop-filter: blur(65px);
+        -webkit-backdrop-filter: blur(65px);
+        transition: background-color 0.3s linear, backdrop-filter 0.3s linear, -webkit-backdrop-filter 0.3s linear;
+
+        @include respond-to(md) {
+            padding-top: 30px;
+            padding-right: 24px;
+            padding-bottom: 24px;
+            padding-left: 24px;
+        }
     }
 
     &__container {
         @include flexbox(row, space-between, center, 0);
-        @include global_content_wrapper(); 
-        min-height: 40px;
+        width: 100%;
+        min-height: 35px;
     }
 
     &__logo {
@@ -35,9 +48,11 @@
     }
 
     &__nav {
-        @include flexbox(row, flex-end, center, clamp(2rem, 6vw, 5.75rem)); 
-        flex-grow: 1; 
+        @include flexbox(row, flex-end, center, 92px);
+        width: 510px;
+        flex-grow: 0;
         justify-content: flex-end;
+        flex-shrink: 0;
 
         @include respond-to(md) {
             display: none;
@@ -46,7 +61,9 @@
 
     &__nav-list {
         list-style: none;
-        @include flexbox(row, flex-end, center, clamp(1rem, 2vw, 1.8125rem)); 
+        @include flexbox(row, flex-end, center, 29px);
+        flex-wrap: nowrap;
+        white-space: nowrap;
     }
 
     &__nav-link {
@@ -57,7 +74,9 @@
         position: relative;
         padding-block: 4px; 
         text-decoration: none;
-        display: inline-block; 
+        display: inline-block;
+        white-space: nowrap;
+        flex-shrink: 0;
 
         &::after {
             content: '';
@@ -85,7 +104,7 @@
     }
 
     &__languages {
-        @include flexbox(row, center, center, var(--space-md));
+        @include flexbox(row, center, center, 14px);
     }
 
     &__toggle {
