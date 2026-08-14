@@ -50,6 +50,10 @@
     --shadow-allaround: 0px 0px 12px rgba(0, 0, 0, 0.3);
     --shadow-bottom: 0px 8px 12px -6px rgba(0, 0, 0, 0.4);
 
+    --shadow-btn-default: 4px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+    --shadow-btn-glow: 0px 0px 20px color-mix(in srgb, var(--clr-primary-2) 40%, transparent);
+
+
     --container-content-md: 1440px; 
 }
 
