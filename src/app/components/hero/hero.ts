@@ -55,13 +55,13 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
       this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.05);
       this.cyanY = textTopInHero - (heroHeight * 0.10);
     } else if (windowWidth >= 1024) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.20);
-      this.purpleY = textTopInHero - (heroHeight * 0.10);
+      this.purpleX = textLeftInHero - (heroWidth * 0.12);
+      this.purpleY = textTopInHero - (heroHeight * 0.22);
       this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.04);
       this.cyanY = textTopInHero - (heroHeight * 0.09);
     } else if (windowWidth >= 912) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.20);
-      this.purpleY = textTopInHero - (heroHeight * 0.12);
+      this.purpleX = textLeftInHero - (heroWidth * 0.14);
+      this.purpleY = textTopInHero - (heroHeight * 0.20);
       this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.18);
       this.cyanY = textTopInHero - (heroHeight * 0.14);
     } else if (windowWidth >= 820) {
@@ -111,9 +111,9 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
       this.cyanY = textTopInHero;
     }
 
-    this.purpleX += heroWidth * 0.16;
+    this.purpleX += heroWidth * 0.04;
     this.cyanX += heroWidth * 0.14;
-    this.purpleY += heroHeight * 0.18;
-    this.cyanY += heroHeight * 0.16;
+    this.purpleY += heroHeight * 0.26;
+    this.cyanY += heroHeight * 0.24;
   }
 }
