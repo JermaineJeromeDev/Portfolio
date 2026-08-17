@@ -1,7 +1,10 @@
 <div class="hero-container">
     <section class="hero">
+        <div #purpleBlob class="ts-blob ts-blob--purple" [style.left.px]="purpleX" [style.top.px]="purpleY"></div>
+        <div #cyanBlob class="ts-blob ts-blob--cyan" [style.left.px]="cyanX" [style.top.px]="cyanY"></div>
+
         <div class="hero__content">
-            <div class="hero__title-wrapper">
+            <div #titleWrapper class="hero__title-wrapper">
                 <div class="hero__prefix-container">
                     <span class="hero__prefix">I am</span>
                 </div>
