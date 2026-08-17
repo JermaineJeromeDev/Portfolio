@@ -16,7 +16,7 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
   cyanX = 0;
   cyanY = 0;
   prefixHeight = 0;
-  prefixFontSize = 24;
+  prefixFontSize = 90;
 
   private resizeObserver?: ResizeObserver;
 
@@ -56,10 +56,18 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
     if (nameElement && subtitleElement) {
       const nameRect = nameElement.getBoundingClientRect();
       const subtitleRect = subtitleElement.getBoundingClientRect();
-      const targetHeight = subtitleRect.bottom - nameRect.top;
+      const targetHeight = Math.max(1, subtitleRect.bottom - nameRect.top);
+      const synchronizedSize = targetHeight * 0.42;
+      const shrinkProgress = Math.max(0, Math.min(1, (1240 - windowWidth) / 520));
+      const viewportReduction = shrinkProgress * 12;
+      const mobileViewport = Math.max(360, Math.min(440, windowWidth));
+      const mobilePrefixCap = 28 + ((mobileViewport - 360) * 0.05);
 
       this.prefixHeight = targetHeight;
-      this.prefixFontSize = Math.max(24, Math.min(78, targetHeight / 2.35));
+      const dynamicPrefixSize = Math.max(28, Math.min(90, synchronizedSize - viewportReduction));
+      this.prefixFontSize = windowWidth <= 440
+        ? Math.min(dynamicPrefixSize, mobilePrefixCap)
+        : dynamicPrefixSize;
     }
 
     if (windowWidth >= 1280) {
