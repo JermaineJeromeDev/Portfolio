@@ -66,7 +66,7 @@
 
     &__prefix-container {
         writing-mode: vertical-lr;
-        transform: rotate(180deg) translateY(-20px); 
+        transform: rotate(180deg);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -204,7 +204,7 @@
         }
 
         &__prefix-container {
-            transform: rotate(180deg) translateY(0); 
+            transform: rotate(180deg);
             margin-top: 0;
             line-height: 1;
         }
@@ -260,7 +260,7 @@
         }
 
         &__prefix-container {
-            transform: rotate(180deg) translateY(-4px);
+            transform: rotate(180deg);
         }
 
         &__prefix {
@@ -268,12 +268,12 @@
         }
 
         &__name {
-            font-size: clamp(3.7rem, 6.8vw, 5.4rem);
+            font-size: clamp(4rem, 7.2vw, 5.9rem);
             white-space: nowrap;
         }
 
         &__subtitle {
-            font-size: clamp(2.2rem, 4.4vw, 3.3rem);
+            font-size: clamp(2.35rem, 4.8vw, 3.6rem);
             white-space: nowrap;
         }
     }

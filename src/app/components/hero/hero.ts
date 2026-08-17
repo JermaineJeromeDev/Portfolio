@@ -15,6 +15,8 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
   purpleY = 0;
   cyanX = 0;
   cyanY = 0;
+  prefixHeight = 0;
+  prefixFontSize = 24;
 
   private resizeObserver?: ResizeObserver;
 
@@ -42,6 +44,8 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
 
     const textRect = titleElement.getBoundingClientRect();
     const heroRect = heroElement.getBoundingClientRect();
+    const nameElement = titleElement.querySelector('.hero__name') as HTMLElement | null;
+    const subtitleElement = titleElement.querySelector('.hero__subtitle') as HTMLElement | null;
     const windowWidth = window.innerWidth;
     const heroWidth = heroRect.width;
     const heroHeight = heroRect.height;
@@ -49,14 +53,23 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
     const textLeftInHero = textRect.left - heroRect.left;
     const textTopInHero = textRect.top - heroRect.top;
 
+    if (nameElement && subtitleElement) {
+      const nameRect = nameElement.getBoundingClientRect();
+      const subtitleRect = subtitleElement.getBoundingClientRect();
+      const targetHeight = subtitleRect.bottom - nameRect.top;
+
+      this.prefixHeight = targetHeight;
+      this.prefixFontSize = Math.max(24, Math.min(78, targetHeight / 2.35));
+    }
+
     if (windowWidth >= 1280) {
       this.purpleX = textLeftInHero - (heroWidth * 0.12);
       this.purpleY = textTopInHero - (heroHeight * 0.12);
       this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.05);
       this.cyanY = textTopInHero - (heroHeight * 0.10);
     } else if (windowWidth >= 1024) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.12);
-      this.purpleY = textTopInHero - (heroHeight * 0.22);
+      this.purpleX = textLeftInHero - (heroWidth * 0.14);
+      this.purpleY = textTopInHero - (heroHeight * 0.18);
       this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.04);
       this.cyanY = textTopInHero - (heroHeight * 0.09);
     } else if (windowWidth >= 912) {

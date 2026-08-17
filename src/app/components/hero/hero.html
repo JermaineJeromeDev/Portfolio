@@ -5,8 +5,8 @@
 
         <div class="hero__content">
             <div #titleWrapper class="hero__title-wrapper">
-                <div class="hero__prefix-container">
-                    <span class="hero__prefix">I am</span>
+                <div class="hero__prefix-container" [style.height.px]="prefixHeight">
+                    <span class="hero__prefix" [style.fontSize.px]="prefixFontSize">I am</span>
                 </div>
 
                 <div class="hero__text-block">
