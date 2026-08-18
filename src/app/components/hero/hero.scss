@@ -252,12 +252,11 @@
         }
     }
 
-    @media (min-width: 700px) and (max-width: 768px) {
+        @media (min-width: 700px) and (max-width: 768px) {
         .ts-blob {
             &--purple {
                 width: clamp(250px, 44vw, 360px);
             }
-
             &--cyan {
                 width: clamp(310px, 54vw, 440px);
             }
@@ -265,6 +264,10 @@
 
         &__title-wrapper {
             gap: 14px;
+        }
+
+        &__prefix {
+            font-size: clamp(2.2rem, 4.5vw, 3.1rem); 
         }
 
         &__name {
