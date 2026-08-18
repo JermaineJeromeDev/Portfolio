@@ -1,0 +1,14 @@
+{
+    "HERO": {
+        "PREFIX": "I am",
+        "SUBTITLE": "JUNIOR FULLSTACK DEVELOPER",
+        "CTA": "Let's talk!",
+        "SCROLL": "Scroll down"
+    },
+    "NAV": {
+        "ABOUT": "About me",
+        "SKILLS": "Skills",
+        "PORTFOLIO": "Portfolio",
+        "CONTACT": "Contact"
+    }
+}

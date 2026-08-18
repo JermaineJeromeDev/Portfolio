@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { LogoComponent } from './../../../../components/logo/logo';
 
 @Component({
   selector: 'app-menu-overlay',
   standalone: true,
-  imports: [CommonModule, LogoComponent],
+  imports: [CommonModule, LogoComponent, TranslatePipe],
   templateUrl: './menu-overlay.html',
   styleUrls: ['./menu-overlay.scss']
 })

@@ -1,0 +1,14 @@
+{
+    "HERO": {
+        "PREFIX": "Ich bin",
+        "SUBTITLE": "JUNIOR FULLSTACK-ENTWICKLER",
+        "CTA": "Lass uns quatschen!",
+        "SCROLL": "Mehr erfahren"
+    },
+    "NAV": {
+        "ABOUT": "Über mich",
+        "SKILLS": "Fähigkeiten",
+        "PORTFOLIO": "Portfolio",
+        "CONTACT": "Kontakt"
+    }
+}

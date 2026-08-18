@@ -1,11 +1,12 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
-import { ButtonComponent } from "../button/button";
+import { TranslatePipe } from '@ngx-translate/core';
+import { ButtonComponent } from '../button/button';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, TranslatePipe],
   templateUrl: './hero.html',
   styleUrls: ['./hero.scss'],
 })

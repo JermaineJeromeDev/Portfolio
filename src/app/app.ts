@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from './layout/header/header';
 
 @Component({
@@ -11,4 +12,12 @@ import { HeaderComponent } from './layout/header/header';
 })
 export class App {
   protected readonly title = signal('portfolio');
+
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['en', 'de']);
+    this.translate.setFallbackLang('en');
+
+    const browserLang = this.translate.getBrowserLang() ?? 'en';
+    this.translate.use(browserLang === 'de' ? 'de' : 'en');
+  }
 }

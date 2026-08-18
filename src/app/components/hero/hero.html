@@ -6,19 +6,20 @@
         <div class="hero__content">
             <div #titleWrapper class="hero__title-wrapper">
                 <div class="hero__prefix-container">
-                    <span class="hero__prefix">I am</span>
+                    <span class="hero__prefix">{{ 'HERO.PREFIX' | translate }}</span>
                 </div>
 
                 <div class="hero__text-block">
                     <h1 class="hero__name">Jérôme Bärwolf</h1>
-                    <p class="hero__subtitle">JUNIOR FULLSTACK DEVELOPER</p>
+                    <p class="hero__subtitle">{{ 'HERO.SUBTITLE' | translate }}</p>
                 </div>
             </div>
 
             <div class="hero__cta">
-                <app-button variant="primary" color="green">Let's talk!</app-button>
+                <app-button variant="primary" color="green">{{ 'HERO.CTA' | translate }}</app-button>
             </div>
         </div>
+
 
         <div class="hero__footer">
             <div class="hero__socials-group">
