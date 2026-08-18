@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { ButtonComponent } from "../button/button";
 
 @Component({
@@ -15,26 +16,39 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
   purpleY = 0;
   cyanX = 0;
   cyanY = 0;
-  prefixHeight = 0;
-  prefixFontSize = 90;
 
   private resizeObserver?: ResizeObserver;
 
+  constructor(
+    private cdr: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
   ngAfterViewInit(): void {
-    this.calculateBlobPositions();
+    if (isPlatformBrowser(this.platformId)) {
+      requestAnimationFrame(() => {
+        this.calculateBlobPositions();
+      });
 
-    this.resizeObserver = new ResizeObserver(() => {
-      this.calculateBlobPositions();
-    });
+      this.resizeObserver = new ResizeObserver(() => {
+        this.calculateBlobPositions();
+      });
 
-    this.resizeObserver.observe(document.body);
+      this.resizeObserver.observe(document.body);
+    }
   }
 
   ngOnDestroy(): void {
-    this.resizeObserver?.disconnect();
+    if (isPlatformBrowser(this.platformId)) {
+      this.resizeObserver?.disconnect();
+    }
   }
 
   private calculateBlobPositions(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     const titleElement = this.titleWrapper.nativeElement as HTMLElement;
     const heroElement = titleElement.closest('.hero') as HTMLElement | null;
 
@@ -44,102 +58,64 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
 
     const textRect = titleElement.getBoundingClientRect();
     const heroRect = heroElement.getBoundingClientRect();
-    const nameElement = titleElement.querySelector('.hero__name') as HTMLElement | null;
-    const subtitleElement = titleElement.querySelector('.hero__subtitle') as HTMLElement | null;
     const windowWidth = window.innerWidth;
     const heroWidth = heroRect.width;
-    const heroHeight = heroRect.height;
 
     const textLeftInHero = textRect.left - heroRect.left;
     const textTopInHero = textRect.top - heroRect.top;
 
-    if (nameElement && subtitleElement) {
-      const nameRect = nameElement.getBoundingClientRect();
-      const subtitleRect = subtitleElement.getBoundingClientRect();
-      const targetHeight = Math.max(1, subtitleRect.bottom - nameRect.top);
-      const synchronizedSize = targetHeight * 0.42;
-      const shrinkProgress = Math.max(0, Math.min(1, (1240 - windowWidth) / 520));
-      const viewportReduction = shrinkProgress * 12;
-      const mobileViewport = Math.max(360, Math.min(440, windowWidth));
-      const mobilePrefixCap = 28 + ((mobileViewport - 360) * 0.05);
+    if (windowWidth >= 1024) {
+      const dynamicLeftOffset = windowWidth >= 1440 ? 560 : 560 - ((1440 - windowWidth) * 0.7);
+      const desktopExtraRight = 400;
+      const rightCap = Math.min(200, heroWidth * 0.25);
 
-      this.prefixHeight = targetHeight;
-      const dynamicPrefixSize = Math.max(28, Math.min(90, synchronizedSize - viewportReduction));
-      this.prefixFontSize = windowWidth <= 440
-        ? Math.min(dynamicPrefixSize, mobilePrefixCap)
-        : dynamicPrefixSize;
+      this.purpleX = textLeftInHero - dynamicLeftOffset;
+      this.purpleY = textTopInHero - 220;
+
+      this.cyanX = Math.min(heroWidth - 20, textLeftInHero + textRect.width + desktopExtraRight) - rightCap;
+      this.cyanY = textTopInHero - 250;
     }
 
-    if (windowWidth >= 1280) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.12);
-      this.purpleY = textTopInHero - (heroHeight * 0.12);
-      this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.05);
-      this.cyanY = textTopInHero - (heroHeight * 0.10);
-    } else if (windowWidth >= 1024) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.14);
-      this.purpleY = textTopInHero - (heroHeight * 0.18);
-      this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.04);
-      this.cyanY = textTopInHero - (heroHeight * 0.09);
-    } else if (windowWidth >= 912) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.16);
-      this.purpleY = textTopInHero - (heroHeight * 0.20);
-      this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.08);
-      this.cyanY = textTopInHero - (heroHeight * 0.14);
-    } else if (windowWidth >= 820) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.16);
-      this.purpleY = textTopInHero - (heroHeight * 0.16);
-      this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.10);
-      this.cyanY = textTopInHero - (heroHeight * 0.10);
-    } else if (windowWidth >= 768) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.16);
-      this.purpleY = textTopInHero - (heroHeight * 0.18);
-      this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.08);
-      this.cyanY = textTopInHero - (heroHeight * 0.10);
-    } else if (windowWidth >= 700) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.27);
-      this.purpleY = textTopInHero - (heroHeight * 0.06);
-      this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.14);
-      this.cyanY = textTopInHero - (heroHeight * 0.07);
-    } else if (windowWidth >= 540) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.30);
-      this.purpleY = textTopInHero;
-      this.cyanX = textLeftInHero + textRect.width + (heroWidth * 0.01);
-      this.cyanY = textTopInHero - (heroHeight * 0.03);
-    } else if (windowWidth >= 440) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.32);
-      this.purpleY = textTopInHero + (heroHeight * 0.03);
-      this.cyanX = textLeftInHero + textRect.width;
-      this.cyanY = textTopInHero - (heroHeight * 0.02);
-    } else if (windowWidth >= 430) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.33);
-      this.purpleY = textTopInHero + (heroHeight * 0.03);
-      this.cyanX = textLeftInHero + textRect.width - (heroWidth * 0.01);
-      this.cyanY = textTopInHero - (heroHeight * 0.02);
-    } else if (windowWidth >= 412) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.34);
-      this.purpleY = textTopInHero + (heroHeight * 0.04);
-      this.cyanX = textLeftInHero + textRect.width - (heroWidth * 0.01);
-      this.cyanY = textTopInHero - (heroHeight * 0.01);
-    } else if (windowWidth >= 390) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.35);
-      this.purpleY = textTopInHero + (heroHeight * 0.05);
-      this.cyanX = textLeftInHero + textRect.width - (heroWidth * 0.02);
-      this.cyanY = textTopInHero - (heroHeight * 0.01);
-    } else if (windowWidth >= 375) {
-      this.purpleX = textLeftInHero - (heroWidth * 0.36);
-      this.purpleY = textTopInHero + (heroHeight * 0.06);
-      this.cyanX = textLeftInHero + textRect.width - (heroWidth * 0.02);
-      this.cyanY = textTopInHero;
-    } else {
-      this.purpleX = textLeftInHero - (heroWidth * 0.37);
-      this.purpleY = textTopInHero + (heroHeight * 0.06);
-      this.cyanX = textLeftInHero + textRect.width - (heroWidth * 0.03);
-      this.cyanY = textTopInHero;
+    else if (windowWidth >= 768) {
+      this.purpleX = textLeftInHero - 330;
+      this.purpleY = textTopInHero - 260;
+
+      this.cyanX = Math.min(heroWidth - 100, textLeftInHero + textRect.width - 180);
+      this.cyanY = textTopInHero + 16;
     }
 
-    this.purpleX += heroWidth * 0.04;
-    this.cyanX += heroWidth * 0.14;
-    this.purpleY += heroHeight * 0.26;
-    this.cyanY += heroHeight * 0.24;
+    else if (windowWidth >= 540) {
+      this.purpleX = textLeftInHero - 120;
+      this.purpleY = textTopInHero + 40;
+
+      this.cyanX = Math.min(heroWidth - 80, textLeftInHero + textRect.width + 10);
+      this.cyanY = textTopInHero + 180;
+    }
+
+    else if (windowWidth >= 420) {
+      this.purpleX = textLeftInHero - 90;
+      this.purpleY = textTopInHero + 50;
+
+      this.cyanX = Math.min(heroWidth - 120, textLeftInHero + textRect.width + 5);
+      this.cyanY = textTopInHero + 150;
+    }
+
+    else if (windowWidth >= 360) {
+      this.purpleX = textLeftInHero - 70;
+      this.purpleY = textTopInHero + 80;
+
+      this.cyanX = Math.min(heroWidth - 150, textLeftInHero + textRect.width - 10);
+      this.cyanY = textTopInHero + 160;
+    }
+
+    else {
+      this.purpleX = textLeftInHero - 40;
+      this.purpleY = textTopInHero + 100;
+
+      this.cyanX = Math.min(heroWidth - 170, textLeftInHero + textRect.width - 30);
+      this.cyanY = textTopInHero + 170;
+    }
+
+    this.cdr.detectChanges();
   }
 }
