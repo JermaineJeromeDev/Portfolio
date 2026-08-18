@@ -313,19 +313,31 @@
         }
     }
 
-    @include respond-to(sm) {
+        @include respond-to(sm) {
         .ts-blob {
             &--purple {
-                width: clamp(360px, 108vw, 620px);
+                padding-left: clamp(340px, 80vw, 540px);
+                padding-top: calc(clamp(340px, 80vw, 540px) * (736 / 740));
             }
 
             &--cyan {
-                width: clamp(320px, 92vw, 520px);
+                padding-left: clamp(340px, 80vw, 480px);
+                padding-top: calc(clamp(340px, 80vw, 480px) * (759 / 783));
             }
         }
 
+        &__content {
+            align-items: flex-start;
+            padding-inline: clamp(var(--space-lg), 6vw, var(--space-xl));
+        }
+
         &__title-wrapper {
-            gap: 8px;
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        &__text-block {
+            align-items: flex-start; 
         }
 
         &__prefix {
@@ -340,30 +352,10 @@
             font-size: clamp(1.8125rem, 4.8vw, 2rem);
             max-width: 16ch;
         }
-    }
 
-    @include respond-to(xsm) {
-        .ts-blob {
-            &--purple {
-                width: clamp(300px, 116vw, 540px);
-            }
-
-            &--cyan {
-                width: clamp(290px, 96vw, 500px);
-            }
-        }
-
-        &__prefix {
-            font-size: clamp(1.25rem, 6.8vw, 1.65rem);
-        }
-
-        &__name {
-            font-size: clamp(2.8125rem, 9.2vw, 3rem);
-        }
-
-        &__subtitle {
-            font-size: clamp(1.8125rem, 5.6vw, 2rem);
-            max-width: 14ch;
+        &__cta {
+            margin-top: 0.5rem;
+            align-self: center;
         }
     }
 

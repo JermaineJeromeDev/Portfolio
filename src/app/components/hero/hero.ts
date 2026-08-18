@@ -64,16 +64,16 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
     const textLeftInHero = textRect.left - heroRect.left;
     const textTopInHero = textRect.top - heroRect.top;
 
-    if (windowWidth >= 1024) {
+        if (windowWidth >= 1024) {
       const dynamicLeftOffset = windowWidth >= 1440 ? 560 : 560 - ((1440 - windowWidth) * 0.7);
       const desktopExtraRight = 400;
       const rightCap = Math.min(200, heroWidth * 0.25);
 
       this.purpleX = textLeftInHero - dynamicLeftOffset;
-      this.purpleY = textTopInHero - 220;
+      this.purpleY = textTopInHero - 300; 
 
       this.cyanX = Math.min(heroWidth - 20, textLeftInHero + textRect.width + desktopExtraRight) - rightCap;
-      this.cyanY = textTopInHero - 250;
+      this.cyanY = textTopInHero - 120; 
     }
 
     else if (windowWidth >= 768) {
@@ -85,11 +85,11 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
     }
 
     else if (windowWidth >= 540) {
-      this.purpleX = textLeftInHero - 360;
-      this.purpleY = textTopInHero -280;
+      this.purpleX = textLeftInHero - 220;
+      this.purpleY = textTopInHero - 200;
 
-      this.cyanX = Math.min(heroWidth - 300, textLeftInHero + textRect.width - 180);
-      this.cyanY = textTopInHero + 20;
+      this.cyanX = Math.min(heroWidth - 20, textLeftInHero + textRect.width - 65);
+      this.cyanY = textTopInHero - 80;
     }
 
         else if (windowWidth >= 420) {
