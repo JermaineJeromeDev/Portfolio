@@ -511,6 +511,59 @@
         }
     }
 
+    @media (min-width: 1025px) and (max-height: 850px) {
+        min-height: calc(100vh - 109px);
+        min-height: calc(100dvh - 109px);
+
+        .ts-blob {
+            &--purple {
+                padding-left: clamp(400px, 45vw, 680px);
+                padding-top: calc(clamp(400px, 45vw, 680px) * (736 / 740));
+            }
+
+            &--cyan {
+                padding-left: clamp(450px, 50vw, 750px);
+                padding-top: calc(clamp(450px, 50vw, 750px) * (759 / 783));
+            }
+        }
+
+        &__content {
+            gap: 16px;
+            transform: translateY(-20px); 
+        }
+
+        &__title-wrapper {
+            gap: 16px;
+        }
+
+        &__prefix {
+            font-size: 42px;
+            line-height: 0.9;
+        }
+
+        &__name {
+            font-size: 64px; 
+            white-space: nowrap;
+        }
+
+        &__subtitle {
+            font-size: 32px; 
+            white-space: nowrap;
+        }
+
+        &__cta {
+            margin-top: 8px;
+        }
+
+        &__footer {
+            bottom: 1rem;
+        }
+
+        &__scroll-wrapper {
+            height: 100px; 
+        }
+    }
+
     @include landscape-mobile {
         min-height: calc(100vh - 109px);
         min-height: calc(100dvh - 109px);
@@ -519,19 +572,19 @@
 
         .ts-blob {
             &--purple {
-                padding-left: clamp(240px, 30vw, 380px);
-                padding-top: calc(clamp(240px, 30vw, 380px) * (736 / 740));
+                padding-left: clamp(440px, 40.3vw, 706px);
+                padding-top: calc(clamp(440px, 40.3vw, 706px) * (736 / 740));
             }
 
             &--cyan {
-                padding-left: clamp(280px, 35vw, 420px);
-                padding-top: calc(clamp(280px, 35vw, 420px) * (759 / 783));
+                padding-left: clamp(504px, 44.7vw, 808px);
+                padding-top: calc(clamp(504px, 44.7vw, 808px) * (759 / 783));
             }
         }
 
         &__content {
-            gap: 14px; 
-            transform: translateY(-35px); 
+            gap: 14px;
+            transform: translateY(-35px);
         }
 
         &__title-wrapper {
@@ -545,12 +598,12 @@
         }
 
         &__prefix {
-            font-size: 32px; 
+            font-size: 32px;
             line-height: 0.9;
         }
 
         &__name {
-            font-size: 48px; 
+            font-size: 48px;
             white-space: nowrap;
         }
 
