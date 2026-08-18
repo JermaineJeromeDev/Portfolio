@@ -96,8 +96,8 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
       this.purpleX = textLeftInHero - 200; 
       this.purpleY = textTopInHero - 150;
 
-      this.cyanX = Math.min(heroWidth - 80, textLeftInHero + textRect.width - 140);
-      this.cyanY = textTopInHero + 20;
+      this.cyanX = Math.min(heroWidth - 80, textLeftInHero + textRect.width - 150);
+      this.cyanY = textTopInHero - 5;
     }
 
     else if (windowWidth >= 360) {
@@ -105,7 +105,7 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
       this.purpleY = textTopInHero - 150;
 
       this.cyanX = Math.min(heroWidth - 60, textLeftInHero + textRect.width - 120);
-      this.cyanY = textTopInHero + 10;
+      this.cyanY = textTopInHero - 20;
     }
 
     else {
