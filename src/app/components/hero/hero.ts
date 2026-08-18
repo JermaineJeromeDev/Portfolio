@@ -101,19 +101,19 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
     }
 
     else if (windowWidth >= 360) {
-      this.purpleX = textLeftInHero - 160;
-      this.purpleY = textTopInHero - 260;
+      this.purpleX = textLeftInHero - 200;
+      this.purpleY = textTopInHero - 150;
 
-      this.cyanX = Math.min(heroWidth - 140, textLeftInHero + textRect.width + 20);
-      this.cyanY = textTopInHero + 115;
+      this.cyanX = Math.min(heroWidth - 140, textLeftInHero + textRect.width + 20) + 20;
+      this.cyanY = textTopInHero - 10;
     }
 
     else {
       this.purpleX = textLeftInHero - 150;
       this.purpleY = textTopInHero - 250;
 
-      this.cyanX = Math.min(heroWidth - 150, textLeftInHero + textRect.width + 10);
-      this.cyanY = textTopInHero + 120;
+      this.cyanX = Math.min(heroWidth - 150, textLeftInHero + textRect.width + 10) + 40;
+      this.cyanY = textTopInHero - 20;
     }
 
     this.cdr.detectChanges();
