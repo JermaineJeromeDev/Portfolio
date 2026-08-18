@@ -367,34 +367,49 @@
     @media (max-width: 440px) {
         .ts-blob {
             &--purple {
-                width: clamp(250px, 120vw, 440px);
+                padding-left: clamp(270px, 80vw, 430px);
+                padding-top: calc(clamp(270px, 80vw, 430px) * (736 / 740));
             }
 
             &--cyan {
-                width: clamp(220px, 90vw, 360px);
+                padding-left: clamp(230px, 64vw, 340px);
+                padding-top: calc(clamp(230px, 64vw, 340px) * (759 / 783));
             }
         }
 
         &__content {
-            padding-inline: clamp(0.75rem, 4vw, 1.25rem);
+            align-items: center;
+            width: 100%;
+            padding-inline: 1rem;
+            gap: 18px;
         }
 
         &__title-wrapper {
             gap: 8px;
+            align-items: flex-start;
+        }
+
+        &__prefix-container {
+            align-self: flex-start;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: auto;
+            min-height: 0;
         }
 
         &__prefix {
-            font-size: clamp(1.2rem, 5.4vw, 1.7rem);
+            font-size: 28px;
+            line-height: 0.9;
         }
 
         &__name {
-            font-size: clamp(34px, calc(34px + (100vw - 360px) * 0.0625), 39px);
+            font-size: clamp(1.9rem, 6.5vw, 2.5rem);
             line-height: var(--line-height-tight);
             white-space: nowrap;
         }
 
         &__subtitle {
-            font-size: clamp(20px, calc(20px + (100vw - 360px) * 0.05), 24px);
+            font-size: clamp(1.45rem, 4.5vw, 1.9rem);
             line-height: var(--line-height-tight);
             white-space: nowrap;
             max-width: none;
@@ -404,33 +419,46 @@
     @media (max-width: 380px) {
         .ts-blob {
             &--purple {
-                width: clamp(220px, 118vw, 380px);
+                padding-left: clamp(270px, 82vw, 420px);
+                padding-top: calc(clamp(270px, 82vw, 420px) * (736 / 740));
             }
 
             &--cyan {
-                width: clamp(200px, 82vw, 300px);
+                padding-left: clamp(210px, 58vw, 310px);
+                padding-top: calc(clamp(210px, 58vw, 310px) * (759 / 783));
             }
         }
 
         &__content {
             gap: 18px;
+            padding-inline: 0.85rem;
+            align-items: center;
         }
 
         &__title-wrapper {
             gap: 6px;
         }
 
+        &__prefix-container {
+            align-self: flex-start;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: auto;
+            min-height: 0;
+        }
+
         &__prefix {
-            font-size: clamp(1.05rem, 4.5vw, 1.3rem);
+            font-size: 28px;
+            line-height: 0.9;
         }
 
         &__name {
-            font-size: clamp(28px, 9vw, 34px);
+            font-size: clamp(1.8rem, 7.6vw, 2.4rem);
             white-space: nowrap;
         }
 
         &__subtitle {
-            font-size: clamp(17px, 6vw, 20px);
+            font-size: clamp(1.3rem, 4.8vw, 1.7rem);
             white-space: nowrap;
         }
     }
@@ -438,33 +466,45 @@
     @media (max-width: 320px) {
         .ts-blob {
             &--purple {
-                width: clamp(200px, 122vw, 340px);
+                padding-left: clamp(250px, 80vw, 390px);
+                padding-top: calc(clamp(250px, 80vw, 390px) * (736 / 740));
             }
 
             &--cyan {
-                width: clamp(180px, 80vw, 260px);
+                padding-left: clamp(200px, 56vw, 280px);
+                padding-top: calc(clamp(200px, 56vw, 280px) * (759 / 783));
             }
         }
 
         &__content {
-            padding-inline: 0.5rem;
+            padding-inline: 0.75rem;
+            align-items: center;
         }
 
         &__title-wrapper {
             gap: 5px;
         }
 
+        &__prefix-container {
+            align-self: flex-start;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: auto;
+            min-height: 0;
+        }
+
         &__prefix {
-            font-size: clamp(1rem, 4vw, 1.15rem);
+            font-size: 28px;
+            line-height: 0.9;
         }
 
         &__name {
-            font-size: clamp(24px, 7.6vw, 28px);
+            font-size: clamp(1.7rem, 7vw, 2.1rem);
             white-space: nowrap;
         }
 
         &__subtitle {
-            font-size: clamp(15px, 5.4vw, 17px);
+            font-size: clamp(1.2rem, 4.2vw, 1.5rem);
             white-space: nowrap;
         }
     }
