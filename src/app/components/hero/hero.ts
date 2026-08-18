@@ -146,7 +146,6 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
       this.cyanY = textTopInHero - 10;
     }
 
-
     this.cdr.detectChanges();
   }
 }
