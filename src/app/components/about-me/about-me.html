@@ -1,0 +1,55 @@
+<section class="about-me">
+    <div class="about-me__container">
+        <!-- Linke Spalte: Texte und Features -->
+        <div class="about-me__content">
+            <h2 class="about-me__title">{{ 'ABOUT.TITLE' | translate }}</h2>
+
+            <!-- Neuer umschließender Box-Container für die exakten Figma-Abstände (35px) -->
+            <div class="about-me__intro-box">
+                <div class="about-me__intro">
+                    <p>{{ 'ABOUT.INTRO_GREETING' | translate }}</p>
+                    <p>{{ 'ABOUT.INTRO_TEXT' | translate }}</p>
+                    <p>{{ 'ABOUT.INTRO_CTA' | translate }}</p>
+                </div>
+
+                <!-- Die Feature-Liste mit den Icons -->
+                <ul class="about-me__features">
+                    <li class="about-me__feature-item">
+                        <div class="about-me__icon-box">
+                            <app-icon name="location"></app-icon>
+                        </div>
+                        <p class="about-me__feature-text">{{ 'ABOUT.FEATURE_LOCATION' | translate }}</p>
+                    </li>
+
+                    <li class="about-me__feature-item">
+                        <div class="about-me__icon-box">
+                            <app-icon name="lightbulb"></app-icon>
+                        </div>
+                        <p class="about-me__feature-text">{{ 'ABOUT.FEATURE_MINDSET' | translate }}</p>
+                    </li>
+
+                    <li class="about-me__feature-item">
+                        <div class="about-me__icon-box">
+                            <app-icon name="puzzle"></app-icon>
+                        </div>
+                        <p class="about-me__feature-text">{{ 'ABOUT.FEATURE_METHOD' | translate }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Rechte Spalte: Gestapelter Photo-Stack -->
+        <div class="about-me__photo-stack">
+            <!-- Alle Pfade korrigiert auf deinen public-Ordner (ohne führenden Slash) -->
+            <img ngSrc="shapes/photo-shadows.svg" alt="" aria-hidden="true" width="820" height="900"
+                class="about-me__img-shadows" />
+            <img ngSrc="img/hero-character-photo.png" alt="Jermaine Jérôme Bärwolf" width="820" height="900" priority
+                class="about-me__img-photo" />
+            <img ngSrc="shapes/hero-background-version-b.svg" alt="" aria-hidden="true" width="820" height="900"
+                class="about-me__img-shape" />
+            <img ngSrc="img/character-photo-mask.png" alt="" aria-hidden="true" width="820" height="900"
+                class="about-me__img-mask" />
+        </div>
+
+    </div>
+</section>
