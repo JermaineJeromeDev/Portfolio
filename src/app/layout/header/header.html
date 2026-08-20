@@ -1,0 +1,35 @@
+<header class="header">
+    <div class="header__layout-wrapper">
+        <div class="header__container">
+
+            <div class="header__logo-container">
+                <app-logo (click)="scrollToTop()" class="header__logo"></app-logo>
+            </div>
+
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li><a href="#about" class="header__nav-link">{{ 'NAV.ABOUT' | translate }}</a></li>
+                    <li><a href="#skills" class="header__nav-link">{{ 'NAV.SKILLS' | translate }}</a></li>
+                    <li><a href="#portfolio" class="header__nav-link">{{ 'NAV.PORTFOLIO' | translate }}</a></li>
+                </ul>
+
+                <div class="header__languages">
+                    <app-button variant="language" [isActive]="currentLang === 'DE'"
+                        (click)="changeLanguage('DE')">DE</app-button>
+                    <app-button variant="language" [isActive]="currentLang === 'EN'"
+                        (click)="changeLanguage('EN')">EN</app-button>
+                </div>
+            </nav>
+
+            <button class="header__toggle" [class.header__toggle--open]="isMenuOpen" (click)="toggleMenu()"
+                aria-label="Menü öffnen/schließen">
+                <span class="header__line header__line--top"></span>
+                <span class="header__line header__line--middle"></span>
+                <span class="header__line header__line--bottom"></span>
+            </button>
+        </div>
+    </div>
+
+    <app-menu-overlay [isOpen]="isMenuOpen" [currentLang]="currentLang" (menuClosed)="isMenuOpen = false"
+        (languageChanged)="changeLanguage($event)"></app-menu-overlay>
+</header>

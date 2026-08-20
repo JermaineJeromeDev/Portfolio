@@ -2,5 +2,8 @@
     "[scss]": {
         "editor.formatOnSave": false
     },
+    "[json]": {
+        "editor.formatOnSave": false
+    },
     "liveServer.settings.port": 5501
 }

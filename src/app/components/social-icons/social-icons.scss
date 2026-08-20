@@ -1,0 +1,21 @@
+@use '../../../styles/variables' as *;
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 42px; 
+
+    &__link {
+        color: var(--txt-primary); 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px; 
+        height: 30px;
+        transition: transform 150ms ease;
+
+        &:active {
+            transform: scale(0.9); 
+        }
+    }
+}

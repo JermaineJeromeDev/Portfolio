@@ -1,0 +1,23 @@
+{
+    "HERO": {
+        "PREFIX": "I am",
+        "SUBTITLE": "FULLSTACK DEVELOPER",
+        "CTA": "Let's talk!",
+        "SCROLL": "Scroll down"
+    },
+    "NAV": {
+        "ABOUT": "About me",
+        "SKILLS": "Skills",
+        "PORTFOLIO": "Portfolio",
+        "CONTACT": "Contact"
+    },
+    "ABOUT": {
+    "TITLE": "About me",
+    "INTRO_GREETING": "Hey there, I'm Jermaine Jérôme!",
+    "INTRO_TEXT": "I am a passionate Fullstack Developer who completed an intensive frontend and backend development program at Developer Akademie. My journey has taught me resilience, adaptability, and the value of continuous growth. Throughout this path, I built various projects and gained hands-on experience turning ideas into functional, user-friendly web applications.",
+    "INTRO_CTA": "Let's connect and create something amazing together!",
+    "FEATURE_LOCATION": "Based in Germany, I am open to remote work and collaboration with teams from different locations. I enjoy sharing knowledge, learning from others, and contributing to successful projects.",
+    "FEATURE_MINDSET": "I believe that learning never stops in tech. That's why I continuously expand my knowledge, explore new technologies, and challenge myself to grow as a developer.",
+    "FEATURE_METHOD": "I approach challenges with analytical thinking, persistence, and creativity. When I encounter a problem, I break it down into manageable steps, research possible solutions, and keep refining my approach until I achieve the best result."
+    }
+}
