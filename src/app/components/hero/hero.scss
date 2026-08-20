@@ -63,9 +63,10 @@
     }
 
     &__title-wrapper {
-        display: flex;
-        align-items: stretch;
-        gap: clamp(1rem, 2.2vw, 2rem); 
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: center;
+        gap: 35px;
     }
 
     &__prefix-container {
@@ -74,8 +75,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        align-self: stretch;
         line-height: 1;
+        width: clamp(2.8rem, 4vw, 4.25rem);
+        min-width: clamp(2.8rem, 4vw, 4.25rem);
+        flex: 0 0 auto;
         padding-top: 0;
     }
 
@@ -207,14 +210,16 @@
         }
 
         &__title-wrapper {
-            align-items: center; 
-            gap: 10px; 
+            align-items: center;
+            gap: 10px;
         }
 
         &__prefix-container {
             transform: rotate(180deg);
             margin-top: 0;
             line-height: 1;
+            width: clamp(2.15rem, 4vw, 3.4rem);
+            min-width: clamp(2.15rem, 4vw, 3.4rem);
         }
 
         &__prefix {
@@ -333,11 +338,12 @@
 
         &__title-wrapper {
             gap: 12px;
-            align-items: stretch;
+            align-items: center;
         }
 
         &__text-block {
-            align-items: flex-start; 
+            align-items: flex-start;
+            min-width: 0;
         }
 
         &__prefix {
@@ -431,7 +437,7 @@
         }
 
         &__title-wrapper {
-            gap: 6px;
+            gap: 18px; 
         }
 
         &__prefix-container {
@@ -477,7 +483,6 @@
         }
 
         &__title-wrapper {
-            gap: 8px; 
             align-items: center; 
         }
 
@@ -505,9 +510,9 @@
         }
 
         &__subtitle {
-            font-size: 14px; 
+            font-size: 18px; 
             white-space: nowrap;
-            margin-left: -1rem;
+            margin-left: -26px;
         }
     }
 
