@@ -137,7 +137,7 @@
     }
 
     &__feature-item {
-        @include flexbox(row, flex-start, flex-start, 16px);
+        @include flexbox(row, flex-start, center, 16px);
         width: 100%;
     }
 
