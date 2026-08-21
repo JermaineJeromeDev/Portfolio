@@ -1,5 +1,5 @@
-@use '../../../styles/variables' as *;
-@use '../../../styles/mixins' as *;
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
 
 .about-me {
     position: relative;
@@ -59,21 +59,19 @@
         padding-left: 100px; 
         padding-right: clamp(var(--space-lg), 5vw, var(--space-2xl));
 
-        // KORREKTUR: Synchronisiert den Layout-Wechsel exakt mit dem Verschwinden der Desktop-Welle bei 1380px
         @media (max-width: 1380px) {
             @include flexbox(column-reverse, flex-start, center, clamp(var(--space-xl), 5vw, var(--space-3xl)));
             padding-left: clamp(var(--space-lg), 5vw, var(--space-2xl));
         }
 
-        // Deaktiviert den alten responsive-Breakpoint, um Kollisionen zu vermeiden
         @include respond-to(xl) {
             display: flex; 
         }
     }
 
     &__content {
-        flex: 1 1 32rem; // Leicht flexibler, um im Zwischenbereich geschmeidig zu reagieren
-        max-width: 520px; // Verhindert auf Desktop das Überlaufen des Textes in die ansteigende Kurve der Welle
+        flex: 1 1 32rem; 
+        max-width: 520px; 
         width: auto;
         margin-left: 0;
 
@@ -81,8 +79,6 @@
             flex: 1 1 auto;
             max-width: 600px;
             width: 100%;
-            
-            // KORREKTUR: Hebt auf Mobile NUR den Textbereich vor die freie Welle, damit er lesbar bleibt
             position: relative;
             z-index: 5; 
         }
@@ -207,7 +203,7 @@
         } 
 
         .about-me__img-photo { 
-            z-index: 2; /* Liegt ununterbrochen hinter beiden Wellen (z-index 3) */
+            z-index: 2; 
             position: relative;
             width: 100%;
             height: auto;
@@ -225,7 +221,7 @@
 
         .about-me__img-mask { 
             position: absolute;
-            z-index: 4; /* Ellenbogen-Maske bricht vor den Wellen (3) aus */
+            z-index: 4; 
             width: 53%; 
             height: auto;
             object-fit: contain;

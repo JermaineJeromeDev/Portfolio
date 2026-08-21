@@ -1,7 +1,7 @@
 import { NgOptimizedImage, isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { IconComponent } from '../icon/icon';
+import { IconComponent } from '../../../components/icon/icon';
 
 @Component({
   selector: 'app-about-me',
