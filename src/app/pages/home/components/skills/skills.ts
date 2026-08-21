@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../../components/button/button';
-import { IconComponent } from '../../../../components/icon/icon';
 import { SkillsIconComponent } from './components/skills-icon/skills-icon';
 
 interface Skill { name: string; icon: string; }
@@ -9,7 +8,7 @@ interface Skill { name: string; icon: string; }
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [IconComponent, ButtonComponent, TranslatePipe, SkillsIconComponent],
+  imports: [ButtonComponent, TranslatePipe, SkillsIconComponent],
   templateUrl: './skills.html',
   styleUrls: ['./skills.scss'],
 })

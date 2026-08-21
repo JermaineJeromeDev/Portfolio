@@ -19,7 +19,6 @@
         position: absolute;
         z-index: 3;
         width: 100vw; 
-        max-width: min(100vw, 1440px);
         height: auto;
         object-fit: contain; 
     
@@ -31,6 +30,10 @@
 
         @media (max-width: 1380px) {
             display: none;
+        }
+
+        @media (min-width: 1440px) {
+            top: min(72%, 649px);
         }
     }
 
