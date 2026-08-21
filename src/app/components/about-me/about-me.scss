@@ -8,6 +8,47 @@
     padding: clamp(var(--space-2xl), 7vw, var(--space-4xl)) 0 clamp(var(--space-3xl), 9vw, 6rem) 0;
     overflow: hidden;
 
+    &__img-bg-desktop {
+        position: absolute;
+        z-index: 3;
+        width: 100vw; 
+        max-width: min(100vw, 1440px);
+        height: auto;
+        object-fit: contain; 
+    
+        left: 50%;
+        transform: translateX(-50%);
+        top: 72%; 
+        pointer-events: none;
+        display: block;
+
+        @media (max-width: 1380px) {
+            display: none;
+        }
+    }
+
+    &__img-bg-mobile {
+        display: none;
+
+        @media (max-width: 1380px) {
+            display: block;
+            position: absolute;
+            z-index: 3; 
+            width: 100vw;
+            height: auto;
+            object-fit: cover;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 29.8%; 
+            pointer-events: none;
+        }
+
+        @media (min-width: 400px) and (max-width: 1240px) {
+            top: 0;
+            margin-top: calc(min(100vw - 2 * clamp(var(--space-lg), 5vw, var(--space-2xl)), 400px) * (647 / 593) - 40px);
+        }
+    }
+
     &__container {
         @include global_content_wrapper();
         margin: 0 auto;
@@ -17,22 +58,32 @@
         padding-left: 100px; 
         padding-right: clamp(var(--space-lg), 5vw, var(--space-2xl));
 
-        @include respond-to(xl) {
-            @include flexbox(column, flex-start, center, clamp(var(--space-xl), 5vw, var(--space-3xl)));
+        // KORREKTUR: Synchronisiert den Layout-Wechsel exakt mit dem Verschwinden der Desktop-Welle bei 1380px
+        @media (max-width: 1380px) {
+            @include flexbox(column-reverse, flex-start, center, clamp(var(--space-xl), 5vw, var(--space-3xl)));
             padding-left: clamp(var(--space-lg), 5vw, var(--space-2xl));
+        }
+
+        // Deaktiviert den alten responsive-Breakpoint, um Kollisionen zu vermeiden
+        @include respond-to(xl) {
+            display: flex; 
         }
     }
 
     &__content {
-        flex: 0 1 38rem;
-        max-width: 580px;
+        flex: 1 1 32rem; // Leicht flexibler, um im Zwischenbereich geschmeidig zu reagieren
+        max-width: 520px; // Verhindert auf Desktop das Überlaufen des Textes in die ansteigende Kurve der Welle
         width: auto;
         margin-left: 0;
 
-        @include respond-to(xl) {
+        @media (max-width: 1380px) {
             flex: 1 1 auto;
             max-width: 600px;
             width: 100%;
+            
+            // KORREKTUR: Hebt auf Mobile NUR den Textbereich vor die freie Welle, damit er lesbar bleibt
+            position: relative;
+            z-index: 5; 
         }
     }
 
@@ -44,7 +95,7 @@
         color: var(--txt-primary);
         margin-bottom: var(--space-xl);
 
-        @include respond-to(xl) {
+        @media (max-width: 1380px) {
             font-size: clamp(2.5rem, 10vw, 3.75rem);
             margin-bottom: clamp(var(--space-lg), 4vw, var(--space-xl));
         }
@@ -58,7 +109,7 @@
         @include flexbox(column, flex-start, flex-start, 35px); 
         width: 100%;
 
-        @include respond-to(xl) {
+        @media (max-width: 1380px) {
             gap: clamp(var(--space-xl), 4vw, 2.25rem);
         }
     }
@@ -83,7 +134,7 @@
         @include flexbox(column, flex-start, flex-start, 24px); 
         width: 100%;
 
-        @include respond-to(xl) {
+        @media (max-width: 1380px) {
             gap: clamp(var(--space-lg), 4vw, 24px);
         }
     }
@@ -113,35 +164,20 @@
         margin: 0;
     }
 
-    &__img-bg {
-        position: absolute;
-        z-index: 3;
-        width: min(100vw, 1440px);
-        height: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 72%;
-        pointer-events: none;
-
-        @include respond-to(xl) {
-            top: 38%;
-        }
-    }
-
     &__photo-stack {
-    position: relative;
-    aspect-ratio: 593 / 647; 
-    align-self: center;
-    width: 100%;
-    max-width: 650px; 
-    margin-left: auto;
-    margin-right: 0;
-
-    @include respond-to(xl) {
+        position: relative;
+        aspect-ratio: 593 / 647; 
+        align-self: center;
         width: 100%;
-        max-width: 400px; 
-        margin: 0 auto; 
-    }
+        max-width: 650px; 
+        margin-left: auto;
+        margin-right: 0;
+
+        @media (max-width: 1380px) {
+            width: 100%;
+            max-width: 400px; 
+            margin: 0 auto; 
+        }
 
         img {
             position: absolute;
@@ -162,14 +198,14 @@
             object-fit: cover;
             overflow: visible;
 
-            @include respond-to(xl) {
+            @media (max-width: 1380px) {
                 inset: 0;
                 object-fit: contain;
             }
         } 
 
         .about-me__img-photo { 
-            z-index: 2; 
+            z-index: 2; /* Liegt ununterbrochen hinter beiden Wellen (z-index 3) */
             position: relative;
             width: 100%;
             height: auto;
@@ -177,7 +213,7 @@
             object-fit: contain;
             left: 2%;
 
-            @include respond-to(xl) {
+            @media (max-width: 1380px) {
                 position: absolute;
                 height: 100%;
                 inset: 0;
@@ -187,7 +223,7 @@
 
         .about-me__img-mask { 
             position: absolute;
-            z-index: 4; 
+            z-index: 4; /* Ellenbogen-Maske bricht vor den Wellen (3) aus */
             width: 53%; 
             height: auto;
             object-fit: contain;
@@ -196,10 +232,10 @@
             top: auto;
             left: auto;
 
-            @include respond-to(xl) {
+            @media (max-width: 1380px) {
                 bottom: 2.4%;
                 right: 0%;
-                transform: rotate(-180deg);
+                left: auto;
             }
         } 
     }
@@ -228,3 +264,5 @@
         }
     }
 }
+
+
