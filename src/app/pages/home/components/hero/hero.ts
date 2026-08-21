@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { ButtonComponent } from '../../../components/button/button';
+import { ButtonComponent } from '../../../../components/button/button';
 
 interface Coordinates { x: number; y: number; }
 
