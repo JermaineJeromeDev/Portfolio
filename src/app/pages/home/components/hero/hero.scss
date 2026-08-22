@@ -3,10 +3,8 @@
 
 .hero-container {
     position: relative;
-    max-width: 1440px;
     width: 100%;
-    margin: 0 auto;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .hero {
@@ -14,52 +12,92 @@
     height: 100vh;
     height: 100dvh;
     width: 100%;
-    overflow: visible;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    .ts-blob {
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        transition: left 0.1s ease-out, top 0.1s ease-out;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-
-        width: 0;
-        height: 0;
-        overflow: visible; 
-
-        &--purple {
-            padding-left: clamp(620px, 56vw, 980px);
-            padding-top: calc(clamp(620px, 56vw, 980px) * (736 / 740));
-            background-image: url('/shapes/purple-shadow-about-me.svg');
-        }
-
-        &--cyan {
-            padding-left: clamp(700px, 62vw, 1120px);
-            padding-top: calc(clamp(700px, 62vw, 1120px) * (759 / 783));
-            background-image: url('/shapes/blue-shadow-version-b.svg');
-        }
-    }
-
     &__content {
+        @include global_content_wrapper();
         position: relative;
         z-index: 2;
         width: min(100%, var(--container-content-md));
         margin-inline: auto;
         padding-inline: clamp(var(--space-lg), 5vw, var(--space-2xl));
         box-sizing: border-box;
-
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: clamp(1.25rem, 2.5vw, 2.1875rem);
-
         transform: translateY(-8px);
+    }
+
+    
+        .ts-blob {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        display: block;
+
+        width: clamp(280px, 90vw, 450px);
+        height: clamp(280px, 90vw, 450px);
+
+        &--purple {
+            background-image: url('/shapes/purple-shadow-about-me.svg');
+            left: 0;
+            top: 42%; 
+            transform: translateY(-50%) translateX(-50%);
+
+            @include respond-from(sm) { 
+                transform: translateY(-50%) translateX(-55%);
+            }
+
+            @include respond-from(md) { 
+                width: clamp(450px, 50vw, 650px); 
+                height: clamp(450px, 50vw, 650px);
+                top: 45%; 
+                transform: translateY(-50%) translateX(-30%);
+            }
+
+            @include respond-from(xxl) {
+                top: 50%;
+                width: calc(950px + (100vw - #{$breakpoint-xxl}) * 0.3);
+                height: calc(950px + (100vw - #{$breakpoint-xxl}) * 0.3);
+                transform: translateY(-50%) translateX(calc(-15% - (100vw - #{$breakpoint-xxl}) * 0.15));
+            }
+        }
+
+        &--cyan {
+            background-image: url('/shapes/blue-shadow-version-b.svg');
+            right: 0;
+            top: 65%;
+            transform: translateY(-50%) translateX(65%); 
+
+            @include respond-from(xsm) { 
+                transform: translateY(-50%) translateX(75%);
+            }
+
+            @include respond-from(sm) { 
+                transform: translateY(-50%) translateX(70%);
+            }
+
+            @include respond-from(md) { 
+                width: clamp(520px, 55vw, 750px); 
+                height: clamp(520px, 55vw, 750px);
+                top: 50%; 
+                transform: translateY(-50%) translateX(35%);
+            }
+
+            @include respond-from(xxl) {
+                top: 50%;
+                width: calc(950px + (100vw - #{$breakpoint-xxl}) * 0.3);
+                height: calc(950px + (100vw - #{$breakpoint-xxl}) * 0.3);
+                transform: translateY(-50%) translateX(calc(15% + (100vw - #{$breakpoint-xxl}) * 0.15));
+            }
+        }
     }
 
     &__title-wrapper {
@@ -144,6 +182,19 @@
         @include respond-to(md) {
             bottom: calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
         }
+
+        @media (max-width: 576px) and (orientation: portrait) {
+            bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(0.35rem, 1vh, 0.75rem));
+        }
+
+        @media (max-height: 520px) and (orientation: landscape) {
+            position: relative;
+            bottom: auto;
+            left: auto;
+            transform: none;
+            // margin-top: var(--space-3xl);
+            padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px)); 
+        }
     }
 
     &__socials-group {
@@ -157,9 +208,23 @@
     &__line {
         width: clamp(60px, 8vw, 100px);
         height: 4px;
+        position: relative;
+        overflow: visible;
         background-color: var(--clr-primary-1);
         margin-left: calc(-1 * clamp(var(--space-lg), 5vw, var(--space-2xl)));
         border-radius: 0 999px 999px 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            width: 100vw;
+            height: 4px;
+            transform: translateY(-50%);
+            background-color: var(--clr-primary-1);
+            border-radius: 0 999px 999px 0;
+        }
 
         @include respond-to(md) {
             width: 64px;
@@ -444,6 +509,7 @@
             white-space: nowrap;
             max-width: none;
         }
+
     }
 
     @media (max-width: 380px) {
@@ -460,26 +526,11 @@
         }
 
         &__content {
-            gap: 18px;
             padding-inline: 0.85rem;
-            align-items: center;
         }
 
         &__title-wrapper {
             gap: 18px; 
-        }
-
-        &__prefix-container {
-            align-self: flex-start;
-            justify-content: flex-start;
-            align-items: flex-start;
-            height: auto;
-            min-height: 0;
-        }
-
-        &__prefix {
-            font-size: 28px;
-            line-height: 0.9;
         }
 
         &__name {
@@ -657,6 +708,25 @@
         &__scroll-wrapper {
             height: 60px;
             margin-right: 1.5rem;
+        }
+    }
+
+    @media (max-width: 320px) {
+        &__content {
+            transform: translateY(0);
+        }
+
+        &__prefix {
+            font-size: 20px;
+            line-height: 0.9;
+        }
+
+        &__name {
+            font-size: 23px;
+        }
+
+        &__subtitle {
+            font-size: 15px;
         }
     }
 }
