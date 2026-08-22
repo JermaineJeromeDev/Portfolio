@@ -32,8 +32,7 @@
         transform: translateY(-8px);
     }
 
-    
-        .ts-blob {
+    .ts-blob {
         position: absolute;
         pointer-events: none;
         z-index: 1;
@@ -42,14 +41,14 @@
         background-size: contain;
         display: block;
 
-        width: clamp(280px, 90vw, 450px);
-        height: clamp(280px, 90vw, 450px);
+        width: clamp(170px, 60vw, 300px);
+        height: clamp(170px, 60vw, 300px);
 
         &--purple {
             background-image: url('/shapes/purple-shadow-about-me.svg');
             left: 0;
             top: 42%; 
-            transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-38%) translateX(-55%);
 
             @include respond-from(sm) { 
                 transform: translateY(-50%) translateX(-55%);
@@ -185,15 +184,6 @@
 
         @media (max-width: 576px) and (orientation: portrait) {
             bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(0.35rem, 1vh, 0.75rem));
-        }
-
-        @media (max-height: 520px) and (orientation: landscape) {
-            position: relative;
-            bottom: auto;
-            left: auto;
-            transform: none;
-            // margin-top: var(--space-3xl);
-            padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px)); 
         }
     }
 
@@ -460,18 +450,6 @@
     }
 
     @media (max-width: 440px) {
-        .ts-blob {
-            &--purple {
-                padding-left: clamp(270px, 80vw, 430px);
-                padding-top: calc(clamp(270px, 80vw, 430px) * (736 / 740));
-            }
-
-            &--cyan {
-                padding-left: clamp(380px, 95vw, 520px);
-                padding-top: calc(clamp(380px, 95vw, 520px) * (759 / 783));
-            }
-        }
-
         &__content {
             align-items: center;
             width: 100%;
@@ -513,18 +491,6 @@
     }
 
     @media (max-width: 380px) {
-        .ts-blob {
-            &--purple {
-                padding-left: clamp(270px, 82vw, 420px);
-                padding-top: calc(clamp(270px, 82vw, 420px) * (736 / 740));
-            }
-
-            &--cyan {
-                padding-left: clamp(330px, 92vw, 470px);
-                padding-top: calc(clamp(330px, 92vw, 470px) * (759 / 783));
-            }
-        }
-
         &__content {
             padding-inline: 0.85rem;
         }
@@ -545,18 +511,6 @@
     }
 
     @media (max-width: 350px) {
-        .ts-blob {
-            &--purple {
-                padding-left: clamp(320px, 85vw, 450px);
-                padding-top: calc(clamp(320px, 85vw, 450px) * (736 / 740));
-            }
-
-            &--cyan {
-                padding-left: clamp(330px, 85vw, 430px);
-                padding-top: calc(clamp(330px, 85vw, 430px) * (759 / 783));
-            }
-        }
-
         &__content {
             padding-inline: 0.65rem;
             align-items: center; 
@@ -654,18 +608,6 @@
         min-height: calc(100dvh - 109px);
         padding-top: 0;
         padding-bottom: 0;
-
-        .ts-blob {
-            &--purple {
-                padding-left: clamp(440px, 40.3vw, 706px);
-                padding-top: calc(clamp(440px, 40.3vw, 706px) * (736 / 740));
-            }
-
-            &--cyan {
-                padding-left: clamp(504px, 44.7vw, 808px);
-                padding-top: calc(clamp(504px, 44.7vw, 808px) * (759 / 783));
-            }
-        }
 
         &__content {
             gap: 14px;
