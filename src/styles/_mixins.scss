@@ -42,3 +42,21 @@
 @mixin landscape-mobile {
     @media (max-height: $breakpoint-rotate) { @content; }
 }
+
+@mixin respond-from($size) {
+    @if $size == xsm {
+        @media (min-width: $breakpoint-xsm) { @content; }
+    } @else if $size == sm {
+        @media (min-width: $breakpoint-sm) { @content; }
+    } @else if $size == md {
+        @media (min-width: $breakpoint-md) { @content; }
+    } @else if $size == lg {
+        @media (min-width: $breakpoint-lg) { @content; }
+    } @else if $size == xl {
+        @media (min-width: $breakpoint-xl) { @content; }
+    } @else if $size == xxl {
+        @media (min-width: $breakpoint-xxl) { @content; }
+    } @else {
+        @error "Unbekannter Breakpoint: #{$size}.";
+    }
+}

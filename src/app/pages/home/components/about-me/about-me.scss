@@ -67,7 +67,7 @@
             padding-left: clamp(var(--space-lg), 5vw, var(--space-2xl));
         }
 
-        @include respond-to(xl) {
+        @media (max-width: 1200px) {
             display: flex; 
         }
     }
@@ -100,7 +100,7 @@
             margin-bottom: clamp(var(--space-lg), 4vw, var(--space-xl));
         }
 
-        @include respond-to(xsm) {
+        @media (max-width: 375px) {
             font-size: clamp(2.5rem, 12vw, 3.25rem);
         }
     }
