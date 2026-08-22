@@ -40,61 +40,79 @@
         background-position: center;
         background-size: contain;
         display: block;
-
-        width: clamp(170px, 60vw, 300px);
-        height: clamp(170px, 60vw, 300px);
+        width: calc(880px + (100vw - #{$breakpoint-xxl}) * 0.3);
+        height: calc(880px + (100vw - #{$breakpoint-xxl}) * 0.3);
+        top: 50%;
 
         &--purple {
             background-image: url('/shapes/purple-shadow-about-me.svg');
             left: 0;
-            top: 42%; 
-            transform: translateY(-38%) translateX(-55%);
+            transform: translateY(-50%) translateX(-45%);
 
-            @include respond-from(sm) { 
-                transform: translateY(-50%) translateX(-55%);
+            @media (min-width: 1441px) {
+                width: 1000px;
+                height: 1000px;
+                
+                left: 40%; 
+                right: auto;
+                transform: translateY(-50%) translateX(calc(-50% - 720px + 200px));
             }
 
-            @include respond-from(md) { 
+            @include respond-to(md) { 
                 width: clamp(450px, 50vw, 650px); 
                 height: clamp(450px, 50vw, 650px);
                 top: 45%; 
                 transform: translateY(-50%) translateX(-30%);
             }
 
-            @include respond-from(xxl) {
-                top: 50%;
-                width: calc(950px + (100vw - #{$breakpoint-xxl}) * 0.3);
-                height: calc(950px + (100vw - #{$breakpoint-xxl}) * 0.3);
-                transform: translateY(-50%) translateX(calc(-15% - (100vw - #{$breakpoint-xxl}) * 0.15));
+            @include respond-to(sm) {
+                width: clamp(380px, 65vw, 500px);
+                height: clamp(380px, 65vw, 500px);
+                top: 42%;
+                transform: translateY(-54%) translateX(-30%);
+            }
+
+            @include respond-to(xsm) { 
+                width: clamp(170px, 60vw, 300px);
+                height: clamp(170px, 60vw, 300px);
+                top: 42%;
+                transform: translateY(-55%) translateX(-35%);
             }
         }
 
         &--cyan {
             background-image: url('/shapes/blue-shadow-version-b.svg');
             right: 0;
-            top: 65%;
-            transform: translateY(-50%) translateX(65%); 
+            transform: translateY(-58%) translateX(65%);
 
-            @include respond-from(xsm) { 
-                transform: translateY(-50%) translateX(75%);
+            @media (min-width: 1441px) {
+                width: 1250px;
+                height: 1250px;
+                left: 50%;
+                right: auto;
+                
+                transform: translateY(-50%) translateX(calc(-10% + 720px - 250px));
             }
 
-            @include respond-from(sm) { 
-                transform: translateY(-50%) translateX(70%);
-            }
-
-            @include respond-from(md) { 
+            @include respond-to(md) { 
                 width: clamp(520px, 55vw, 750px); 
                 height: clamp(520px, 55vw, 750px);
                 top: 50%; 
                 transform: translateY(-50%) translateX(35%);
             }
 
-            @include respond-from(xxl) {
-                top: 50%;
-                width: calc(950px + (100vw - #{$breakpoint-xxl}) * 0.3);
-                height: calc(950px + (100vw - #{$breakpoint-xxl}) * 0.3);
-                transform: translateY(-50%) translateX(calc(15% + (100vw - #{$breakpoint-xxl}) * 0.15));
+            @include respond-to(sm) { 
+                width: clamp(400px, 65vw, 550px);
+                height: clamp(400px, 65vw, 550px);
+                top: 65%;
+                transform: translateY(-50%) translateX(56%);
+            }
+
+            @include respond-to(xsm) { 
+                width: clamp(170px, 60vw, 300px);
+                height: clamp(170px, 60vw, 300px);
+                top: 65%;
+                transform: translateY(-50%) translateX(65%);
             }
         }
     }
