@@ -684,4 +684,41 @@
             bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
         }
     }
+
+    @media (min-width: 820px) and (max-width: 896px) and (max-height: 414px) and (orientation: landscape) {
+        .ts-blob {
+            &--purple {
+                width: 300px;
+                height: 300px;
+                transform: translateY(-45%) translateX(-10%);
+            }
+
+            &--cyan {
+                width: 300px;
+                height: 300px;
+                transform: translateY(-40%) translateX(10%);
+            }
+        }
+
+        &__content {
+            gap: 12px;
+            transform: translateY(0);
+        }
+
+        &__prefix {
+            font-size: 22px;
+        }
+
+        &__name {
+            font-size: 40px;
+        }
+
+        &__subtitle {
+            font-size: 22px;
+        }
+
+        &__cta {
+            margin-top: 10px;
+        }
+    }
 }
