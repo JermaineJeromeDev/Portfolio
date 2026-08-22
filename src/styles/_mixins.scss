@@ -28,6 +28,8 @@
         @media (max-width: $breakpoint-xl) { @content; }
     } @else if $size == lg {
         @media (max-width: $breakpoint-lg) { @content; }
+    } @else if $size == tbt {
+        @media (max-width: $breakpoint-tbt) { @content; }
     } @else if $size == md {
         @media (max-width: $breakpoint-md) { @content; }
     } @else if $size == sm {
@@ -50,6 +52,8 @@
         @media (min-width: $breakpoint-sm) { @content; }
     } @else if $size == md {
         @media (min-width: $breakpoint-md) { @content; }
+    } @else if $size == tbt {
+        @media (min-width: $breakpoint-tbt) { @content; }
     } @else if $size == lg {
         @media (min-width: $breakpoint-lg) { @content; }
     } @else if $size == xl {
