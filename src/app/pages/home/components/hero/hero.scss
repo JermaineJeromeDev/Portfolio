@@ -73,10 +73,10 @@
             }
 
             @include respond-to(xsm) { 
-                width: clamp(170px, 60vw, 300px);
-                height: clamp(170px, 60vw, 300px);
+                width: clamp(400px, 60vw, 450px);
+                height: clamp(400px, 60vw, 450px);
                 top: 42%;
-                transform: translateY(-55%) translateX(-35%);
+                transform: translateY(-48%) translateX(-30%);
             }
         }
 
@@ -109,10 +109,10 @@
             }
 
             @include respond-to(xsm) { 
-                width: clamp(170px, 60vw, 300px);
-                height: clamp(170px, 60vw, 300px);
+                width: clamp(420px, 65vw, 480px);
+                height: clamp(420px, 65vw, 480px);
                 top: 65%;
-                transform: translateY(-50%) translateX(65%);
+                transform: translateY(-50%) translateX(60%);
             }
         }
     }
