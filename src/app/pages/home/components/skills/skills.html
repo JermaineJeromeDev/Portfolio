@@ -2,9 +2,25 @@
     <div class="skills__container">
 
         <div class="skills__tech-zone">
-            <div class="skills__category">
-                <h3 class="skills__category-title">{{ 'SKILLS.CAT_FRONTEND' | translate }}</h3>
-                <div class="skills__grid">
+            <div class="skills__tabs">
+                <button class="skills__tab-btn" [class.skills__tab-btn--active]="activeTab === 'frontend'"
+                    (click)="setActiveTab('frontend')">
+                    {{ 'SKILLS.CAT_FRONTEND' | translate }}
+                </button>
+                <button class="skills__tab-btn" [class.skills__tab-btn--active]="activeTab === 'backend'"
+                    (click)="setActiveTab('backend')">
+                    {{ 'SKILLS.CAT_BACKEND' | translate }}
+                </button>
+                <button class="skills__tab-btn" [class.skills__tab-btn--active]="activeTab === 'devsecops'"
+                    (click)="setActiveTab('devsecops')">
+                    {{ 'SKILLS.CAT_DEVSECOPS' | translate }}
+                </button>
+            </div>
+
+            <div class="skills__grid-container">
+                @switch (activeTab) {
+                @case ('frontend') {
+                <div class="skills__grid animate-fade-in">
                     @for (skill of frontendSkills; track skill.name) {
                     <div class="skills__item">
                         <app-skills-icon [name]="skill.icon"></app-skills-icon>
@@ -12,11 +28,32 @@
                     </div>
                     }
                 </div>
-            </div>
 
-            <div class="skills__category">
-                <h3 class="skills__category-title">{{ 'SKILLS.CAT_BACKEND' | translate }}</h3>
-                <div class="skills__grid">
+                <div class="skills__special-item animate-fade-in">
+                    <div class="skills__item skills__item--cyan">
+                        <app-skills-icon name="continually-learning"></app-skills-icon>
+                        <span>{{ 'SKILLS.CONTINUALLY_LEARNING' | translate }}</span>
+
+                        <div class="skills__tooltip">
+                            <p class="skills__tooltip-text">I have a special interest in learning</p>
+                            <div class="skills__tooltip-icons">
+                                <div class="skills__tooltip-icon-box">
+
+                                    <app-skills-icon name="react"></app-skills-icon>
+                                    <span class="skills__tooltip-icon-name">React</span>
+                                </div>
+                                <div class="skills__tooltip-icon-box">
+                                    <app-skills-icon name="vue-js"></app-skills-icon>
+                                    <span class="skills__tooltip-icon-name">Vue.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                }
+                @case ('backend') {
+                <div class="skills__grid animate-fade-in">
                     @for (skill of backendSkills; track skill.name) {
                     <div class="skills__item">
                         <app-skills-icon [name]="skill.icon"></app-skills-icon>
@@ -24,11 +61,9 @@
                     </div>
                     }
                 </div>
-            </div>
-
-            <div class="skills__category">
-                <h3 class="skills__category-title">{{ 'SKILLS.CAT_DEVSECOPS' | translate }}</h3>
-                <div class="skills__grid">
+                }
+                @case ('devsecops') {
+                <div class="skills__grid animate-fade-in">
                     @for (skill of devSecOpsSkills; track skill.name) {
                     <div class="skills__item">
                         <app-skills-icon [name]="skill.icon"></app-skills-icon>
@@ -36,18 +71,23 @@
                     </div>
                     }
                 </div>
+                }
+                }
             </div>
         </div>
 
         <div class="skills__content">
-            <h2 class="skills__title">{{ 'SKILLS.TITLE' | translate }}</h2>
+            <div class="skills__title-box">
+                <h2 class="skills__title">{{ 'SKILLS.TITLE' | translate }}</h2>
+                <span class="skills__line"></span>
+            </div>
 
             <p class="skills__description">{{ 'SKILLS.DESCRIPTION' | translate }}</p>
 
             <div class="skills__cta-box">
                 <h4 class="skills__cta-title">
                     {{ 'SKILLS.CTA_TITLE' | translate }}<span class="skills__cta-highlight">{{
-                        'SKILLS.CTA_TITLE_HIGHLIGHT' | translate }}</span>
+                        'SKILLS.CTA_TITLE_HIGHLIGHT' | translate }}</span><span style="color: #fff;">?</span>
                 </h4>
                 <p class="skills__cta-text">{{ 'SKILLS.CTA_TEXT' | translate }}</p>
                 <app-button variant="primary" color="green" (click)="scrollToContact()">

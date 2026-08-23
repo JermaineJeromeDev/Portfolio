@@ -27,8 +27,9 @@
         "TITLE": "Skills",
         "DESCRIPTION": "Ich habe fundierte praktische Erfahrung in der Entwicklung von Fullstack-Webanwendungen mit modernen Frontend- und Backend-Technologien gesammelt. Mein Spektrum reicht von der Erstellung responsiver und interaktiver Benutzeroberflächen mit Angular, TypeScript, HTML und CSS bis hin zur Entwicklung robuster Backend-Lösungen mit Python, Django, REST-APIs und PostgreSQL.\n\nÜber das reine Coden hinaus lege ich großen Wert auf saubere Architektur, Teamarbeit und agile Entwicklungsmethoden. Da sich die Technologie ständig weiterentwickelt, investiere ich aktiv in kontinuierliche Weiterbildung. Es begeistert mich, neue Tools, Frameworks und Best Practices zu entdecken, um meine Expertise stetig auszubauen.",
         "CTA_TITLE": "Auf der Suche nach ",
-        "CTA_TITLE_HIGHLIGHT": "anderen Skills?",
+        "CTA_TITLE_HIGHLIGHT": "anderen Skills",
         "CTA_TEXT": "Ich freue mich immer darauf, neue Technologien kennenzulernen und mich neuen Herausforderungen zu stellen. Anpassungsfähigkeit, Neugier und kontinuierliches Wachstum stehen im Mittelpunkt meiner Entwicklungsreise.",
-        "BTN_TEXT": "Kontakt aufnehmen"
+        "BTN_TEXT": "Kontakt aufnehmen",
+        "CONTINUALLY_LEARNING": "Continually learning"
     }
 }
