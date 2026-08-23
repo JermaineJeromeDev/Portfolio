@@ -32,8 +32,36 @@
             display: none;
         }
 
-        @media (min-width: 1440px) {
-            top: min(72%, 649px);
+        @media (min-width: 1536px) {
+            top: 638px;
+        }
+
+        @media (min-width: 1600px) {
+            top: 630px;
+        }
+
+        @media (min-width: 1728px) {
+            top: 614px;
+        }
+
+        @media (min-width: 1920px) {
+            top: 590px;
+        }
+
+        @media (min-width: 2048px) {
+            top: 575px;
+        }
+
+        @media (min-width: 2560px) {
+            top: 515px;
+        }
+
+        @media (min-width: 3440px) {
+            top: 410px;
+        }
+
+        @media (min-width: 3840px) {
+            top: 365px;
         }
     }
 

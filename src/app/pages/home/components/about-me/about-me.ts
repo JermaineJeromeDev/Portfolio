@@ -55,6 +55,9 @@ export class AboutMe implements AfterViewInit, OnDestroy {
     if (width >= 1000) return 0.62 + ((1380 - width) / (1380 - 1000)) * 0.10;
     if (width >= 880) return 0.72 - ((1000 - width) / (1000 - 880)) * 0.001;
     if (width > 768) return 0.84 - ((880 - width) / (880 - 768)) * 0.16;
+    if (width >= 430 && width <= 440) {
+      return 0.77 + ((768 - width) / (768 - 360)) * 0.10 + 0.001;
+    }
     if (width >= 360) return 0.77 + ((768 - width) / (768 - 360)) * 0.10;
     return 0.87 + ((360 - width) / (360 - 320)) * 0.001;
   }
