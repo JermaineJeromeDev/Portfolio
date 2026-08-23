@@ -3,10 +3,11 @@
 
 .about-me {
     position: relative;
+    z-index: 2;
     width: 100%;
     background: var(--bg-dark-3); 
     padding: clamp(var(--space-2xl), 7vw, var(--space-4xl)) 0 clamp(var(--space-3xl), 9vw, 6rem) 0;
-    overflow: hidden;
+    overflow: visible;
     scroll-margin-top: 100px;
 
     &__scroll-anchor {
