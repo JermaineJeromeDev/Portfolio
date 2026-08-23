@@ -46,7 +46,7 @@
     }
 
     &__tabs {
-        @include flexbox(row, flex-start, center, clamp(12px, 1.7vw, 26px));
+        @include flexbox(row, space-between, center, clamp(12px, 1.7vw, 26px));
         width: 100%;
         border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
         padding-bottom: var(--space-sm);
