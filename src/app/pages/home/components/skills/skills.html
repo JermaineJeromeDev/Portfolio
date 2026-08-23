@@ -32,22 +32,9 @@
                 <div class="skills__special-item animate-fade-in">
                     <div class="skills__item skills__item--cyan">
                         <app-skills-icon name="continually-learning"></app-skills-icon>
-                        <span>{{ 'SKILLS.CONTINUALLY_LEARNING' | translate }}</span>
-
-                        <div class="skills__tooltip">
-                            <p class="skills__tooltip-text">I have a special interest in learning</p>
-                            <div class="skills__tooltip-icons">
-                                <div class="skills__tooltip-icon-box">
-
-                                    <app-skills-icon name="react"></app-skills-icon>
-                                    <span class="skills__tooltip-icon-name">React</span>
-                                </div>
-                                <div class="skills__tooltip-icon-box">
-                                    <app-skills-icon name="vue-js"></app-skills-icon>
-                                    <span class="skills__tooltip-icon-name">Vue.js</span>
-                                </div>
-                            </div>
-                        </div>
+                        <span>Continually learning</span>
+                        <img src="icons/continually-hover.svg" class="skills__tooltip-img"
+                            alt="Special interests tooltip">
                     </div>
                 </div>
 
@@ -82,7 +69,8 @@
                 <span class="skills__line"></span>
             </div>
 
-            <p class="skills__description">{{ 'SKILLS.DESCRIPTION' | translate }}</p>
+            <p class="skills__description">{{ 'SKILLS.DESCRIPTION_1' | translate }}</p>
+            <p class="skills__description">{{ 'SKILLS.DESCRIPTION_2' | translate }}</p>
 
             <div class="skills__cta-box">
                 <h4 class="skills__cta-title">
@@ -95,6 +83,22 @@
                 </app-button>
             </div>
         </div>
-
     </div>
+
+    <svg class="skills__bg-glow" width="829" height="822" viewBox="0 0 829 822" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_f_230_440)">
+            <path
+                d="M142.53 282.236C156.971 178.032 292.904 139.291 306.883 136.433C306.883 136.433 379.716 21.3269 377.356 165.885C374.996 310.444 525.665 137.464 568.204 200.104C609.505 260.922 375.378 417.379 536.183 385.61C696.989 353.841 783.569 251.39 706.606 418.529C629.643 585.668 548.542 751.216 373.274 725.939C362.368 724.366 343.41 715.955 320.322 703.696C304.661 705.354 270.61 688.424 210.09 645.055C-54.4247 455.5 194.389 636.831 320.322 703.696C385.659 696.776 130.882 366.292 142.53 282.236Z"
+                fill="#1CDAE6" />
+        </g>
+        <defs>
+            <filter id="filter0_f_230_440" x="0" y="0" width="828.063" height="821.508" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="46.5" result="effect1_foregroundBlur_230_440" />
+            </filter>
+        </defs>
+    </svg>
 </section>

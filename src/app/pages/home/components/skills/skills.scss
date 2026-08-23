@@ -6,16 +6,35 @@
     z-index: 3;
     width: 100%;
     padding: clamp(var(--space-3xl), 8vw, var(--space-4xl)) 0;
-    overflow: hidden;
+    
+    overflow-x: hidden; 
+    overflow-y: visible; 
 
     &__container {
         @include global_content_wrapper();
         margin: 0 auto;
         position: relative;
+        z-index: 2; 
         @include flexbox(row, space-between, flex-start, 80px);
 
         @include respond-to(lg) {
             @include flexbox(column-reverse, flex-start, center, var(--space-3xl));
+        }
+    }
+
+    &__bg-glow {
+        position: absolute;
+        bottom: -580px; 
+        right: -380px;
+        
+        z-index: 1;     
+        pointer-events: none; 
+        opacity: 1;
+
+        @include respond-to(md) {
+            width: 400px;
+            bottom: -150px;
+            right: -100px;
         }
     }
 
@@ -27,11 +46,12 @@
     }
 
     &__tabs {
-        @include flexbox(row, flex-start, center, var(--space-md));
+        @include flexbox(row, flex-start, center, clamp(12px, 1.7vw, 26px));
         width: 100%;
         border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
         padding-bottom: var(--space-sm);
         margin-bottom: var(--space-md);
+        padding-left: clamp(8px, 1.2vw, 20px);
     }
 
     &__tab-btn {
@@ -70,7 +90,7 @@
 
     &__grid-container {
         width: 100%;
-        min-height: 380px; 
+        min-height: 687px; 
     }
 
     &__grid {
@@ -122,93 +142,36 @@
         }
 
         &--cyan {
-            app-skills-icon {
-                color: var(--clr-secondary);
-            }
-        }
+            color: var(--clr-secondary);
 
-        .skills__tooltip {
+            .skills__tooltip-img {
                 position: absolute;
-                top: -120px; 
-                left: 36px;
+                top: -117px; 
+                left: 17%;
+                transform: translateX(-50%); 
                 
-                width: 188px;  
-                height: 129px; 
-                background-color: var(--txt-primary); 
-                border-radius: var(--radius-lg); 
-                padding: var(--space-md); 
-                box-sizing: border-box;
-                
-                @include flexbox(column, center, center, 8px);
+                width: 200px; 
+                height: auto;  
                 
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none; 
-                transition: opacity 150ms ease-in-out, visibility 150ms;
-                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15); 
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -8px; 
-                    left: 32px; 
-                    border-width: 8px 8px 0; 
-                    border-style: solid;
-                    border-color: var(--txt-primary) transparent;
-                    display: block;
-                    width: 0;
-                }
-            }
-
-            .skills__tooltip-text {
-                font-family: var(--font-family);
-                font-weight: var(--fw-normal);
-                font-size: var(--fs-sm); 
-                line-height: 1.12; 
-                color: #000000; 
-                text-align: center;
-                margin: 0;
-            }
-
-            .skills__tooltip-icons {
-                @include flexbox(row, center, center, 16px);
-                width: 100%;
-            }
-
-            .skills__tooltip-icon-box {
-                @include flexbox(column, center, center, 5px);
-                
-                app-skills-icon {
-                    width: 32px;  
-                    height: 32px;
-                    
-                    ::ng-deep svg, ::ng-deep path {
-                        fill: initial; 
-                        stroke: initial;
-                    }
-                }
-            }
-
-            .skills__tooltip-icon-name {
-                font-family: 'Poppins', var(--font-family);
-                font-weight: 700; 
-                font-size: 12px; 
-                line-height: 1.08;
-                text-align: center;
-                color: #000000 !important;
-                padding: 0;
+                transition: opacity 150ms ease-out, visibility 150ms ease-out;
             }
 
             &:hover {
+                color: var(--txt-primary); 
+
                 app-skills-icon {
-                    transform: translateY(-4px); 
+                    transform: translateX(-4px); 
                 }
 
-                .skills__tooltip {
+                .skills__tooltip-img {
                     opacity: 1;
                     visibility: visible;
                 }
             }
+        }
 
         span {
             font-family: var(--font-family);

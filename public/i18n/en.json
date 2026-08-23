@@ -5,12 +5,14 @@
         "CTA": "Let's talk!",
         "SCROLL": "Scroll down"
     },
+
     "NAV": {
         "ABOUT": "About me",
         "SKILLS": "Skills",
         "PORTFOLIO": "Portfolio",
         "CONTACT": "Contact"
     },
+
     "ABOUT": {
     "TITLE": "About me",
     "INTRO_GREETING": "Hey there, I'm Jermaine Jérôme!",
@@ -20,13 +22,15 @@
     "FEATURE_MINDSET": "I believe that learning never stops in tech. That's why I continuously expand my knowledge, explore new technologies, and challenge myself to grow as a developer.",
     "FEATURE_METHOD": "I approach challenges with analytical thinking, persistence, and creativity. When I encounter a problem, I break it down into manageable steps, research possible solutions, and keep refining my approach until I achieve the best result."
     },
+
     "SKILLS": {
     "CAT_FRONTEND": "Frontend",
     "CAT_BACKEND": "Backend",
     "CAT_DEVSECOPS": "DevSecOps",
     "TITLE": "Skills",
-    "DESCRIPTION": "I have gained hands-on experience building fullstack web applications using modern frontend and backend technologies. My skill set ranges from creating responsive and interactive user interfaces with Angular, TypeScript, HTML, and CSS to developing robust backend solutions with Python, Django, REST APIs, and PostgreSQL.\n\nBeyond coding, I value clean architecture, teamwork, and agile development practices. Since technology is constantly evolving, I actively invest in continuous learning and enjoy exploring new tools, frameworks, and best practices to further expand my expertise.",
+    "DESCRIPTION_1": "I have gained hands-on experience building fullstack web applications using modern frontend and backend technologies. My skill set ranges from creating responsive and interactive user interfaces with Angular, TypeScript, HTML, and CSS to developing robust backend solutions with Python, Django, REST APIs, and PostgreSQL.",
     "CTA_TITLE": "Looking for ",
+    "DESCRIPTION_2": "Beyond coding, I value clean architecture, teamwork, and agile development practices. Since technology is constantly evolving, I actively invest in continuous learning and enjoy exploring new tools, frameworks, and best practices to further expand my expertise.",
     "CTA_TITLE_HIGHLIGHT": "another skill",
     "CTA_TEXT": "I am always excited to learn new technologies and take on new challenges. Adaptability, curiosity, and continuous growth are at the core of my development journey.",
     "BTN_TEXT": "Get in touch",
