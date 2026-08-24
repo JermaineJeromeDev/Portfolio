@@ -42,18 +42,12 @@
 
     &__bg-glow {
         position: absolute;
-        bottom: -580px; 
+        bottom: -550px; 
         right: -380px;
         
         z-index: 1;     
         pointer-events: none; 
         opacity: 1;
-
-        // @include respond-to(md) {
-        //     width: 400px;
-        //     bottom: -150px;
-        //     right: -100px;
-        // }
     }
 
     &__tech-zone {
@@ -142,6 +136,10 @@
             order: 4;
             min-height: 500px;
         }
+
+        @include respond-to(md) {
+            min-height: 499px; 
+        }
     }
 
     &__grid {
@@ -156,11 +154,10 @@
             column-gap: 20px;
         }
 
-        // @include respond-to(md) {
-        //     grid-template-columns: repeat(2, 1fr);
-        //     row-gap: var(--space-xl);
-        //     column-gap: var(--space-xl);
-        // }
+        @include respond-to(md) {
+            row-gap: var(--space-xl);
+            column-gap: var(--space-xl);
+        }
     }
 
     &__special-item {
@@ -170,6 +167,10 @@
 
         @include respond-to(desktop) {
             margin-top: 15px; 
+        }
+
+        @include respond-to(md) {
+            margin-top: 32px; 
         }
 
         .skills__item {
@@ -350,6 +351,11 @@
         color: var(--txt-primary);
         margin: 0;
         white-space: nowrap;
+
+        @include respond-to(md) {
+            margin-top: 10px;
+            
+        }
     }
 
     &__cta-highlight {
@@ -368,11 +374,6 @@
 
         @include respond-to(desktop) {
             margin-bottom: 18px;
-        }
-
-        @include respond-to(lg) {
-            text-align: center;
-            margin-bottom: 0;
         }
     }
 
