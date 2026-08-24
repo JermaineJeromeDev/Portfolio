@@ -14,7 +14,7 @@
     }
 
     @include respond-to(lg) {
-        padding-top: 125px;
+        padding-top: 110px;
     }
 
     &__container {
@@ -36,6 +36,7 @@
             gap: var(--space-xl);
             max-width: 695px;
             margin: 0 auto;
+            gap: var(--space-lg);
         }
     }
 
@@ -139,7 +140,7 @@
 
         @include respond-to(lg) {
             order: 4;
-            min-height: auto;
+            min-height: 500px;
         }
     }
 
@@ -151,8 +152,8 @@
         width: 100%;
 
         @include respond-to(desktop) {
-            row-gap: 30px;    
-            column-gap: 30px;
+            row-gap: 20px;    
+            column-gap: 20px;
         }
 
         // @include respond-to(md) {
@@ -336,7 +337,6 @@
 
         @include respond-to(lg) {
             order: 5;
-            margin-top: var(--space-xl);
             align-items: center; 
             text-align: center;
         }
@@ -368,6 +368,11 @@
 
         @include respond-to(desktop) {
             margin-bottom: 18px;
+        }
+
+        @include respond-to(lg) {
+            text-align: center;
+            margin-bottom: 0;
         }
     }
 
