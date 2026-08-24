@@ -26,6 +26,8 @@
         @media (max-width: $breakpoint-xxl) { @content; }
     } @else if $size == xl {
         @media (max-width: $breakpoint-xl) { @content; }
+    } @else if $size == desktop {
+        @media (max-width: $breakpoint-desktop) { @content; }
     } @else if $size == lg {
         @media (max-width: $breakpoint-lg) { @content; }
     } @else if $size == tbt {
