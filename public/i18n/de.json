@@ -19,5 +19,18 @@
     "FEATURE_LOCATION": "Ansässig in Deutschland bin ich offen für Remote-Arbeit und die Zusammenarbeit mit Teams an verschiedenen Standorten. Ich mag es, Wissen zu teilen, von anderen zu lernen und zu erfolgreichen Projekten beizutragen.",
     "FEATURE_MINDSET": "Ich glaube, dass das Lernen in der Tech-Welt niemals aufhört. Deshalb erweitere ich ständig mein Wissen, erkunde neue Technologien und fordere mich selbst heraus, um als Entwickler zu wachsen.",
     "FEATURE_METHOD": "Ich begegne Herausforderungen mit analytischem Denken, Beharrlichkeit und Kreativität. Wenn ich auf ein Problem stoße, zerlege ich es in überschaubare Schritte, recherchiere Lösungswege und verfeinere meinen Ansatz, bis ich das beste Ergebnis erziele."
+    },
+    "SKILLS": {
+        "CAT_FRONTEND": "Frontend",
+        "CAT_BACKEND": "Backend",
+        "CAT_DEVSECOPS": "DevSecOps",
+        "TITLE": "Skills",
+        "DESCRIPTION_1": "Ich entwickle Full-Stack-Webanwendungen mit responsiven Angular/TypeScript-Frontends und robusten Python/Django-Backends.",
+        "DESCRIPTION_2": "Um mit dem schnellen Wandel in der Webentwicklung Schritt zu halten, investiere ich aktiv in kontinuierliche Weiterbildung, saubere Architektur und moderne agile Praktiken.",
+        "CTA_TITLE": "Auf der Suche nach ",
+        "CTA_TITLE_HIGHLIGHT": "anderen Skills",
+        "CTA_TEXT": "Ich freue mich immer darauf, neue Technologien kennenzulernen und mich neuen Herausforderungen zu stellen. Anpassungsfähigkeit, Neugier und kontinuierliches Wachstum stehen im Mittelpunkt meiner Entwicklungsreise.",
+        "BTN_TEXT": "Kontakt aufnehmen",
+        "CONTINUALLY_LEARNING": "Continually learning"
     }
 }

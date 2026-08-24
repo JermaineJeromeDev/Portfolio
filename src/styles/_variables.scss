@@ -57,12 +57,18 @@
     --container-content-md: 1440px; 
 }
 
-$breakpoint-xsm: 375px;
+$breakpoint-phone-mini: 320px;
+$breakpoint-xsm: 360px;
+$breakpoint-phone-narrow: 393px;
+$breakpoint-phone: 412px;
+$breakpoint-phone-plus: 430px;
+$breakpoint-phone-wide: 440px;
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
-$breakpoint-tablet: 768px; 
+$breakpoint-tbt: 820px; 
 $breakpoint-lg: 992px;
+$breakpoint-laptop: 1024px;
 $breakpoint-xl: 1200px;
-$breakpoint-desktop: 1200px;
+$breakpoint-desktop: 1366px;
 $breakpoint-xxl: 1440px;
 $breakpoint-rotate: 622px;

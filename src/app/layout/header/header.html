@@ -8,16 +8,36 @@
 
             <nav class="header__nav">
                 <ul class="header__nav-list">
-                    <li><a href="#about" class="header__nav-link">{{ 'NAV.ABOUT' | translate }}</a></li>
-                    <li><a href="#skills" class="header__nav-link">{{ 'NAV.SKILLS' | translate }}</a></li>
-                    <li><a href="#portfolio" class="header__nav-link">{{ 'NAV.PORTFOLIO' | translate }}</a></li>
+                    <li>
+                        <a [routerLink]="['/']" [fragment]="'about'" routerLinkActive="header__nav-link--active"
+                            [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
+                            class="header__nav-link">
+                            {{ 'NAV.ABOUT' | translate }}
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/']" [fragment]="'skills'" routerLinkActive="header__nav-link--active"
+                            [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
+                            class="header__nav-link">
+                            {{ 'NAV.SKILLS' | translate }}
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/']" [fragment]="'portfolio'" routerLinkActive="header__nav-link--active"
+                            [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
+                            class="header__nav-link">
+                            {{ 'NAV.PORTFOLIO' | translate }}
+                        </a>
+                    </li>
                 </ul>
 
                 <div class="header__languages">
-                    <app-button variant="language" [isActive]="currentLang === 'DE'"
-                        (click)="changeLanguage('DE')">DE</app-button>
-                    <app-button variant="language" [isActive]="currentLang === 'EN'"
-                        (click)="changeLanguage('EN')">EN</app-button>
+                    <app-button variant="language" [isActive]="currentLang === 'DE'" (click)="changeLanguage('DE')">
+                        DE
+                    </app-button>
+                    <app-button variant="language" [isActive]="currentLang === 'EN'" (click)="changeLanguage('EN')">
+                        EN
+                    </app-button>
                 </div>
             </nav>
 

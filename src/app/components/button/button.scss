@@ -24,9 +24,24 @@
         transition: transform 100ms ease-in-out, background-color 100ms ease-in-out, box-shadow 100ms ease-in-out;
 
         @include respond-to(md) {
-            font-size: 16px; 
-            padding: 12px 24px; 
-            min-height: 48px;
+            gap: 10px;
+            font-size: 16px;
+            line-height: 1.2;
+            padding: 15px 30px;
+            transition: background-color 100ms ease-out 300ms, color 100ms ease-out 300ms, padding 100ms ease-out 300ms, min-height 100ms ease-out 300ms, min-width 100ms ease-out 300ms;
+
+            &:hover:not(:disabled),
+            &:active:not(:disabled) {
+                transform: none;
+                min-width: 113px;
+                min-height: 59px;
+                padding: 20px 40px;
+                background-color: var(--clr-primary-2);
+                box-shadow: var(--shadow-btn-glow);
+                transition-timing-function: ease-in-out;
+                transition-duration: 100ms;
+                transition-delay: 0ms;
+            }
         }
 
         &:hover:not(:disabled) {
@@ -41,6 +56,16 @@
             background-color: var(--txt-primary); 
             color: #000000;          
             box-shadow: none; 
+
+            @include respond-to(md) {
+                transition: background-color 100ms ease-in-out, color 100ms ease-in-out, padding 100ms ease-in-out, min-height 100ms ease-in-out, min-width 100ms ease-in-out;
+                background-color: var(--clr-primary-2);
+                color: var(--txt-primary);
+                min-width: 113px;
+                min-height: 59px;
+                padding: 20px 40px;
+                box-shadow: var(--shadow-btn-glow);
+            }
         }
     }
 

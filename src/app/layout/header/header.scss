@@ -10,14 +10,17 @@
     z-index: 1000;
     background: transparent;
     padding: 0;
+    background-color: var(--bg-dark-3);
 
     &__layout-wrapper {
         width: min(100%, 1440px);
         margin: 0 auto;
         padding-top: 37px;
-        padding-right: 100px;
         padding-bottom: 37px;
-        padding-left: 100px;
+        
+        padding-left: clamp(1.5rem, 7vw, 100px);
+        padding-right: clamp(1.5rem, 7vw, 100px);
+        
         box-sizing: border-box;
         background-color: var(--bg-dark-3);
         backdrop-filter: blur(65px);
@@ -54,6 +57,11 @@
         justify-content: flex-end;
         flex-shrink: 0;
 
+        @media (max-width: 900px) {
+            gap: 32px;
+            width: auto;
+        }
+
         @include respond-to(md) {
             display: none;
         }
@@ -64,6 +72,10 @@
         @include flexbox(row, flex-end, center, 29px);
         flex-wrap: nowrap;
         white-space: nowrap;
+
+        @media (max-width: 900px) {
+            gap: 16px; 
+        }
     }
 
     &__nav-link {
@@ -93,8 +105,7 @@
             color: var(--clr-primary-1);
         }
 
-        &--active,
-        &:active {
+        &--active {
             color: var(--clr-primary-1); 
 
             &::after {
@@ -155,3 +166,4 @@
         &--bottom { transform-origin: center; }
     }
 }
+

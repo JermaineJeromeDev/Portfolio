@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ButtonComponent } from '../../components/button/button';
 import { LogoComponent } from '../../components/logo/logo';
@@ -8,7 +9,7 @@ import { MenuOverlayComponent } from './components/menu-overlay/menu-overlay';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, LogoComponent, ButtonComponent, MenuOverlayComponent, TranslatePipe],
+  imports: [CommonModule, LogoComponent, ButtonComponent, MenuOverlayComponent, TranslatePipe, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
   host: {

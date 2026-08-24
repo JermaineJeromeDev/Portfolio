@@ -5,12 +5,14 @@
         "CTA": "Let's talk!",
         "SCROLL": "Scroll down"
     },
+
     "NAV": {
         "ABOUT": "About me",
         "SKILLS": "Skills",
         "PORTFOLIO": "Portfolio",
         "CONTACT": "Contact"
     },
+
     "ABOUT": {
     "TITLE": "About me",
     "INTRO_GREETING": "Hey there, I'm Jermaine Jérôme!",
@@ -19,5 +21,19 @@
     "FEATURE_LOCATION": "Based in Germany, I am open to remote work and collaboration with teams from different locations. I enjoy sharing knowledge, learning from others, and contributing to successful projects.",
     "FEATURE_MINDSET": "I believe that learning never stops in tech. That's why I continuously expand my knowledge, explore new technologies, and challenge myself to grow as a developer.",
     "FEATURE_METHOD": "I approach challenges with analytical thinking, persistence, and creativity. When I encounter a problem, I break it down into manageable steps, research possible solutions, and keep refining my approach until I achieve the best result."
+    },
+
+    "SKILLS": {
+    "CAT_FRONTEND": "Frontend",
+    "CAT_BACKEND": "Backend",
+    "CAT_DEVSECOPS": "DevSecOps",
+    "TITLE": "Skills",
+    "DESCRIPTION_1": "I build full-stack web applications with responsive Angular/TypeScript frontends and robust Python/Django backends.",
+    "CTA_TITLE": "Looking for ",
+    "DESCRIPTION_2": "To keep up with the rapid changes in web development, I actively invest in continuous learning, clean architecture, and modern agile practices.",
+    "CTA_TITLE_HIGHLIGHT": "another skill",
+    "CTA_TEXT": "I am always excited to learn new technologies and take on new challenges. Adaptability, curiosity, and continuous growth are at the core of my development journey.",
+    "BTN_TEXT": "Get in touch",
+    "CONTINUALLY_LEARNING": "Continually learning"
     }
 }

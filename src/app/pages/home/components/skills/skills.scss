@@ -1,0 +1,414 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.skills {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    padding: clamp(var(--space-3xl), 8vw, var(--space-4xl)) 0;
+    overflow: hidden; 
+
+    @include respond-to(desktop) {
+        @include flexbox(row, space-between, flex-start, var(--space-xl));
+    }
+
+    &__container {
+        @include global_content_wrapper();
+        margin: 0 auto;
+        position: relative;
+        z-index: 2; 
+        @include flexbox(row, space-between, flex-start, 80px);
+
+        @include respond-to(laptop) {
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            margin-top: 44px;
+        }
+        
+        @include respond-to(lg) {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 695px;
+            margin: 0 auto;
+            gap: 22px;
+        }
+    }
+
+    &__bg-glow {
+        position: absolute;
+        bottom: -550px; 
+        right: -380px;
+        
+        z-index: 1;     
+        pointer-events: none; 
+        opacity: 1;
+    }
+
+    &__tech-zone {
+        flex: 1 1 auto;
+        max-width: 650px; 
+        width: 100%;
+        @include flexbox(column, flex-start, flex-start, var(--space-xl));
+
+        @include respond-to(desktop) {
+            max-width: 580px;
+        }
+
+        @include respond-to(lg) {
+            display: contents;
+        }
+    }
+
+    &__tabs {
+        @include flexbox(row, space-between, flex-start, clamp(12px, 1.7vw, 26px));
+        width: 100%;
+        padding-bottom: var(--space-sm);
+        margin-bottom: var(--space-md);
+        padding-left: clamp(8px, 1.2vw, 20px);
+        position: relative;
+
+        &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: clamp(31px, 1.2vw, 20px); 
+        right: 0;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.1);
+        z-index: 1;
+        }
+
+        @include respond-to(lg) {
+            order: 3;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__tab-btn {
+        background: transparent;
+        border: none;
+        font-family: var(--font-family);
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-base); 
+        color: var(--txt-secondary); 
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        padding: var(--space-sm) var(--space-md);
+        position: relative;
+        transition: color 200ms ease-in-out;
+
+        &:hover {
+            color: var(--clr-primary-1); 
+        }
+
+        &--active {
+            color: var(--clr-primary-1);
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 31%;                    
+                transform: translateX(-50%);  
+                
+                width: clamp(42px, 5vw, 55px); 
+                height: 3px;
+                background-color: var(--clr-primary-2);
+                border-radius: var(--radius-pill);
+            }
+        }
+    }
+
+    &__grid-container {
+        width: 100%;
+        min-height: 687px; 
+
+        @include respond-to(desktop) {
+            min-height: auto; 
+        }
+
+        @include respond-to(lg) {
+            order: 4;
+            min-height: 440px;
+        }
+
+        @include respond-to(md) {
+            min-height: 420px; 
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 80px; 
+        column-gap: 80px;
+        width: 100%;
+
+        @include respond-to(desktop) {
+            row-gap: 20px;    
+            column-gap: 20px;
+        }
+
+        @include respond-to(lg) {
+            row-gap: 60px;    
+            column-gap: clamp(28px, 4.6vw, 44px);
+            margin-top: 4px;
+        }
+
+        @include respond-to(md) {
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 28px;
+            column-gap: 24px;
+        }
+    }
+
+    &__item {
+        @include flexbox(column, flex-start, center, 10px);
+        padding-top: 12px;
+        padding-bottom: var(--space-md);
+        border-radius: var(--radius-md);
+        background: transparent; 
+        color: var(--txt-primary);
+
+        app-skills-icon {
+            display: block;
+            width: 54px;
+            height: 60px;
+            color: inherit;
+            transition: transform 100ms ease-in-out; 
+
+            @include respond-to(desktop) {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        &:hover {
+            app-skills-icon {
+                transform: translateY(-12px); 
+            }
+        }
+
+        &--cyan {
+            position: relative;
+            color: var(--clr-secondary);
+            grid-column: 1 / -1;
+            justify-self: start;
+            width: calc((100% - (60px * 3)) / 4);
+            padding-left: 0;
+            padding-right: 0;
+
+            span {
+                white-space: nowrap;
+            }
+
+            @include respond-to(lg) {
+                color: var(--clr-primary-2);
+                grid-column: auto;
+                justify-self: stretch;
+                width: auto;
+            }
+
+            .skills__tooltip-img {
+                position: absolute;
+                bottom: clamp(calc(100% - 40px), calc(100% - 32px), calc(100% - 20px));
+                left: clamp(88%, 95%, 104%);
+                transform: translateX(-50%); 
+                
+                width: clamp(185px, 22vw, 220px); 
+                max-width: none;
+                height: auto;  
+                
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none; 
+                transition: opacity 150ms ease-out, visibility 150ms ease-out;
+
+                @include respond-to(lg) {
+                    bottom: clamp(calc(100% - 38px), calc(100% - 20px), calc(100% - 12px));
+                    left: clamp(90%, 95%, 102%);
+                    width: clamp(165px, 38vw, 220px);
+                }
+            }
+
+            &:hover {
+                color: var(--txt-primary); 
+
+                app-skills-icon {
+                    transform: translateX(-4px); 
+
+                    @include respond-to(lg) {
+                        transform: none;
+                    }
+                }
+
+                .skills__tooltip-img {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        span {
+            font-family: var(--font-family);
+            font-weight: var(--fw-bold);
+            font-size: var(--fs-sm); 
+            line-height: var(--line-height-tight); 
+            text-align: center;
+            color: var(--txt-primary);
+            white-space: normal;
+            padding-inline: var(--space-xs);
+            
+            word-break: normal; 
+            overflow-wrap: anywhere; 
+
+            @include respond-to(desktop) {
+                font-size: 14px; 
+            }
+        }
+
+        &.skills__item--cyan span {
+            white-space: nowrap;
+            overflow-wrap: normal;
+            word-break: keep-all;
+        }
+    }
+
+    &__content {
+        flex: 1 1 460px; 
+        max-width: 480px;
+        width: 100%;
+        @include flexbox(column, flex-start, flex-start, 40px);
+        margin-top: 200px;
+
+        @include respond-to(desktop) {
+            gap: var(--space-xl);
+            flex: 1 1 440px;
+            margin-top: -16px;
+        }
+
+        @include respond-to(laptop) {
+            gap: 12px;
+            flex: 1 1 auto;
+        }
+
+        @include respond-to(lg) {
+            display: contents;
+        }
+    }
+
+    &__title-box {
+        position: relative;
+        width: 100%;
+        @include flexbox(row, flex-start, center, 32px);
+
+        @include respond-to(lg) {
+            order: 1;
+            padding-left: 0; 
+            margin-left: 0;   
+            justify-content: flex-start;
+        }
+    }
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: var(--fw-bold);
+        font-size: clamp(2rem, 1rem + 5.56vw, var(--fs-hero-title));
+        line-height: var(--line-height-tight); 
+        color: var(--txt-primary);
+        margin: 0;
+    }
+
+    &__line {
+        flex: 1 1 auto;
+        min-width: 287px;
+        height: 0px;
+        border: 4px solid var(--clr-secondary); 
+        opacity: 1;
+        flex-shrink: 0;
+        margin-right: calc(50% - 50vw);
+    }
+
+    &__description {
+        font-family: var(--font-family);
+        font-weight: var(--fw-normal);
+        font-size: var(--fs-sm); 
+        line-height: var(--line-height-tight); 
+        color: var(--txt-primary);
+        margin: 0;
+
+        @include respond-to(lg) {
+            order: 2;
+        }
+    }
+
+    &__cta-box {
+        width: 100%;
+        @include flexbox(column, flex-start, flex-start, 16px);
+
+        @include respond-to(lg) {
+            order: 5;
+            align-items: center; 
+            text-align: center;
+        }
+    }
+
+    &__cta-title {
+        font-family: var(--font-family);
+        font-weight: var(--fw-bold);
+        font-size: clamp(1.375rem, 4vw + 0.5rem, var(--fs-xl)); 
+        line-height: var(--line-height-tight); 
+        color: var(--txt-primary);
+        margin: 0;
+        white-space: nowrap;
+
+        @include respond-to(md) {
+            margin-top: 10px;
+            
+        }
+    }
+
+    &__cta-highlight {
+        color: var(--clr-primary-2); 
+        margin-left: 0.35em;
+    }
+
+    &__cta-text {
+        font-family: var(--font-family);
+        font-weight: var(--fw-normal);
+        font-size: var(--fs-sm); 
+        line-height: var(--line-height-tight); 
+        color: var(--txt-primary);
+        margin: 0;
+        margin-bottom: var(--space-xl);
+
+        @include respond-to(desktop) {
+            margin-bottom: 18px;
+        }
+    }
+
+    app-button {
+        display: inline-block;
+        transition: transform 0.3s ease-out;
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInTab 200ms ease-out forwards;
+}
+
+@keyframes fadeInTab {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

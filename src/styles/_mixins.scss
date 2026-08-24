@@ -26,14 +26,30 @@
         @media (max-width: $breakpoint-xxl) { @content; }
     } @else if $size == xl {
         @media (max-width: $breakpoint-xl) { @content; }
+    } @else if $size == desktop {
+        @media (max-width: $breakpoint-desktop) { @content; }
     } @else if $size == lg {
         @media (max-width: $breakpoint-lg) { @content; }
+    } @else if $size == laptop {
+        @media (max-width: $breakpoint-laptop) { @content; }
+    } @else if $size == tbt {
+        @media (max-width: $breakpoint-tbt) { @content; }
     } @else if $size == md {
         @media (max-width: $breakpoint-md) { @content; }
     } @else if $size == sm {
         @media (max-width: $breakpoint-sm) { @content; }
+    } @else if $size == phone-wide {
+        @media (max-width: $breakpoint-phone-wide) { @content; }
+    } @else if $size == phone-plus {
+        @media (max-width: $breakpoint-phone-plus) { @content; }
+    } @else if $size == phone {
+        @media (max-width: $breakpoint-phone) { @content; }
+    } @else if $size == phone-narrow {
+        @media (max-width: $breakpoint-phone-narrow) { @content; }
     } @else if $size == xsm {
         @media (max-width: $breakpoint-xsm) { @content; }
+    } @else if $size == phone-mini {
+        @media (max-width: $breakpoint-phone-mini) { @content; }
     } @else {
         @error "Unbekannter Breakpoint: #{$size}.";
     }
@@ -41,4 +57,36 @@
 
 @mixin landscape-mobile {
     @media (max-height: $breakpoint-rotate) { @content; }
+}
+
+@mixin respond-from($size) {
+    @if $size == xsm {
+        @media (min-width: $breakpoint-xsm) { @content; }
+    } @else if $size == sm {
+        @media (min-width: $breakpoint-sm) { @content; }
+    } @else if $size == md {
+        @media (min-width: $breakpoint-md) { @content; }
+    } @else if $size == phone-wide {
+        @media (min-width: $breakpoint-phone-wide) { @content; }
+    } @else if $size == phone-plus {
+        @media (min-width: $breakpoint-phone-plus) { @content; }
+    } @else if $size == phone {
+        @media (min-width: $breakpoint-phone) { @content; }
+    } @else if $size == phone-narrow {
+        @media (min-width: $breakpoint-phone-narrow) { @content; }
+    } @else if $size == tbt {
+        @media (min-width: $breakpoint-tbt) { @content; }
+    } @else if $size == phone-mini {
+        @media (min-width: $breakpoint-phone-mini) { @content; }
+    } @else if $size == lg {
+        @media (min-width: $breakpoint-lg) { @content; }
+    } @else if $size == laptop {
+        @media (min-width: $breakpoint-laptop) { @content; }
+    } @else if $size == xl {
+        @media (min-width: $breakpoint-xl) { @content; }
+    } @else if $size == xxl {
+        @media (min-width: $breakpoint-xxl) { @content; }
+    } @else {
+        @error "Unbekannter Breakpoint: #{$size}.";
+    }
 }

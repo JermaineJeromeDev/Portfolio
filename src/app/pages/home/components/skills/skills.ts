@@ -1,0 +1,53 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { ButtonComponent } from '../../../../components/button/button';
+import { SkillsIconComponent } from './components/skills-icon/skills-icon';
+
+interface Skill { name: string; icon: string; }
+export type SkillTab = 'frontend' | 'backend' | 'devsecops';
+
+@Component({
+  selector: 'app-skills',
+  standalone: true,
+  imports: [ButtonComponent, TranslatePipe, SkillsIconComponent, CommonModule],
+  templateUrl: './skills.html',
+  styleUrls: ['./skills.scss'],
+})
+export class SkillsComponent {
+  activeTab: SkillTab = 'frontend';
+
+  frontendSkills: Skill[] = [
+    { name: 'HTML', icon: 'html' },
+    { name: 'CSS', icon: 'css' },
+    { name: 'JavaScript', icon: 'javascript' },
+    { name: 'TypeScript', icon: 'typescript' },
+    { name: 'Angular', icon: 'angular' },
+    { name: 'Supabase', icon: 'supabase' },
+    { name: 'Git', icon: 'git' },
+    { name: 'REST-API', icon: 'rest-api' },
+    { name: 'Scrum', icon: 'scrum' },
+    { name: 'Material Design', icon: 'material-design' }
+  ];
+
+  backendSkills: Skill[] = [
+    { name: 'Python', icon: 'python' },
+    { name: 'Django', icon: 'django' },
+    { name: 'PostgreSQL', icon: 'postgresql' },
+    { name: 'Docker', icon: 'docker' },
+  ];
+
+  devSecOpsSkills: Skill[] = [
+    { name: 'Shell-Scripting', icon: 'shell-scripting' },
+    { name: 'DRF', icon: 'drf' }
+  ];
+
+  setActiveTab(tab: SkillTab): void {
+    this.activeTab = tab;
+  }
+
+  scrollToContact(): void {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  }
+}

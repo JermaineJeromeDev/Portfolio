@@ -16,18 +16,6 @@ svg {
     transition: transform 100ms ease-out, color 100ms ease-out;
 }
 
-:host-context([name="location"]) svg {
-    height: 32px; 
-}
-
-:host-context([name="lightbulb"]) svg {
-    height: 32px;
-}
-
-:host-context([name="puzzle"]) svg {
-    height: 30px;
-}
-
 :host-context(.about-me__feature-item:hover) {
     
     &[name="location"] svg {
