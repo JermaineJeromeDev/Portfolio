@@ -20,6 +20,24 @@ export class MenuOverlayComponent {
     this.menuClosed.emit();
   }
 
+  scrollToSection(event: Event, sectionId: string): void {
+    const target = document.getElementById(sectionId);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const headerHeight = document.querySelector('.header')?.getBoundingClientRect().height ?? 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 24;
+
+    window.scrollTo({
+      top,
+      behavior: 'smooth'
+    });
+  }
+
   selectLanguage(lang: string): void {
     this.languageChanged.emit(lang); 
     this.closeMenu(); 
