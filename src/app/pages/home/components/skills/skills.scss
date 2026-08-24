@@ -13,10 +13,6 @@
         @include flexbox(row, space-between, flex-start, var(--space-xl));
     }
 
-    @include respond-to(lg) {
-        padding-top: 110px;
-    }
-
     &__container {
         @include global_content_wrapper();
         margin: 0 auto;
@@ -26,17 +22,16 @@
 
         @include respond-to(laptop) {
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-top: 60px;
+            gap: 64px;
+            margin-top: 44px;
         }
         
         @include respond-to(lg) {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--space-xl);
             max-width: 695px;
             margin: 0 auto;
-            gap: var(--space-lg);
+            gap: 22px;
         }
     }
 
@@ -86,6 +81,7 @@
 
         @include respond-to(lg) {
             order: 3;
+            margin-bottom: 10px;
         }
     }
 
@@ -134,11 +130,11 @@
 
         @include respond-to(lg) {
             order: 4;
-            min-height: 500px;
+            min-height: 440px;
         }
 
         @include respond-to(md) {
-            min-height: 499px; 
+            min-height: 420px; 
         }
     }
 
@@ -154,35 +150,16 @@
             column-gap: 20px;
         }
 
-        @include respond-to(md) {
-            row-gap: var(--space-xl);
-            column-gap: var(--space-xl);
-        }
-    }
-
-    &__special-item {
-        width: 100%;
-        margin-top: 60px; 
-        @include flexbox(row, flex-start, center, 0);
-
-        @include respond-to(desktop) {
-            margin-top: 15px; 
+        @include respond-to(lg) {
+            row-gap: 60px;    
+            column-gap: clamp(28px, 4.6vw, 44px);
+            margin-top: 4px;
         }
 
         @include respond-to(md) {
-            margin-top: 32px; 
-        }
-
-        .skills__item {
-            width: calc((100% - (60px * 3)) / 4); 
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        @include respond-to(laptop) {
-            .skills__item {
-                width: calc((100% - (var(--space-xl) * 2)) / 3);
-            }
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 28px;
+            column-gap: 24px;
         }
     }
 
@@ -214,21 +191,45 @@
         }
 
         &--cyan {
+            position: relative;
             color: var(--clr-secondary);
+            grid-column: 1 / -1;
+            justify-self: start;
+            width: calc((100% - (60px * 3)) / 4);
+            padding-left: 0;
+            padding-right: 0;
+
+            span {
+                white-space: nowrap;
+            }
+
+            @include respond-to(lg) {
+                color: var(--clr-primary-2);
+                grid-column: auto;
+                justify-self: stretch;
+                width: auto;
+            }
 
             .skills__tooltip-img {
                 position: absolute;
-                top: -117px; 
-                left: 17%;
+                bottom: clamp(calc(100% - 40px), calc(100% - 32px), calc(100% - 20px));
+                left: clamp(88%, 95%, 104%);
                 transform: translateX(-50%); 
                 
-                width: 200px; 
+                width: clamp(185px, 22vw, 220px); 
+                max-width: none;
                 height: auto;  
                 
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none; 
                 transition: opacity 150ms ease-out, visibility 150ms ease-out;
+
+                @include respond-to(lg) {
+                    bottom: clamp(calc(100% - 38px), calc(100% - 20px), calc(100% - 12px));
+                    left: clamp(90%, 95%, 102%);
+                    width: clamp(165px, 38vw, 220px);
+                }
             }
 
             &:hover {
@@ -236,6 +237,10 @@
 
                 app-skills-icon {
                     transform: translateX(-4px); 
+
+                    @include respond-to(lg) {
+                        transform: none;
+                    }
                 }
 
                 .skills__tooltip-img {
@@ -262,6 +267,12 @@
                 font-size: 14px; 
             }
         }
+
+        &.skills__item--cyan span {
+            white-space: nowrap;
+            overflow-wrap: normal;
+            word-break: keep-all;
+        }
     }
 
     &__content {
@@ -278,7 +289,7 @@
         }
 
         @include respond-to(laptop) {
-            gap: var(--space-md);
+            gap: 12px;
             flex: 1 1 auto;
         }
 
