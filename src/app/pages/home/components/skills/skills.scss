@@ -12,6 +12,10 @@
         @include flexbox(row, space-between, flex-start, var(--space-xl));
     }
 
+    @include respond-to(lg) {
+        padding-top: 125px;
+    }
+
     &__container {
         @include global_content_wrapper();
         margin: 0 auto;
@@ -134,6 +138,7 @@
 
         @include respond-to(lg) {
             order: 4;
+            min-height: auto;
         }
     }
 
