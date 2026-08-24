@@ -48,6 +48,24 @@ export class HeaderComponent {
     this.currentLang = normalizedLang;
   }
 
+  scrollToSection(event: Event, sectionId: string): void {
+    const target = document.getElementById(sectionId);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const headerHeight = document.querySelector('.header')?.getBoundingClientRect().height ?? 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 24;
+
+    window.scrollTo({
+      top,
+      behavior: 'smooth'
+    });
+  }
+
   scrollToTop(): void {
     window.scrollTo({
       top: 0,
