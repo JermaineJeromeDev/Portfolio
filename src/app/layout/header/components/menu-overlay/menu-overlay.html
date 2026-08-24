@@ -10,18 +10,19 @@
 
     <nav class="menu__nav">
         <ul class="menu__list">
-            <li class="menu__item"><a href="#about" class="menu__link"
-                    (click)="scrollToSection($event, 'about'); closeMenu()">{{ 'NAV.ABOUT' | translate
-                    }}</a></li>
-            <li class="menu__item"><a href="#skills" class="menu__link"
-                    (click)="scrollToSection($event, 'skills'); closeMenu()">{{ 'NAV.SKILLS' |
-                    translate }}</a></li>
-            <li class="menu__item"><a href="#portfolio" class="menu__link"
-                    (click)="scrollToSection($event, 'portfolio'); closeMenu()">{{ 'NAV.PORTFOLIO' |
-                    translate }}</a></li>
-            <li class="menu__item"><a href="#contact" class="menu__link"
-                    (click)="scrollToSection($event, 'contact'); closeMenu()">{{ 'NAV.CONTACT' |
-                    translate }}</a></li>
+            <li class="menu__item"><a [routerLink]="['/']" [fragment]="'about'" routerLinkActive="menu__link--active"
+                    [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
+                    class="menu__link" (click)="closeMenu()">{{ 'NAV.ABOUT' | translate }}</a></li>
+            <li class="menu__item"><a [routerLink]="['/']" [fragment]="'skills'" routerLinkActive="menu__link--active"
+                    [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
+                    class="menu__link" (click)="closeMenu()">{{ 'NAV.SKILLS' | translate }}</a></li>
+            <li class="menu__item"><a [routerLink]="['/']" [fragment]="'portfolio'"
+                    routerLinkActive="menu__link--active"
+                    [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
+                    class="menu__link" (click)="closeMenu()">{{ 'NAV.PORTFOLIO' | translate }}</a></li>
+            <li class="menu__item"><a [routerLink]="['/']" [fragment]="'contact'" routerLinkActive="menu__link--active"
+                    [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
+                    class="menu__link" (click)="closeMenu()">{{ 'NAV.CONTACT' | translate }}</a></li>
 
             <li class="menu__item menu__item--languages">
                 <span class="menu__lang" [class.menu__lang--active]="currentLang === 'EN'"

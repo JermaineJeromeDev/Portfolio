@@ -5,6 +5,7 @@
     position: relative;
     z-index: 3;
     width: 100%;
+    height: auto;
     padding: clamp(var(--space-3xl), 8vw, var(--space-4xl)) 0;
     overflow: hidden; 
 
