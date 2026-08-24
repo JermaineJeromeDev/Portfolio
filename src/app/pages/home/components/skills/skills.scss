@@ -7,8 +7,11 @@
     width: 100%;
     padding: clamp(var(--space-3xl), 8vw, var(--space-4xl)) 0;
     
-    overflow-x: hidden; 
-    overflow-y: visible; 
+    overflow: hidden; 
+
+    @include respond-to(desktop) {
+        @include flexbox(row, space-between, flex-start, var(--space-xl));
+    }
 
     &__container {
         @include global_content_wrapper();
@@ -16,6 +19,7 @@
         position: relative;
         z-index: 2; 
         @include flexbox(row, space-between, flex-start, 80px);
+        
 
         @include respond-to(lg) {
             @include flexbox(column-reverse, flex-start, center, var(--space-3xl));
@@ -43,6 +47,10 @@
         max-width: 650px; 
         width: 100%;
         @include flexbox(column, flex-start, flex-start, var(--space-xl));
+
+        @include respond-to(desktop) {
+            max-width: 580px;
+        }
     }
 
     &__tabs {
@@ -103,14 +111,23 @@
     &__grid-container {
         width: 100%;
         min-height: 687px; 
+
+        @include respond-to(desktop) {
+            min-height: auto; 
+        }
     }
 
     &__grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        row-gap: 60px; 
-        column-gap: 60px;
+        row-gap: 80px; 
+        column-gap: 80px;
         width: 100%;
+
+        @include respond-to(desktop) {
+            row-gap: 30px;    
+            column-gap: 30px;
+        }
 
         @include respond-to(md) {
             grid-template-columns: repeat(2, 1fr);
@@ -123,6 +140,10 @@
         width: 100%;
         margin-top: 60px; 
         @include flexbox(row, flex-start, center, 0);
+
+        @include respond-to(desktop) {
+            margin-top: 15px; 
+        }
 
         .skills__item {
             width: calc((100% - (60px * 3)) / 4); 
@@ -145,6 +166,11 @@
             height: 60px;
             color: inherit;
             transition: transform 100ms ease-in-out; 
+
+            @include respond-to(desktop) {
+                width: 50px;
+                height: 50px;
+            }
         }
 
         &:hover {
@@ -197,13 +223,23 @@
             
             word-break: normal; 
             overflow-wrap: anywhere; 
+
+            @include respond-to(desktop) {
+                font-size: 14px; 
+            }
         }
     }
 
     &__content {
-        flex: 0 1 480px; 
+        flex: 1 1 460px; 
+        max-width: 520px;
         width: 100%;
         @include flexbox(column, flex-start, flex-start, 40px);
+
+        @include respond-to(desktop) {
+            gap: var(--space-xl);
+            flex: 1 1 440px;
+        }
 
         @include respond-to(lg) {
             max-width: 600px;
@@ -220,7 +256,7 @@
     &__title {
         font-family: var(--font-family);
         font-weight: var(--fw-bold);
-        font-size: clamp(3.5rem, 6vw, 90px);
+        font-size: clamp(3rem, 5vw + 1rem, var(--fs-section-title));
         line-height: var(--line-height-tight); 
         color: var(--txt-primary);
         margin: 0;
@@ -253,10 +289,11 @@
     &__cta-title {
         font-family: var(--font-family);
         font-weight: var(--fw-bold);
-        font-size: var(--fs-xl); 
+        font-size: clamp(1.375rem, 4vw + 0.5rem, var(--fs-xl)); 
         line-height: var(--line-height-tight); 
         color: var(--txt-primary);
         margin: 0;
+        white-space: nowrap;
     }
 
     &__cta-highlight {
@@ -272,6 +309,10 @@
         color: var(--txt-primary);
         margin: 0;
         margin-bottom: var(--space-xl);
+
+        @include respond-to(desktop) {
+            margin-bottom: 18px;
+        }
     }
 
     app-button {

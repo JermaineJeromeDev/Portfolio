@@ -25,7 +25,7 @@ export class SkillsComponent {
     { name: 'Angular', icon: 'angular' },
     { name: 'Supabase', icon: 'supabase' },
     { name: 'Git', icon: 'git' },
-    { name: 'REST API', icon: 'rest-api' },
+    { name: 'REST-API', icon: 'rest-api' },
     { name: 'Scrum', icon: 'scrum' },
     { name: 'Material Design', icon: 'material-design' }
   ];
