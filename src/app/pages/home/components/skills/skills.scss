@@ -6,7 +6,6 @@
     z-index: 3;
     width: 100%;
     padding: clamp(var(--space-3xl), 8vw, var(--space-4xl)) 0;
-    
     overflow: hidden; 
 
     @include respond-to(desktop) {
@@ -19,10 +18,19 @@
         position: relative;
         z-index: 2; 
         @include flexbox(row, space-between, flex-start, 80px);
-        
 
+        @include respond-to(laptop) {
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+        
         @include respond-to(lg) {
-            @include flexbox(column-reverse, flex-start, center, var(--space-3xl));
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            max-width: 695px;
+            margin: 0 auto;
         }
     }
 
@@ -35,11 +43,11 @@
         pointer-events: none; 
         opacity: 1;
 
-        @include respond-to(md) {
-            width: 400px;
-            bottom: -150px;
-            right: -100px;
-        }
+        // @include respond-to(md) {
+        //     width: 400px;
+        //     bottom: -150px;
+        //     right: -100px;
+        // }
     }
 
     &__tech-zone {
@@ -50,6 +58,10 @@
 
         @include respond-to(desktop) {
             max-width: 580px;
+        }
+
+        @include respond-to(lg) {
+            display: contents;
         }
     }
 
@@ -71,6 +83,10 @@
         background-color: rgba(255, 255, 255, 0.1);
         z-index: 1;
         }
+
+        @include respond-to(lg) {
+            order: 3;
+        }
     }
 
     &__tab-btn {
@@ -88,11 +104,11 @@
         transition: color 200ms ease-in-out;
 
         &:hover {
-            color: var(--txt-primary); 
+            color: var(--clr-primary-1); 
         }
 
         &--active {
-            color: var(--txt-primary);
+            color: var(--clr-primary-1);
             &::after {
                 content: '';
                 position: absolute;
@@ -115,6 +131,10 @@
         @include respond-to(desktop) {
             min-height: auto; 
         }
+
+        @include respond-to(lg) {
+            order: 4;
+        }
     }
 
     &__grid {
@@ -129,11 +149,11 @@
             column-gap: 30px;
         }
 
-        @include respond-to(md) {
-            grid-template-columns: repeat(2, 1fr);
-            row-gap: var(--space-xl);
-            column-gap: var(--space-xl);
-        }
+        // @include respond-to(md) {
+        //     grid-template-columns: repeat(2, 1fr);
+        //     row-gap: var(--space-xl);
+        //     column-gap: var(--space-xl);
+        // }
     }
 
     &__special-item {
@@ -149,6 +169,12 @@
             width: calc((100% - (60px * 3)) / 4); 
             padding-left: 0;
             padding-right: 0;
+        }
+
+        @include respond-to(laptop) {
+            .skills__item {
+                width: calc((100% - (var(--space-xl) * 2)) / 3);
+            }
         }
     }
 
@@ -232,18 +258,24 @@
 
     &__content {
         flex: 1 1 460px; 
-        max-width: 520px;
+        max-width: 480px;
         width: 100%;
         @include flexbox(column, flex-start, flex-start, 40px);
+        margin-top: 200px;
 
         @include respond-to(desktop) {
             gap: var(--space-xl);
             flex: 1 1 440px;
+            margin-top: -16px;
+        }
+
+        @include respond-to(laptop) {
+            gap: var(--space-md);
+            flex: 1 1 auto;
         }
 
         @include respond-to(lg) {
-            max-width: 600px;
-            flex: 1 1 auto;
+            display: contents;
         }
     }
 
@@ -251,12 +283,19 @@
         position: relative;
         width: 100%;
         @include flexbox(row, flex-start, center, 32px);
+
+        @include respond-to(lg) {
+            order: 1;
+            padding-left: 0; 
+            margin-left: 0;   
+            justify-content: flex-start;
+        }
     }
 
     &__title {
         font-family: var(--font-family);
         font-weight: var(--fw-bold);
-        font-size: clamp(3rem, 5vw + 1rem, var(--fs-section-title));
+        font-size: clamp(2rem, 1rem + 5.56vw, var(--fs-hero-title));
         line-height: var(--line-height-tight); 
         color: var(--txt-primary);
         margin: 0;
@@ -279,11 +318,22 @@
         line-height: var(--line-height-tight); 
         color: var(--txt-primary);
         margin: 0;
+
+        @include respond-to(lg) {
+            order: 2;
+        }
     }
 
     &__cta-box {
         width: 100%;
         @include flexbox(column, flex-start, flex-start, 16px);
+
+        @include respond-to(lg) {
+            order: 5;
+            margin-top: var(--space-xl);
+            align-items: center; 
+            text-align: center;
+        }
     }
 
     &__cta-title {

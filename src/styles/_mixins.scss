@@ -30,6 +30,8 @@
         @media (max-width: $breakpoint-desktop) { @content; }
     } @else if $size == lg {
         @media (max-width: $breakpoint-lg) { @content; }
+    } @else if $size == laptop {
+        @media (max-width: $breakpoint-laptop) { @content; }
     } @else if $size == tbt {
         @media (max-width: $breakpoint-tbt) { @content; }
     } @else if $size == md {
@@ -58,6 +60,8 @@
         @media (min-width: $breakpoint-tbt) { @content; }
     } @else if $size == lg {
         @media (min-width: $breakpoint-lg) { @content; }
+    } @else if $size == laptop {
+        @media (min-width: $breakpoint-laptop) { @content; }
     } @else if $size == xl {
         @media (min-width: $breakpoint-xl) { @content; }
     } @else if $size == xxl {
