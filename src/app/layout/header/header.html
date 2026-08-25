@@ -11,21 +11,21 @@
                     <li>
                         <a [routerLink]="['/']" [fragment]="'about'" routerLinkActive="header__nav-link--active"
                             [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
-                            class="header__nav-link">
+                            (click)="scrollToFragmentWithOffset('about')" class="header__nav-link">
                             {{ 'NAV.ABOUT' | translate }}
                         </a>
                     </li>
                     <li>
                         <a [routerLink]="['/']" [fragment]="'skills'" routerLinkActive="header__nav-link--active"
                             [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
-                            class="header__nav-link">
+                            (click)="scrollToFragmentWithOffset('skills')" class="header__nav-link">
                             {{ 'NAV.SKILLS' | translate }}
                         </a>
                     </li>
                     <li>
                         <a [routerLink]="['/']" [fragment]="'portfolio'" routerLinkActive="header__nav-link--active"
                             [routerLinkActiveOptions]="{ matrixParams: 'ignored', queryParams: 'ignored', paths: 'exact', fragment: 'exact' }"
-                            class="header__nav-link">
+                            (click)="scrollToFragmentWithOffset('portfolio')" class="header__nav-link">
                             {{ 'NAV.PORTFOLIO' | translate }}
                         </a>
                     </li>

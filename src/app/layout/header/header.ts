@@ -48,6 +48,19 @@ export class HeaderComponent {
     this.currentLang = normalizedLang;
   }
 
+  scrollToFragmentWithOffset(fragment: string): void {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  this.isMenuOpen = false;
+  setTimeout(() => {
+    const target = document.getElementById(fragment);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 200);
+}
+
   scrollToTop(): void {
     window.scrollTo({
       top: 0,
