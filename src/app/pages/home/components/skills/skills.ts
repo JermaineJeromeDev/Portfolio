@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../../components/button/button';
 import { SkillsIconComponent } from './components/skills-icon/skills-icon';
@@ -16,6 +16,8 @@ export type SkillTab = 'frontend' | 'backend' | 'devsecops';
 })
 export class SkillsComponent {
   activeTab: SkillTab = 'frontend';
+
+  isTooltipVisible: boolean = false;
 
   frontendSkills: Skill[] = [
     { name: 'HTML', icon: 'html' },
@@ -49,5 +51,15 @@ export class SkillsComponent {
   scrollToContact(): void {
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  toggleTooltip(event: Event): void {
+    event.stopPropagation(); 
+    this.isTooltipVisible = !this.isTooltipVisible;
+  }
+
+  @HostListener('document:click')
+  closeTooltip(): void {
+    this.isTooltipVisible = false;
   }
 }

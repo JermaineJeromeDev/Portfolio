@@ -30,8 +30,21 @@
                     <div class="skills__item skills__item--cyan">
                         <app-skills-icon name="continually-learning"></app-skills-icon>
                         <span>Continually<br>learning</span>
-                        <img src="icons/continually-hover.svg" class="skills__tooltip-img"
-                            alt="Special interests tooltip">
+                        <div class="skills__tooltip" [class.is-visible]="isTooltipVisible">
+                            <div class="skills__tooltip-content">
+                                <p>{{ 'SKILLS.CONTINUALLY_LEARNING_TOOLTIP' | translate }}</p>
+                                <div class="skills__tooltip-icons">
+                                    <div class="skills__tooltip-item">
+                                        <app-skills-icon name="react-speechbubble"></app-skills-icon>
+                                        <span>React</span>
+                                    </div>
+                                    <div class="skills__tooltip-item">
+                                        <app-skills-icon name="vue-speechbubble"></app-skills-icon>
+                                        <span>Vue.js</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
