@@ -549,6 +549,10 @@
         @include respond-to(lg) {
             order: 2;
         }
+
+        @include respond-to(phone) {
+            line-height: 1.5;
+        }
     }
 
     &__cta-box {
@@ -607,6 +611,7 @@
 
         @include respond-to(phone) {
             margin-bottom: 8px;
+            line-height: 1.5;
         }
     }
 
