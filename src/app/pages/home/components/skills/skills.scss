@@ -156,7 +156,9 @@
             min-height: 495px;
         }
 
-        
+        @include respond-to(phone) {
+            height: 440px;
+        }   
     }
 
     &__grid {
@@ -181,7 +183,11 @@
             row-gap: 24px;
             column-gap: 20px;
             grid-auto-rows: max-content; 
-            height: 510px;
+        }
+
+        @include respond-to(phone) {
+            row-gap: 10px;
+            column-gap: 10px;
         }
     }
 
@@ -508,6 +514,11 @@
             align-items: center; 
             text-align: center;
         }
+
+        @include respond-to(phone) {
+            margin-top: -50px;
+            gap: 8px;
+        }
     }
 
     &__cta-title {
@@ -542,6 +553,10 @@
 
         @include respond-to(desktop) {
             margin-bottom: 14px;
+        }
+
+        @include respond-to(phone) {
+            margin-bottom: 8px;
         }
     }
 
