@@ -44,6 +44,16 @@
             }
         }
 
+        @include respond-to(phone) {
+            min-width: 0;
+            width: 100%;
+            max-width: 280px;
+            min-height: 46px;
+            padding: 12px 18px;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
         &:hover:not(:disabled) {
             transform: scale(1.172); 
             background-color: var(--clr-primary-2); 

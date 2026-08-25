@@ -27,7 +27,7 @@
                         <span>{{ skill.name }}</span>
                     </div>
                     }
-                    <div class="skills__item skills__item--cyan">
+                    <div class="skills__item skills__item--cyan" (click)="toggleTooltip($event)">
                         <app-skills-icon name="continually-learning"></app-skills-icon>
                         <span>Continually<br>learning</span>
                         <div class="skills__tooltip" [class.is-visible]="isTooltipVisible">

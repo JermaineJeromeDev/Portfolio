@@ -54,12 +54,25 @@ export class SkillsComponent {
   }
 
   toggleTooltip(event: Event): void {
-    event.stopPropagation(); 
+    if (window.innerWidth > 991) {
+      return;
+    }
+
+    event.stopPropagation();
     this.isTooltipVisible = !this.isTooltipVisible;
   }
 
-  @HostListener('document:click')
-  closeTooltip(): void {
-    this.isTooltipVisible = false;
+  @HostListener('document:click', ['$event'])
+  closeTooltip(event?: Event): void {
+    if (window.innerWidth > 991) {
+      return;
+    }
+
+    const target = event?.target as HTMLElement | null;
+    const clickedInsideSkill = target?.closest('.skills__item--cyan');
+
+    if (!clickedInsideSkill) {
+      this.isTooltipVisible = false;
+    }
   }
 }

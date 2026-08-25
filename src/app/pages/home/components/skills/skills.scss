@@ -21,6 +21,10 @@
         padding-top: 90px;
     }
 
+    @include respond-to(phone-wide) {
+        padding-top: 64px;
+    }
+
     &__container {
         @include global_content_wrapper();
         margin: 0 auto;
@@ -141,6 +145,12 @@
             font-size: 16px;
             padding: 6px 8px;
         }
+
+        @include respond-to(phone) {
+            font-size: 12px;
+            padding: 6px 6px;
+            letter-spacing: 0.02em;
+        }
     }
 
     &__grid-container {
@@ -157,7 +167,8 @@
         }
 
         @include respond-to(phone) {
-            height: 440px;
+            min-height: 420px;
+            height: auto;
         }   
     }
 
@@ -186,8 +197,14 @@
         }
 
         @include respond-to(phone) {
-            row-gap: 10px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            row-gap: 12px;
             column-gap: 10px;
+        }
+
+        @include respond-to(phone-narrow) {
+            row-gap: 8px;
+            column-gap: 8px;
         }
     }
 
@@ -198,6 +215,12 @@
         border-radius: var(--radius-md);
         background: transparent; 
         color: var(--txt-primary);
+
+        @include respond-to(phone) {
+            gap: 8px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
 
         @include respond-to(lg) {
             &:not(.skills__item--cyan) {
@@ -234,6 +257,11 @@
                 width: 50px;
                 height: 50px;
             }
+
+            @include respond-to(phone) {
+                width: 42px;
+                height: 42px;
+            }
         }
 
         &:hover {
@@ -267,6 +295,18 @@
                 width: 100%;         
                 margin-left: 8px;  
                 bottom: 130px;
+            }
+
+            @include respond-to(phone) {
+                bottom: 115px;
+            }
+
+            @include respond-to(xsm) {
+                bottom: 90px;
+            }
+
+            @include respond-to(phone-mini) {
+                bottom: 87px;
             }
 
             .skills__tooltip {
@@ -355,8 +395,8 @@
 
                     app-skills-icon {
                         display: inline-flex;
-                        width: 32px !important;
-                        height: 32px !important;
+                        width: 32px;
+                        height: 32px;
                         min-width: 32px;
                         min-height: 32px;
                         color: inherit;
@@ -427,6 +467,12 @@
 
             @include respond-to(desktop) {
                 font-size: 14px; 
+            }
+
+            @include respond-to(phone) {
+                font-size: 12px;
+                line-height: 1.1;
+                padding-inline: 0;
             }
         }
 
@@ -518,6 +564,10 @@
         @include respond-to(phone) {
             margin-top: -50px;
             gap: 8px;
+        }
+
+        @include respond-to(phone-mini) {
+            margin-top: -100px;
         }
     }
 
