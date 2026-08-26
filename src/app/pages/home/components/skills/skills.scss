@@ -6,8 +6,7 @@
     z-index: 3;
     width: 100%;
     height: auto;
-    // padding: clamp(var(--space-3xl), 8vw, var(--space-4xl)) 0;
-    overflow: hidden; 
+    overflow: visible;
 
     @include respond-to(desktop) {
         @include flexbox(row, space-between, flex-start, var(--space-xl));
@@ -53,8 +52,8 @@
 
     &__bg-glow {
         position: absolute;
-        bottom: -550px; 
-        right: -380px;
+        bottom: -650px; 
+        right: -400px;
         
         z-index: 1;     
         pointer-events: none; 

@@ -36,5 +36,12 @@
     "BTN_TEXT": "Get in touch",
     "CONTINUALLY_LEARNING": "Continually learning",
     "CONTINUALLY_LEARNING_TOOLTIP": "I have a special interest in learning"
+    },
+    "PROJECTS": {
+        "TITLE": "Portfolio",
+        "SUBTITLE": "Explore a selection of my work here - interact with projects to see my skills in action.",
+        "LIVE_LINK": "Live Test",
+        "TESTIMONIAL_TEXT": "Michael really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
+        "POLLO_DESC": "A jump-and-run game written from scratch using object-oriented JavaScript."
     }
 }

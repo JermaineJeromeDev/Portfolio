@@ -1,0 +1,59 @@
+<section class="projects content-wrapper" aria-labelledby="portfolio-title" id="portfolio">
+    <div class="projects__intro">
+        <div class="projects__heading">
+            <span class="projects__divider" aria-hidden="true"></span>
+            <h2 id="portfolio-title" class="projects__title">Portfolio</h2>
+        </div>
+
+        <p class="projects__subtitle">{{ 'PROJECTS.SUBTITLE' | translate }}
+        </p>
+    </div>
+
+    <div class="projects__grid">
+        @for (project of projects; track project.id) {
+        <article class="project-card" aria-label="Project preview">
+            <div class="project-card__mockup">
+                <img [src]="project.image" [alt]="project.name" class="project-card__image" loading="lazy">
+            </div>
+
+            <div class="project-card__info">
+                <h3>{{ project.name }}</h3>
+                <p class="project-card__tech">
+                    {{ project.techStack.join(' | ') }}
+                </p>
+                <p class="project-card__description">
+                    {{ project.descriptionKey | translate }}
+                </p>
+
+                <div class="project-card__links">
+                    <a [href]="project.liveLink" target="_blank" rel="noopener" class="project-card__link">
+                        {{ 'PROJECTS.LIVE_LINK' | translate }}
+                    </a>
+                    <a [href]="project.githubLink" target="_blank" rel="noopener" class="project-card__link">GitHub</a>
+                </div>
+            </div>
+        </article>
+        }
+    </div>
+
+    <aside class="projects__testimonial" aria-label="Team feedback">
+        <div class="projects__quote-mark">“</div>
+        <p class="projects__testimonial-text">
+            {{ 'PROJECTS.TESTIMONIAL_TEXT' | translate }}
+        </p>
+        <div class="projects__person">
+            <div class="projects__avatar">
+                <img src="assets/img/character-photo-m..." alt="V. Schuster" class="projects__avatar-img">
+            </div>
+            <div class="projects__person-meta">
+                <span class="projects__person-name">V. Schuster</span>
+                <span class="projects__person-role">Team Partner</span>
+            </div>
+        </div>
+        <div class="projects__controls" aria-label="Testimonial navigation">
+            <button class="projects__control projects__control--active" type="button" aria-label="Slide 1"></button>
+            <button class="projects__control" type="button" aria-label="Slide 2"></button>
+            <button class="projects__control" type="button" aria-label="Slide 3"></button>
+        </div>
+    </aside>
+</section>
