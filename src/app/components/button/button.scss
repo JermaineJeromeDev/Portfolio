@@ -11,48 +11,27 @@
     transition: all 0.2s ease-in-out;
     box-sizing: border-box;
     color: var(--txt-primary);
+    min-width: 107px;
+    min-height: 58px;
+    padding: 15px 30px;
+    font-size: 23px;
+    font-weight: var(--fw-normal);           
+    line-height: 120%;
+    letter-spacing: 0;
+
+    @include respond-to(phone) {
+        min-width: 0;
+        width: 100%;
+        max-width: 280px;
+        min-height: 46px; 
+        padding: 12px 18px;
+        font-size: 16px;  
+        line-height: 1.2;
+    }
 
     &--primary {
-        min-width: 107px;
-        min-height: 58px;
-        padding: 15px 30px;
-        font-size: var(--fs-lg); 
-        font-weight: var(--fw-normal);           
-        
         box-shadow: var(--shadow-btn-default);
-        
         transition: transform 100ms ease-in-out, background-color 100ms ease-in-out, box-shadow 100ms ease-in-out;
-
-        @include respond-to(md) {
-            gap: 10px;
-            font-size: 16px;
-            line-height: 1.2;
-            padding: 15px 30px;
-            transition: background-color 100ms ease-out 300ms, color 100ms ease-out 300ms, padding 100ms ease-out 300ms, min-height 100ms ease-out 300ms, min-width 100ms ease-out 300ms;
-
-            &:hover:not(:disabled),
-            &:active:not(:disabled) {
-                transform: none;
-                min-width: 113px;
-                min-height: 59px;
-                padding: 20px 40px;
-                background-color: var(--clr-primary-2);
-                box-shadow: var(--shadow-btn-glow);
-                transition-timing-function: ease-in-out;
-                transition-duration: 100ms;
-                transition-delay: 0ms;
-            }
-        }
-
-        @include respond-to(phone) {
-            min-width: 0;
-            width: 100%;
-            max-width: 280px;
-            min-height: 46px;
-            padding: 12px 18px;
-            font-size: 18px;
-            line-height: 1.2;
-        }
 
         &:hover:not(:disabled) {
             transform: scale(1.172); 
@@ -80,10 +59,24 @@
     }
 
     &--secondary {
-        min-height: 58px; 
-        padding: 15px 30px;
-        font-size: var(--fs-lg);
-        font-weight: var(--fw-normal);
+        transition: transform 100ms ease-in-out, background-color 100ms ease-in-out, border-color 100ms ease-in-out, box-shadow 100ms ease-in-out;
+
+        &:hover:not(:disabled) {
+            transform: scale(1.172); 
+            background-color: var(--clr-secondary); 
+            border-color: var(--clr-secondary);
+            box-shadow: var(--shadow-btn-glow);
+        }
+
+        @include respond-to(phone) {
+            min-width: 0;
+            width: 100%;
+            max-width: 280px;
+            min-height: 46px;
+            padding: 12px 18px;
+            font-size: 16px;
+            line-height: 1.2;
+        }
 
         &:active:not(:disabled) {
             border-color: var(--txt-primary);
@@ -91,12 +84,14 @@
             color: var(--clr-primary-2); 
             transition: none; 
             box-shadow: none;
+            transform: scale(1);
         }
     }
 
     &--language {
         height: 32px; 
         min-width: 38px;
+        min-height: auto; 
         padding: 5px 8px; 
         font-size: var(--fs-base); 
         line-height: var(--line-height-tight); 

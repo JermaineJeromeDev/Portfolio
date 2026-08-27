@@ -40,9 +40,9 @@
         "SUBTITLE": "Entdecken Sie eine Auswahl meiner Arbeiten hier - interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
         "LIVE_LINK": "Live Test",
         "TESTIMONIAL_TEXT": "Michael hat das Team mit seiner großartigen Organisation und klaren Kommunikation wirklich zusammengehalten. Ohne sein Engagement wären wir nicht so weit gekommen.",
-        "POLLO_DESC": "Ein Jump-and-Run-Spiel, das von Grund auf mit objektorientierter JavaScript-Programmierung entwickelt wurde – inklusive eigener Spielschleife, Kollisionslogik und Charakteranimationen.",
-        "JOIN_DESC": "Task-Management-App inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.",
-        "CODERR_DESC": "Entwicklung eines Django-Backends für eine Freelancer-Plattform, inklusive vollständiger API-Funktionalität, Datenmodellen und nahtloser Frontend-Integration für ein vollumfängliches Marktplatz-Erlebnis.",
-        "VIDEOFLIX_DESC": "Entwicklung eines Django-Backends für eine Video-Streaming-Plattform im Netflix-Stil, inklusive sicherer Benutzer-Authentifizierung, maßgeschneiderter Datenmodelle und Hintergrund-Videoverarbeitung mittels FFmpeg."
+        "POLLO_DESC": "Ein auf einem objektorientierten Ansatz basierendes Spiel, bei dem gesprungen, gerannt und geworfen wird. Hilf Pepe dabei, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
+        "JOIN_DESC": "Ein vom Kanban-System inspirierter Aufgabenmanager. Erstellen und organisieren Sie Aufgaben per Drag-and-Drop und weisen Sie Benutzer sowie Kategorien zu.",
+        "CODERR_DESC": "Freelancer-Plattform mit Django-Backend, API-Funktionalität und nahtloser Frontend-Integration.",
+        "VIDEOFLIX_DESC": "Streaming-Plattform im Netflix-Stil mit sicherer Authentifizierung, eigenen Modellen und Videoverarbeitung."
     }
 }

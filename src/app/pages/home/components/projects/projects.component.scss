@@ -230,6 +230,10 @@
         width: 100%;
         aspect-ratio: 1.15;
         overflow: hidden;
+
+        @media (max-width: 500px) {
+            aspect-ratio: 0.80;
+        }
     }
 
     &__image {
@@ -240,6 +244,11 @@
         padding: var(--space-md);
         transition: transform 200ms ease-in-out, filter 200ms ease-in-out, opacity 200ms ease-in-out;
         transform-origin: center;
+
+        @media (max-width: 500px) {
+            transform: scale(1.25);
+            transform-origin: center center;
+        }
     }
 
     &__overlay {
@@ -261,6 +270,10 @@
         transform: scale(2.5);
         filter: brightness(0.55) saturate(0.8);
         opacity: 0.65;
+
+        @media (max-width: 500px) {
+            transform: scale(4.2);
+        }
     }
 
     &:hover &__overlay,
@@ -279,6 +292,22 @@
         opacity: 1;
         min-height: 100px;
 
+        @media (max-width: 900px) {
+            gap: 60px;
+        }
+
+        @media (max-width: 500px) {
+            gap: 33px;
+            padding-top: 18px;
+            min-height: 72px;
+        }
+
+        @media (max-width: 350px) {
+            gap: 18px;
+            padding-top: 14px;
+            min-height: 60px;
+        }
+
         @media (min-width: 500px) {
             padding-top: 80px;
         }
@@ -286,8 +315,6 @@
 
     &__btn {
         display: inline-flex;
-        font-size: clamp(0.75rem, 1.15vw, 1rem);
-        line-height: 1.2;
         transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out, opacity 200ms ease-in-out;
     }
 
@@ -295,14 +322,35 @@
         ::ng-deep {
             .btn,
             .btn.btn--secondary {
-                font-size: clamp(0.75rem, 1.15vw, 1rem);
-                line-height: 1.2;
+                border-radius: 10px;
+                border-width: 1px;
+                gap: 10px;
+                opacity: 1;
                 padding: 15px 30px;
                 border: 1px solid var(--clr-secondary);
                 background: transparent;
                 color: var(--txt-primary);
+                font-family: var(--font-family);
+                font-weight: var(--fw-normal);
+                font-style: normal;
+                font-size: 23px;
+                line-height: 120%;
+                letter-spacing: 0;
                 box-shadow: none;
                 transform: none;
+
+                @media (max-width: 900px) {
+                    font-size: 18px;
+                }
+
+                @media (max-width: 500px) {
+                    font-size: 16px;
+                }
+
+                @media (max-width: 350px) {
+                    font-size: 14px;
+                    padding: 12px 20px;
+                }
 
                 &:hover:not(:disabled) {
                     background-color: rgba(255, 255, 255, 0.08);
@@ -316,14 +364,34 @@
         ::ng-deep {
             .btn,
             .btn.btn--primary {
-                font-size: clamp(0.75rem, 1.15vw, 1rem);
-                line-height: 1.2;
+                border-radius: 10px;
+                gap: 10px;
+                opacity: 1;
                 padding: 15px 30px;
+                background-color: var(--clr-primary-2);
                 border: 1px solid transparent;
-                background-color: var(--clr-primary-2); 
                 color: var(--txt-primary);
+                font-family: var(--font-family);
+                font-weight: var(--fw-normal);
+                font-style: normal;
+                font-size: 23px;
+                line-height: 120%;
+                letter-spacing: 0;
                 box-shadow: none;
-                transform: none; 
+                transform: none;
+
+                @media (max-width: 900px) {
+                    font-size: 18px;
+                }
+
+                @media (max-width: 500px) {
+                    font-size: 16px;
+                }
+
+                @media (max-width: 350px) {
+                    font-size: 14px;
+                    padding: 12px 20px;
+                }
 
                 &:hover:not(:disabled) {
                     background-color: var(--clr-primary-1);
@@ -347,6 +415,12 @@
         margin-top: auto;
         transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
 
+        @media (max-width: 500px) {
+            padding: 18px 18px 20px;
+            gap: 10px;
+            min-height: 0;
+        }
+
         h3 {
             margin: 0;
             font-family: var(--font-family);
@@ -355,6 +429,10 @@
             font-weight: var(--fw-bold);
             color: var(--clr-primary-2);
             text-align: center;
+
+            @media (max-width: 500px) {
+                font-size: clamp(1.35rem, 6vw, 2.2rem);
+            }
         }
     }
 
@@ -366,6 +444,11 @@
         line-height: 120%;
         font-weight: var(--fw-normal);
         text-align: center;
+
+        @media (max-width: 500px) {
+            font-size: clamp(1rem, 4vw, 1.4rem);
+            line-height: 1.25;
+        }
     }
 
     &__tech {
@@ -376,5 +459,9 @@
         line-height: 120%;
         font-weight: var(--fw-normal);
         text-align: center;
+
+        @media (max-width: 500px) {
+            font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+        }
     }
 }
