@@ -14,22 +14,28 @@
         <article class="project-card" aria-label="Project preview">
             <div class="project-card__mockup">
                 <img [src]="project.image" [alt]="project.name" class="project-card__image" loading="lazy">
-            </div>
 
-            <div class="project-card__info">
-                <h3>{{ project.name }}</h3>
-                <p class="project-card__tech">
-                    {{ project.techStack.join(' | ') }}
-                </p>
-                <p class="project-card__description">
-                    {{ project.descriptionKey | translate }}
-                </p>
+                <div class="project-card__overlay">
+                    <div class="project-card__top-links">
+                        <a [href]="project.githubLink" target="_blank" rel="noopener"
+                            class="project-card__btn-link project-card__btn-link--github">
+                            GitHub
+                        </a>
+                        <a [href]="project.liveLink" target="_blank" rel="noopener"
+                            class="project-card__btn-link project-card__btn-link--live">
+                            {{ 'PROJECTS.LIVE_LINK' | translate }}
+                        </a>
+                    </div>
 
-                <div class="project-card__links">
-                    <a [href]="project.liveLink" target="_blank" rel="noopener" class="project-card__link">
-                        {{ 'PROJECTS.LIVE_LINK' | translate }}
-                    </a>
-                    <a [href]="project.githubLink" target="_blank" rel="noopener" class="project-card__link">GitHub</a>
+                    <div class="project-card__hover-card">
+                        <h3>{{ project.name }}</h3>
+                        <p class="project-card__description">
+                            {{ project.descriptionKey | translate }}
+                        </p>
+                        <p class="project-card__tech">
+                            {{ project.techStack.join(' | ') }}
+                        </p>
+                    </div>
                 </div>
             </div>
         </article>
