@@ -42,6 +42,9 @@
         "SUBTITLE": "Explore a selection of my work here - interact with projects to see my skills in action.",
         "LIVE_LINK": "Live Test",
         "TESTIMONIAL_TEXT": "Michael really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
-        "POLLO_DESC": "A jump-and-run game written from scratch using object-oriented JavaScript."
+        "POLLO_DESC": "A jump-and-run game built from scratch with object-oriented JavaScript, including a custom game loop, collision logic, and character animations.",
+        "JOIN_DESC": "Task management app inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "CODERR_DESC": "Built a Django backend for a freelancer platform, including full API functionality, data models, and seamless frontend integration for a complete marketplace experience.",
+        "VIDEOFLIX_DESC": "Built a Django backend for a Netflix-styled video streaming platform, featuring secure user authentication, custom data models, and background video processing with FFmpeg."
     }
 }
