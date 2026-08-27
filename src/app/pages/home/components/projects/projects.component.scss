@@ -5,7 +5,7 @@
     position: relative;
     z-index: 3;
     width: 100%;
-    padding-block: var(--space-4xl);
+    padding-block: var(--space-xl);
     isolation: isolate;
 
     &__intro {
@@ -259,10 +259,11 @@
         justify-content: flex-start;
         align-items: stretch;
         opacity: 0;
-        pointer-events: none;
-        transition: opacity 200ms ease-in-out;
+        visibility: hidden;
+        transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
         z-index: 2;
         padding: 0;
+        pointer-events: none !important;
     }
 
     &:hover &__image,
@@ -279,7 +280,30 @@
     &:hover &__overlay,
     &:focus-within &__overlay {
         opacity: 1;
+        visibility: visible;
+    }
+
+    &__btn {
+        display: inline-flex;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out, opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+
+        ::ng-deep .btn {
+            pointer-events: none;
+        }
+    }
+
+    &:hover &__btn,
+    &:focus-within &__btn {
         pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+
+        ::ng-deep .btn {
+            pointer-events: auto;
+        }
     }
 
     &__top-links {
@@ -290,6 +314,8 @@
         padding-top: clamp(1.5rem, 7vw, 2.5rem);
         margin-top: 0;
         opacity: 1;
+        visibility: hidden;
+        pointer-events: none;
         min-height: 100px;
 
         @media (max-width: 900px) {
@@ -313,9 +339,10 @@
         }
     }
 
-    &__btn {
-        display: inline-flex;
-        transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out, opacity 200ms ease-in-out;
+    &:hover &__top-links,
+    &:focus-within &__top-links {
+        visibility: visible;
+        pointer-events: auto;
     }
 
     &__btn--github {
@@ -355,6 +382,14 @@
                 &:hover:not(:disabled) {
                     background-color: var(--clr-secondary);
                     border-color: var(--clr-secondary);
+                }
+
+                &:active:not(:disabled) {
+                    background-color: var(--txt-primary);
+                    border-color: var(--txt-primary);
+                    color: var(--clr-primary-2);
+                    box-shadow: none;
+                    transform: scale(1);
                 }
             }
         }
