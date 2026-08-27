@@ -38,11 +38,19 @@
     "PROJECTS": {
         "TITLE": "Portfolio",
         "SUBTITLE": "Entdecken Sie eine Auswahl meiner Arbeiten hier - interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
-        "LIVE_LINK": "Live Test",
-        "TESTIMONIAL_TEXT": "Michael hat das Team mit seiner großartigen Organisation und klaren Kommunikation wirklich zusammengehalten. Ohne sein Engagement wären wir nicht so weit gekommen.",
+        "LIVE_LINK": "Live test",
         "POLLO_DESC": "Ein auf einem objektorientierten Ansatz basierendes Spiel, bei dem gesprungen, gerannt und geworfen wird. Hilf Pepe dabei, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
         "JOIN_DESC": "Ein vom Kanban-System inspirierter Aufgabenmanager. Erstellen und organisieren Sie Aufgaben per Drag-and-Drop und weisen Sie Benutzer sowie Kategorien zu.",
         "CODERR_DESC": "Freelancer-Plattform mit Django-Backend, API-Funktionalität und nahtloser Frontend-Integration.",
-        "VIDEOFLIX_DESC": "Streaming-Plattform im Netflix-Stil mit sicherer Authentifizierung, eigenen Modellen und Videoverarbeitung."
+        "VIDEOFLIX_DESC": "Streaming-Plattform im Netflix-Stil mit sicherer Authentifizierung, eigenen Modellen und Videoverarbeitung.",
+        "TESTIMONIAL_TEXT_1": "Michael hat das Team durch seine hervorragende Organisation und klare Kommunikation wirklich zusammengehalten. Ohne seinen Einsatz wären wir nicht so weit gekommen.",
+        "TESTIMONIAL_NAME_1": "V. Schuster",
+        "TESTIMONIAL_ROLE_1": "Team Partner",
+        "TESTIMONIAL_TEXT_2": "Michi war ein hervorragender Kollege im Team von DA. Sein positives Engagement und seine Bereitschaft, Verantwortung zu übernehmen, haben maßgeblich dazu beigetragen, dass wir unsere Ziele erreicht haben.",
+        "TESTIMONIAL_NAME_2": "E.Eichinger",
+        "TESTIMONIAL_ROLE_2": "Team Partner",
+        "TESTIMONIAL_TEXT_3": "Die Zusammenarbeit mit Michael war eine große Freude. Er versteht es, Teammitglieder zu motivieren und zu Höchstleistungen anzuspornen, und bereichert Brainstormings stets mit wertvollen neuen Ideen. Auch für das Wohlbefinden der Teammitglieder hatte er stets ein offenes Ohr und war jederzeit hilfsbereit – und das bei gleichzeitig großem Sinn für Humor.",
+        "TESTIMONIAL_NAME_3": "I.Nuber",
+        "TESTIMONIAL_ROLE_3": "Frontend Engineer"
     }
 }

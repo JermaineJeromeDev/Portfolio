@@ -14,37 +14,45 @@
     },
 
     "ABOUT": {
-    "TITLE": "About me",
-    "INTRO_GREETING": "Hey there, I'm Jermaine Jérôme!",
-    "INTRO_TEXT": "I am a passionate Fullstack Developer who completed an intensive frontend and backend development program at Developer Akademie. My journey has taught me resilience, adaptability, and the value of continuous growth. Throughout this path, I built various projects and gained hands-on experience turning ideas into functional, user-friendly web applications.",
-    "INTRO_CTA": "Let's connect and create something amazing together!",
-    "FEATURE_LOCATION": "Based in Erfurt, I am open to remote work and collaboration with teams from different locations. I enjoy sharing knowledge, learning from others, and contributing to successful projects.",
-    "FEATURE_MINDSET": "I believe that learning never stops in tech. That's why I continuously expand my knowledge, explore new technologies, and challenge myself to grow as a developer.",
-    "FEATURE_METHOD": "I approach challenges with analytical thinking, persistence, and creativity. When I encounter a problem, I break it down into manageable steps, research possible solutions, and keep refining my approach until I achieve the best result."
+        "TITLE": "About me",
+        "INTRO_GREETING": "Hey there, I'm Jermaine Jérôme!",
+        "INTRO_TEXT": "I am a passionate Fullstack Developer who completed an intensive frontend and backend development program at Developer Akademie. My journey has taught me resilience, adaptability, and the value of continuous growth. Throughout this path, I built various projects and gained hands-on experience turning ideas into functional, user-friendly web applications.",
+        "INTRO_CTA": "Let's connect and create something amazing together!",
+        "FEATURE_LOCATION": "Based in Erfurt, I am open to remote work and collaboration with teams from different locations. I enjoy sharing knowledge, learning from others, and contributing to successful projects.",
+        "FEATURE_MINDSET": "I believe that learning never stops in tech. That's why I continuously expand my knowledge, explore new technologies, and challenge myself to grow as a developer.",
+        "FEATURE_METHOD": "I approach challenges with analytical thinking, persistence, and creativity. When I encounter a problem, I break it down into manageable steps, research possible solutions, and keep refining my approach until I achieve the best result."
     },
 
     "SKILLS": {
-    "CAT_FRONTEND": "Frontend",
-    "CAT_BACKEND": "Backend",
-    "CAT_DEVSECOPS": "DevSecOps",
-    "TITLE": "Skills",
-    "DESCRIPTION_1": "I build full-stack web applications with responsive Angular/TypeScript frontends and robust Python/Django backends.",
-    "CTA_TITLE": "Looking for ",
-    "DESCRIPTION_2": "To keep up with the rapid changes in web development, I actively invest in continuous learning, clean architecture, and modern agile practices.",
-    "CTA_TITLE_HIGHLIGHT": "another skill",
-    "CTA_TEXT": "I am always excited to learn new technologies and take on new challenges. Adaptability, curiosity, and continuous growth are at the core of my development journey.",
-    "BTN_TEXT": "Get in touch",
-    "CONTINUALLY_LEARNING": "Continually learning",
-    "CONTINUALLY_LEARNING_TOOLTIP": "I have a special interest in learning"
+        "CAT_FRONTEND": "Frontend",
+        "CAT_BACKEND": "Backend",
+        "CAT_DEVSECOPS": "DevSecOps",
+        "TITLE": "Skills",
+        "DESCRIPTION_1": "I build full-stack web applications with responsive Angular/TypeScript frontends and robust Python/Django backends.",
+        "CTA_TITLE": "Looking for ",
+        "DESCRIPTION_2": "To keep up with the rapid changes in web development, I actively invest in continuous learning, clean architecture, and modern agile practices.",
+        "CTA_TITLE_HIGHLIGHT": "another skill",
+        "CTA_TEXT": "I am always excited to learn new technologies and take on new challenges. Adaptability, curiosity, and continuous growth are at the core of my development journey.",
+        "BTN_TEXT": "Get in touch",
+        "CONTINUALLY_LEARNING": "Continually learning",
+        "CONTINUALLY_LEARNING_TOOLTIP": "I have a special interest in learning"
     },
     "PROJECTS": {
         "TITLE": "Portfolio",
         "SUBTITLE": "Explore a selection of my work here - interact with projects to see my skills in action.",
-        "LIVE_LINK": "Live Test",
-        "TESTIMONIAL_TEXT": "Michael really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
+        "LIVE_LINK": "Live test",
         "POLLO_DESC": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
         "JOIN_DESC": "Task manager inspiried by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         "CODERR_DESC": "Freelancer platform with Django backend, API functionality, and seamless frontend integration.",
-        "VIDEOFLIX_DESC": "Netflix-style streaming platform with secure auth, custom models, and video processing."
+        "VIDEOFLIX_DESC": "Netflix-style streaming platform with secure auth, custom models, and video processing.",
+        "TESTIMONIAL_TEXT_1": "Michael really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
+        "TESTIMONIAL_NAME_1": "V. Schuster",
+        "TESTIMONIAL_ROLE_1": "Team Partner",
+        "TESTIMONIAL_TEXT_2": "Michi was a top team colleague at DA. His positive commitment and willingness to take on responsibility made a significant contribution to us achieving our goals.",
+        "TESTIMONIAL_NAME_2": "E.Eichinger",
+        "TESTIMONIAL_ROLE_2": "Team Partner",
+        "TESTIMONIAL_TEXT_3": "It was a great pleasure to work with Michael. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.",
+        "TESTIMONIAL_NAME_3": "I.Nuber",
+        "TESTIMONIAL_ROLE_3": "Frontend Engineer"
     }
 }

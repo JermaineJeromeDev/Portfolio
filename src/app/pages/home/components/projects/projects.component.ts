@@ -13,6 +13,13 @@ interface Project {
   image: string;          
 }
 
+interface Testimonial {
+  textKey: string;
+  nameKey: string;
+  roleKey: string;
+  avatar: string;
+}
+
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -21,10 +28,51 @@ interface Project {
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
+  currentTestimonialIndex = 0;
+
+  testimonials: Testimonial[] = [
+    {
+      textKey: 'PROJECTS.TESTIMONIAL_TEXT_1',
+      nameKey: 'PROJECTS.TESTIMONIAL_NAME_1',
+      roleKey: 'PROJECTS.TESTIMONIAL_ROLE_1',
+      avatar: 'img/placeholder-1.png' 
+    },
+    {
+      textKey: 'PROJECTS.TESTIMONIAL_TEXT_2',
+      nameKey: 'PROJECTS.TESTIMONIAL_NAME_2',
+      roleKey: 'PROJECTS.TESTIMONIAL_ROLE_2',
+      avatar: 'img/placeholder-2.png'
+    },
+    {
+      textKey: 'PROJECTS.TESTIMONIAL_TEXT_3',
+      nameKey: 'PROJECTS.TESTIMONIAL_NAME_3',
+      roleKey: 'PROJECTS.TESTIMONIAL_ROLE_3',
+      avatar: 'img/placeholder-3.png'
+    }
+  ];
+
   openLink(url: string): void {
     if (typeof window !== 'undefined') {
       window.open(url, '_blank', 'noopener');
     }
+  }
+
+  setTestimonial(index: number): void {
+    this.currentTestimonialIndex = index;
+  }
+
+  prevTestimonial(): void {
+    this.currentTestimonialIndex = 
+      this.currentTestimonialIndex === 0 
+        ? this.testimonials.length - 1 
+        : this.currentTestimonialIndex - 1;
+  }
+
+  nextTestimonial(): void {
+    this.currentTestimonialIndex = 
+      this.currentTestimonialIndex === this.testimonials.length - 1 
+        ? 0 
+        : this.currentTestimonialIndex + 1;
   }
 
   projects: Project[] = [
