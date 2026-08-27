@@ -17,14 +17,15 @@
 
                 <div class="project-card__overlay">
                     <div class="project-card__top-links">
-                        <a [href]="project.githubLink" target="_blank" rel="noopener"
-                            class="project-card__btn-link project-card__btn-link--github">
+                        <app-button class="project-card__btn project-card__btn--github" variant="secondary" color="cyan"
+                            (click)="openLink(project.githubLink)">
                             GitHub
-                        </a>
-                        <a [href]="project.liveLink" target="_blank" rel="noopener"
-                            class="project-card__btn-link project-card__btn-link--live">
+                        </app-button>
+
+                        <app-button class="project-card__btn project-card__btn--live" variant="primary"
+                            (click)="openLink(project.liveLink)">
                             {{ 'PROJECTS.LIVE_LINK' | translate }}
-                        </a>
+                        </app-button>
                     </div>
 
                     <div class="project-card__hover-card">
