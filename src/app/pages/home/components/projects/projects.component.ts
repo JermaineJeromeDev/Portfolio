@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ButtonComponent } from '../../../../components/button/button';
 
 interface Project {
   id: number;
@@ -15,11 +16,17 @@ interface Project {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, TranslatePipe], 
+  imports: [CommonModule, TranslatePipe, ButtonComponent], 
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
+  openLink(url: string): void {
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank', 'noopener');
+    }
+  }
+
   projects: Project[] = [
     { 
       id: 1, 
