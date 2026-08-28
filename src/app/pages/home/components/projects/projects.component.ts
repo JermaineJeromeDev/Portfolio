@@ -35,19 +35,19 @@ export class ProjectsComponent {
       textKey: 'PROJECTS.TESTIMONIAL_TEXT_1',
       nameKey: 'PROJECTS.TESTIMONIAL_NAME_1',
       roleKey: 'PROJECTS.TESTIMONIAL_ROLE_1',
-      avatar: 'img/placeholder-1.png' 
+      avatar: 'img/placeholder-1.svg' 
     },
     {
       textKey: 'PROJECTS.TESTIMONIAL_TEXT_2',
       nameKey: 'PROJECTS.TESTIMONIAL_NAME_2',
       roleKey: 'PROJECTS.TESTIMONIAL_ROLE_2',
-      avatar: 'img/placeholder-2.png'
+      avatar: 'img/placeholder-2.svg'
     },
     {
       textKey: 'PROJECTS.TESTIMONIAL_TEXT_3',
       nameKey: 'PROJECTS.TESTIMONIAL_NAME_3',
       roleKey: 'PROJECTS.TESTIMONIAL_ROLE_3',
-      avatar: 'img/placeholder-3.png'
+      avatar: 'img/placeholder-3.svg'
     }
   ];
 

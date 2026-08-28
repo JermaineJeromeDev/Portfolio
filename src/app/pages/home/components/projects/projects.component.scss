@@ -2,11 +2,13 @@
 @use '../../../../../styles/mixins' as *;
 
 .projects {
+    @include global_content_wrapper();
     position: relative;
     z-index: 3;
-    width: 100%;
+    margin-inline: auto;
     padding-block: var(--space-xl);
     isolation: isolate;
+    padding-top: clamp(4.5rem, 8vw, 7rem);
 
     &__intro {
         @include flexbox(column, flex-start, flex-start, 10px); 
@@ -90,6 +92,7 @@
 
     &__testimonial-wrapper {
         width: 100%;
+        @include global_content_wrapper();
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -176,10 +179,29 @@
         border-radius: var(--radius-pill);
         width: 220px;
         height: 220px;
-        border: 4px solid var(--clr-primary-1);
+        border: none;
         background: var(--bg-dark-1);
         flex-shrink: 0;
-        box-shadow: 0 0 0 6px rgba(112, 230, 28, 0.06);
+        box-shadow: none;
+
+        @media (max-width: 900px) {
+            width: 120px;
+            height: 120px;
+            margin-right: 0; 
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%; 
+            width: 100vw; 
+            height: 0;
+            border: 2px solid var(--clr-primary-1); 
+            transform: translateY(-50%);
+            z-index: 1;
+            pointer-events: none;
+        }
     }
 
     &__avatar-img {
