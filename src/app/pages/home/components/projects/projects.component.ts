@@ -18,6 +18,7 @@ interface Testimonial {
   nameKey: string;
   roleKey: string;
   avatar: string;
+  mobileLineWidth: number;
 }
 
 @Component({
@@ -35,19 +36,22 @@ export class ProjectsComponent {
       textKey: 'PROJECTS.TESTIMONIAL_TEXT_1',
       nameKey: 'PROJECTS.TESTIMONIAL_NAME_1',
       roleKey: 'PROJECTS.TESTIMONIAL_ROLE_1',
-      avatar: 'img/placeholder-1.svg' 
+      avatar: 'img/placeholder-1.svg',
+      mobileLineWidth: 64
     },
     {
       textKey: 'PROJECTS.TESTIMONIAL_TEXT_2',
       nameKey: 'PROJECTS.TESTIMONIAL_NAME_2',
       roleKey: 'PROJECTS.TESTIMONIAL_ROLE_2',
-      avatar: 'img/placeholder-2.svg'
+      avatar: 'img/placeholder-2.svg',
+      mobileLineWidth: 61
     },
     {
       textKey: 'PROJECTS.TESTIMONIAL_TEXT_3',
       nameKey: 'PROJECTS.TESTIMONIAL_NAME_3',
       roleKey: 'PROJECTS.TESTIMONIAL_ROLE_3',
-      avatar: 'img/placeholder-3.svg'
+      avatar: 'img/placeholder-3.svg',
+      mobileLineWidth: 46
     }
   ];
 
