@@ -9,6 +9,20 @@
     padding-block: var(--space-xl);
     isolation: isolate;
     padding-top: clamp(4.5rem, 8vw, 7rem);
+    
+    &__scroll-anchor {
+        position: absolute;
+        left: 0;
+        top: 96px; 
+
+        @include respond-to(laptop) {
+            top: 75px; 
+        }
+
+        @include respond-to(md) {
+            top: -10px; 
+        }
+    }
 
     &__intro {
         @include flexbox(column, flex-start, flex-start, 10px); 
@@ -94,6 +108,10 @@
             top: 1710px;
             left: -500px;
         }
+
+        @include respond-to(md) {
+            display: none;
+        }
     }
 
     &__grid {
@@ -139,7 +157,7 @@
         padding: 48px 96px;
         border: 4px solid var(--clr-primary-2);
         border-radius: 32px;
-        background: rgba(13, 31, 52, 0.76);
+        background: var(--bg-dark-3);
         box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
         display: flex;
         flex-direction: column;
@@ -159,6 +177,24 @@
         width: 97px;
         height: 69px;
         pointer-events: none;
+
+        @include respond-to(lg) {
+            width: 77px;
+            height: 55px;
+            top: -20px;
+            left: -60px;
+        }
+
+        @include respond-to(md) {
+            width: 57px;
+            height: 41px;
+            top: -15px;
+            left: -40px;
+        }
+
+        @media (max-width: 600px) {
+            display: none;
+        }
     }
 
     &__testimonial-text {
@@ -344,9 +380,22 @@
             }
 
             &__heading {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.6rem;
+                flex-direction: row;
+                align-items: center;
+                gap: 4px;
+            }
+
+            &__divider {
+                width: 24px;
+                border: 4px solid var(--clr-primary-2);
+            }
+
+            &__title {
+                font-size: 45px;
+                font-weight: var(--fw-bold);
+                line-height: 120%;
+                letter-spacing: 0;
+                text-align: center;
             }
 
             &__subtitle {
@@ -407,7 +456,7 @@
 
         @media (min-width: 541px) {
             &__testimonial {
-                width: min(620px, calc(100vw - 64px));
+                width: min(520px, calc(100vw - 64px));
             }
         }
 
@@ -499,7 +548,7 @@
         overflow: hidden;
 
         @media (max-width: 500px) {
-            aspect-ratio: 0.80;
+            aspect-ratio: 1.05;
         }
     }
 
@@ -594,6 +643,10 @@
             gap: 33px;
             padding-top: 18px;
             min-height: 72px;
+        }
+
+        @media (max-width: 440px) {
+            padding-top: 40px;
         }
 
         @media (max-width: 350px) {
