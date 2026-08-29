@@ -14,7 +14,7 @@
         left: 0;
         top: 50px; 
 
-        @include respond-to(desktop) { top: 96px; }
+        @include respond-to(desktop) { top: 105px; }
         @media (max-width: 1280px) { top: 90px; }
         @include respond-to(laptop) { top: 70px; }
         @include respond-to(md) { top: -30px; }
@@ -89,7 +89,10 @@
             width: 100%;
             position: relative;
             z-index: 5; 
+            margin-top: -64px;
         }
+
+        @include respond-to(md) { margin-top: -32px; }   
     }
 
     &__title {
@@ -207,7 +210,8 @@
             pointer-events: none;
 
             @media (max-width: 1380px) {
-                transform: scale(1.5);
+                transform: scale(1);
+                height: 150%;
             }
         } 
 

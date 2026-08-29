@@ -5,11 +5,12 @@ import { IconComponent } from '../../../../components/icon/icon';
 
 @Component({
   selector: 'app-about-me',
+  standalone: true,
   imports: [IconComponent, NgOptimizedImage, TranslatePipe],
   templateUrl: './about-me.html',
   styleUrls: ['./about-me.scss'],
 })
-export class AboutMe implements AfterViewInit, OnDestroy {
+export class AboutMeComponent implements AfterViewInit, OnDestroy {
   @ViewChild('photoRef') photoRef!: ElementRef<HTMLImageElement>;
   @ViewChild('waveMobileRef') waveMobileRef!: ElementRef<HTMLImageElement>;
 
@@ -52,13 +53,13 @@ export class AboutMe implements AfterViewInit, OnDestroy {
   }
 
   private getResponsiveFactor(width: number): number {
-    if (width >= 1000) return 0.62 + ((1380 - width) / (1380 - 1000)) * 0.10;
+    if (width >= 1000) return 0.66 + ((1380 - width) / (1380 - 1000)) * 0.10;
     if (width >= 880) return 0.72 - ((1000 - width) / (1000 - 880)) * 0.001;
     if (width > 768) return 0.84 - ((880 - width) / (880 - 768)) * 0.18;
     if (width >= 430 && width <= 440) {
       return 0.77 + ((768 - width) / (768 - 360)) * 0.10 + 0.001;
     }
-    if (width >= 360) return 0.77 + ((768 - width) / (768 - 360)) * 0.10;
+    if (width >= 360) return 0.765 + ((768 - width) / (768 - 360)) * 0.10;
     return 0.87 + ((360 - width) / (360 - 320)) * 0.0001;
   }
 
