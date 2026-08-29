@@ -1,0 +1,42 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.home-layout {
+    position: relative;
+    width: 100%;
+    overflow: hidden; 
+}
+
+.skills-section-container {
+    position: relative; 
+    width: 100%;
+}
+
+.responsive-glow {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;         
+    width: 800px;
+    height: auto;
+
+    &--cyan {
+        bottom: -700px;    
+        right: -350px;    
+    }
+
+    @media (max-width: 905px) {
+        opacity: 0.70;
+    }
+
+    @media (max-width: 768px) {
+        width: 700px;
+        bottom: -650px;
+        right: -300px;
+    }
+
+    @include respond-to(phone-wide) {
+        width: 650px;
+        bottom: -430px;
+        right: -200px;
+    }
+}
