@@ -11,22 +11,18 @@
     transition: all 0.2s ease-in-out;
     box-sizing: border-box;
     color: var(--txt-primary);
-    min-width: 107px;
-    min-height: 58px;
-    padding: 15px 30px;
-    font-size: 23px;
     font-weight: var(--fw-normal);           
-    line-height: 120%;
+    line-height: var(--line-height-tight);
     letter-spacing: 0;
+    padding: clamp(12px, 0.5vw + 10px, 15px) clamp(18px, 1.5vw + 12px, 30px);
+    min-height: clamp(46px, 1.5vw + 40px, 58px);
+    min-width: clamp(107px, 5vw + 90px, 140px); 
+    font-size: clamp(14px, 1.2vw + 12px, 23px);
 
-    @include respond-to(phone) {
+    @media (max-width: 480px) {
+        width: auto;  
         min-width: 0;
-        width: 100%;
-        max-width: 280px;
-        min-height: 46px; 
-        padding: 12px 18px;
-        font-size: 16px;  
-        line-height: 1.2;
+        max-width: none;
     }
 
     &--primary {
@@ -47,13 +43,15 @@
             box-shadow: none; 
 
             @include respond-to(md) {
-                transition: background-color 100ms ease-in-out, color 100ms ease-in-out, padding 100ms ease-in-out, min-height 100ms ease-in-out, min-width 100ms ease-in-out;
+                transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
                 background-color: var(--clr-primary-2);
                 color: var(--txt-primary);
-                min-width: 113px;
-                min-height: 59px;
-                padding: 20px 40px;
                 box-shadow: var(--shadow-btn-glow);
+            }
+
+            @media (max-width: 480px) {
+                min-width: 0;
+                width: auto;
             }
         }
     }
@@ -70,12 +68,7 @@
 
         @include respond-to(phone) {
             min-width: 0;
-            width: 100%;
-            max-width: 280px;
-            min-height: 46px;
-            padding: 12px 18px;
-            font-size: 16px;
-            line-height: 1.2;
+            width: auto;
         }
 
         &:active:not(:disabled) {
