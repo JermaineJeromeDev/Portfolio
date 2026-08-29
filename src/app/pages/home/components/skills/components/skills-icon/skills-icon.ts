@@ -15,9 +15,21 @@ import { SKILLS_ICON_DATA } from './skills-icon-data';
     }
   `,
   styles: [
-    `:host { display: inline-flex; align-items: center; justify-content: center; color: inherit; }`,
-    `svg { width: auto; height: auto; max-width: 100%; max-height: 100%; color: inherit; fill: currentColor; stroke: currentColor; }`
-  ],
+  `:host { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: inherit;
+    width: var(--icon-size, 100%);
+    height: var(--icon-size, 100%);
+  }`,
+  `svg { 
+    color: inherit; 
+    fill: currentColor; 
+    stroke: currentColor; 
+  }`
+],
+
 })
 export class SkillsIconComponent implements OnChanges {
   @Input() name!: string;
