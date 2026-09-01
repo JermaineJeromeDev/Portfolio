@@ -72,6 +72,7 @@
         "SUCCESS_MSG": "Message sent successfully!",
         "ERROR_NAME": "Please enter your name.",
         "ERROR_EMAIL": "Please enter a valid email address.",
-        "ERROR_MESSAGE": "Please enter a message."
+        "ERROR_MESSAGE": "Please enter a message.",
+        "ERROR_PRIVACY": "Please accept the privacy policy."
     }
 }
