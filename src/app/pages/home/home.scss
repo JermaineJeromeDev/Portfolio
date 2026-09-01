@@ -15,6 +15,11 @@
         width: min(85vw, 1083px);
         height: auto;
         pointer-events: none;
+
+        @media (max-width: 900px) {
+            right: -28rem;
+            opacity: 0.65;
+        }
     }
 }
 

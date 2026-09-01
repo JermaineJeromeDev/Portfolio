@@ -7,6 +7,7 @@
     width: 100%;
     background-color: transparent;
     padding-block: var(--space-4xl);
+    scroll-margin-top: 109px;
     isolation: isolate;
 
     &__content {
@@ -62,7 +63,7 @@
         grid-template-columns: minmax(0, 1fr) minmax(0, 550px);
         gap: clamp(3rem, 8vw, 6.25rem);
 
-        @media (max-width: 1100px) {
+        @media (max-width: 900px) {
             @include flexbox(column, flex-start, stretch, var(--space-3xl));
         }
     }
@@ -115,6 +116,7 @@
         font-size: 16px; 
         line-height: 120%;
         color: var(--txt-primary);
+        white-space: pre-line;
     }
 
     &__subtext {
@@ -344,7 +346,7 @@
 
     &__submit-wrapper {
         width: 100%;
-        @include flexbox(row, flex-start, center, 0);
+        @include flexbox(row, center, center, 0);
 
         ::ng-deep .btn {
             box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25); 
@@ -384,6 +386,127 @@
         &:hover {
             svg rect { stroke: var(--clr-primary-1); }
             svg path { stroke: var(--clr-primary-1); }
+        }
+    }
+
+    @media (min-width: 501px) and (max-width: 900px) {
+        padding-top: 140px;
+
+        &__intro {
+            margin-bottom: 40px;
+        }
+
+        &__title {
+            font-size: 45px;
+        }
+
+        &__container {
+            gap: 48px;
+        }
+
+        &__info,
+        &__form {
+            max-width: 550px;
+        }
+
+        &__info {
+            gap: 20px;
+        }
+
+        &__subheading-box {
+            gap: 20px;
+        }
+
+        &__text-title {
+            font-size: clamp(1.625rem, 3vw, 1.75rem);
+        }
+
+        &__form {
+            gap: 24px;
+            margin-inline: auto;
+        }
+
+        &__scroll-up {
+            right: max(clamp(var(--space-lg), 5vw, var(--space-2xl)), calc(50% - 275px));
+        }
+    }
+
+    @media (max-width: 500px) {
+        padding-block: var(--space-3xl);
+
+        &__intro {
+            gap: 16px;
+            margin-bottom: var(--space-3xl);
+        }
+
+        &__heading {
+            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+            column-gap: 16px;
+        }
+
+        &__title {
+            font-size: 45px;
+            text-align: center;
+        }
+
+        &__divider {
+            display: block;
+        }
+
+        &__container {
+            gap: var(--space-3xl);
+        }
+
+        &__info {
+            gap: var(--space-lg);
+        }
+
+        &__subheading-box {
+            gap: 4px;
+        }
+
+        &__text-title {
+            font-size: 23px;
+        }
+
+        &__form {
+            max-width: 340px;
+            margin-inline: auto;
+            gap: 12px;
+        }
+
+        &__input {
+            padding: 15px 25px;
+        }
+
+        &__textarea {
+            min-height: 202px;
+        }
+
+        &__privacy {
+            gap: 12px;
+        }
+
+        &__checkbox-label {
+            gap: 8px;
+        }
+
+        &__privacy-text,
+        &__privacy-link {
+            font-size: 14px;
+            line-height: 120%;
+        }
+
+        &__privacy-link-wrapper {
+            width: 106px;
+            height: 27px;
+            box-sizing: border-box;
+            gap: 10px;
+            padding: 5px 4px;
+        }
+
+        &__scroll-up {
+            right: max(clamp(var(--space-lg), 5vw, var(--space-2xl)), calc(50% - 170px));
         }
     }
 }
