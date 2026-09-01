@@ -10,5 +10,14 @@ import { ButtonComponent } from '../../../../components/button/button';
   styleUrls: ['./hero.scss'],
 })
 export class HeroComponent {
+  scrollToContact(): void {
+    if (typeof document === 'undefined') {
+      return;
+    }
 
+    document.getElementById('contact')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
 }

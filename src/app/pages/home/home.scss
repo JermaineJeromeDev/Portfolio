@@ -4,7 +4,18 @@
 .home-layout {
     position: relative;
     width: 100%;
-    overflow: hidden; 
+    overflow: hidden;
+    background-color: var(--bg-dark-3);
+
+    &__footer-shadow {
+        position: absolute;
+        right: -18rem;
+        bottom: 0;
+        z-index: 1;
+        width: min(85vw, 1083px);
+        height: auto;
+        pointer-events: none;
+    }
 }
 
 .skills-section-container {
@@ -48,9 +59,9 @@
     }
 
     &--purple {
-        width: 650px;  
-        bottom: -800px;       
-        right: -200px;        
-        opacity: 0.5;         
+        width: 60%;  
+        bottom: -200px;       
+        right: -100px;        
+        opacity: 0.5;  
     }
 }
