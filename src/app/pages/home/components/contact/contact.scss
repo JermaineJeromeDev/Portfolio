@@ -11,8 +11,12 @@
 
     &__scroll-anchor {
         position: absolute;
-        top: 96px;
+        top: 90px;
         left: 0;
+
+        @include respond-to(desktop) {
+            top: 96px;
+        }
     }
 
     &__content {
@@ -22,7 +26,7 @@
 
     &__intro {
         @include flexbox(column, flex-start, flex-start, 10px); 
-        margin-bottom: 48px;
+        margin-bottom: clamp(40px, 3.5vw, 48px);
         width: 100%;
     }
 
@@ -75,7 +79,7 @@
 
     &__info {
         max-width: 454px;
-        @include flexbox(column, flex-start, flex-start, 24px); 
+        @include flexbox(column, flex-start, flex-start, clamp(20px, 2vw, 24px)); 
     }
 
     &__subheading-box {
@@ -125,12 +129,12 @@
 
     &__description {
         @include flexbox(column, flex-start, flex-start, 12px);
-        margin-left: 64px;
+        margin-left: clamp(36px, 5.8vw, 64px);
     }
 
     &__subtext {
         margin: 0;
-        margin-left: 64px;
+        margin-left: clamp(36px, 5.8vw, 64px);
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 16px; 
@@ -420,38 +424,26 @@
             svg rect { stroke: var(--clr-primary-1); }
             svg path { stroke: var(--clr-primary-1); }
         }
+
+        @include respond-to(desktop) {
+            bottom: 64px;
+        }
     }
 
     @media (min-width: 501px) and (max-width: 900px) {
         padding-top: 140px;
-
-        &__intro {
-            margin-bottom: 40px;
-        }
 
         &__title {
             font-size: 45px;
         }
 
         &__container {
-            gap: 48px;
+            gap: clamp(40px, 5.5vw, 48px);
         }
 
         &__info,
         &__form {
             max-width: 550px;
-        }
-
-        &__info {
-            gap: 20px;
-        }
-
-        &__description {
-            margin-left: 52px;
-        }
-
-        &__subtext {
-            margin-left: 52px;
         }
 
         &__subheading-box {
