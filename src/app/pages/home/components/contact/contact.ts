@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -13,6 +13,12 @@ import { ButtonComponent } from '../../../../components/button/button';
   styleUrls: ['./contact.scss']
 })
 export class ContactComponent {
+  readonly messageHeight = signal<number | null>(null);
+  private readonly minimumMessageHeight = 202;
+  private messageResizeStartY = 0;
+  private messageResizeStartHeight = this.minimumMessageHeight;
+  private isResizingMessage = false;
+
   contactData = {
     name: '',
     email: '',
@@ -36,6 +42,48 @@ export class ContactComponent {
 
   isMessageEmpty(message: string): boolean {
     return message.trim().length === 0;
+  }
+
+  startMessageResize(event: PointerEvent, textarea: HTMLTextAreaElement): void {
+    event.preventDefault();
+    this.isResizingMessage = true;
+    this.messageResizeStartY = event.clientY;
+    this.messageResizeStartHeight = textarea.getBoundingClientRect().height;
+
+    const resizeHandle = event.currentTarget as HTMLButtonElement;
+    resizeHandle.setPointerCapture(event.pointerId);
+  }
+
+  resizeMessage(event: PointerEvent): void {
+    if (!this.isResizingMessage) {
+      return;
+    }
+
+    this.messageHeight.set(Math.max(
+      this.minimumMessageHeight,
+      this.messageResizeStartHeight + event.clientY - this.messageResizeStartY,
+    ));
+  }
+
+  stopMessageResize(event: PointerEvent): void {
+    const resizeHandle = event.currentTarget as HTMLButtonElement;
+
+    if (resizeHandle.hasPointerCapture(event.pointerId)) {
+      resizeHandle.releasePointerCapture(event.pointerId);
+    }
+
+    this.isResizingMessage = false;
+  }
+
+  resizeMessageWithKeyboard(event: KeyboardEvent): void {
+    if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
+      return;
+    }
+
+    event.preventDefault();
+    const currentHeight = this.messageHeight() ?? this.minimumMessageHeight;
+    const heightChange = event.key === 'ArrowUp' ? 16 : -16;
+    this.messageHeight.set(Math.max(this.minimumMessageHeight, currentHeight + heightChange));
   }
 
   onSubmit(form: NgForm): void {

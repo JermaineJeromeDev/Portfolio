@@ -52,12 +52,18 @@
                 </div>
 
                 <div class="contact__field">
-                    <textarea name="message" [(ngModel)]="contactData.message" #messageInput="ngModel" required
-                        [placeholder]="'CONTACT.PLACEHOLDER_MESSAGE' | translate" class="contact__textarea"
+                    <textarea #messageTextarea name="message" [(ngModel)]="contactData.message" #messageInput="ngModel"
+                        required [placeholder]="'CONTACT.PLACEHOLDER_MESSAGE' | translate" class="contact__textarea"
+                        [style.height.px]="messageHeight()"
                         [attr.aria-describedby]="!isValidMessage(contactData.message) && messageInput.touched ? 'message-error' : null"
                         [attr.aria-invalid]="!isValidMessage(contactData.message) && messageInput.touched"
                         [class.contact__input--error]="!isValidMessage(contactData.message) && messageInput.touched"
                         [class.contact__input--valid]="isValidMessage(contactData.message) && messageInput.touched"></textarea>
+                    <button class="contact__textarea-resize" type="button" aria-label="Resize message field"
+                        title="Resize message field" (pointerdown)="startMessageResize($event, messageTextarea)"
+                        (pointermove)="resizeMessage($event)" (pointerup)="stopMessageResize($event)"
+                        (pointercancel)="stopMessageResize($event)" (keydown)="resizeMessageWithKeyboard($event)">
+                    </button>
                     @if (!isValidMessage(contactData.message) && messageInput.touched) {
                     @if (isMessageEmpty(contactData.message)) {
                     <span id="message-error" class="contact__error-msg" role="alert">{{
