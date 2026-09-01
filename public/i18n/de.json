@@ -52,5 +52,24 @@
         "TESTIMONIAL_TEXT_3": "Die Zusammenarbeit mit Michael war eine große Freude. Er versteht es, Teammitglieder zu motivieren und zu Höchstleistungen anzuspornen, und bereichert Brainstormings stets mit wertvollen neuen Ideen. Auch für das Wohlbefinden der Teammitglieder hatte er stets ein offenes Ohr und war jederzeit hilfsbereit – und das bei gleichzeitig großem Sinn für Humor.",
         "TESTIMONIAL_NAME_3": "I.Nuber",
         "TESTIMONIAL_ROLE_3": "Frontend Engineer"
+    },
+
+    "CONTACT": {
+        "TITLE": "Kontakt",
+        "TEXT": "Hast du ein Problem zu lösen?",
+        "DESCRIPTION": "Beschreibe, für welche Rolle du dich interessierst. Zeige, welchen Mehrwert du mit deiner Arbeit für das Projekt schaffen kannst.",
+        "SUBTEXT_START": "Brauchst du einen Fullstack Entwickler?",
+        "SUBTEXT_HIGHLIGHT": "Kontaktiere mich!",
+        "PLACEHOLDER_NAME": "Dein Name",
+        "PLACEHOLDER_EMAIL": "Deine E-Mail",
+        "PLACEHOLDER_MESSAGE": "Deine Nachricht",
+        "PRIVACY_BEFORE": "Ich habe die ",
+        "PRIVACY_LINK": "Datenschutzrichtlinie",
+        "PRIVACY_AFTER": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+        "SUBMIT_BTN": "Nachricht senden :)",
+        "SUCCESS_MSG": "Nachricht erfolgreich gesendet!",
+        "ERROR_NAME": "Bitte geben Sie Ihren Namen ein.",
+        "ERROR_EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "ERROR_MESSAGE": "Bitte geben Sie eine Nachricht ein."
     }
 }

@@ -54,5 +54,24 @@
         "TESTIMONIAL_TEXT_3": "It was a great pleasure to work with Michael. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.",
         "TESTIMONIAL_NAME_3": "I.Nuber",
         "TESTIMONIAL_ROLE_3": "Frontend Engineer"
+    },
+
+    "CONTACT": {
+        "TITLE": "Contact",
+        "TEXT": "Got a problem to solve?",
+        "DESCRIPTION": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+        "SUBTEXT_START": "Need a Fullstack developer?",
+        "SUBTEXT_HIGHLIGHT": "Contact me!",
+        "PLACEHOLDER_NAME": "Your name",
+        "PLACEHOLDER_EMAIL": "Your email",
+        "PLACEHOLDER_MESSAGE": "Your message",
+        "PRIVACY_BEFORE": "I've read the ",
+        "PRIVACY_LINK": "privacy policy",
+        "PRIVACY_AFTER": " and agree to the processing of my data as outlined.",
+        "SUBMIT_BTN": "Send message :)",
+        "SUCCESS_MSG": "Message sent successfully!",
+        "ERROR_NAME": "Please enter your name.",
+        "ERROR_EMAIL": "Please enter a valid email address.",
+        "ERROR_MESSAGE": "Please enter a message."
     }
 }
