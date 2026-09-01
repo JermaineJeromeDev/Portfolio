@@ -68,9 +68,11 @@
         "PRIVACY_AFTER": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
         "SUBMIT_BTN": "Nachricht senden :)",
         "SUCCESS_MSG": "Nachricht erfolgreich gesendet!",
-        "ERROR_NAME": "Ihr Name ist erforderlich.",
-        "ERROR_EMAIL": "Ihre E-Mail ist erforderlich.",
-        "ERROR_MESSAGE": "Ihre Nachricht ist leer.",
+        "ERROR_NAME": "Bitte geben Sie mindestens zwei Buchstaben ein. Zahlen sind nicht erlaubt.",
+        "ERROR_EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "ERROR_MESSAGE": "Ihre Nachricht ist erforderlich.",
+        "ERROR_MESSAGE_REQUIRED": "Ihre Nachricht ist erforderlich.",
+        "ERROR_MESSAGE_MIN_LENGTH": "Bitte geben Sie mindestens 10 Zeichen ein.",
         "ERROR_PRIVACY": "Bitte akzeptieren Sie die Datenschutzrichtlinie."
     }
 }

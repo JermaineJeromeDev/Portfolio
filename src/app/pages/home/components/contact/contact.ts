@@ -22,8 +22,30 @@ export class ContactComponent {
 
   mailSent = false;
 
+  isValidName(name: string): boolean {
+    return /^(?=(?:.*\p{L}){2,})[\p{L}\p{M}' -]+$/u.test(name.trim());
+  }
+
+  isValidEmail(email: string): boolean {
+    return /^(?=.{1,254}$)(?=.{1,64}@)[A-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+[A-Z]{2,63}$/i.test(email.trim());
+  }
+
+  isValidMessage(message: string): boolean {
+    return message.trim().length >= 10;
+  }
+
+  isMessageEmpty(message: string): boolean {
+    return message.trim().length === 0;
+  }
+
   onSubmit(form: NgForm): void {
-    if (form.valid && this.contactData.privacyAccepted) {
+    if (
+      form.valid &&
+      this.isValidName(this.contactData.name) &&
+      this.isValidEmail(this.contactData.email) &&
+      this.isValidMessage(this.contactData.message) &&
+      this.contactData.privacyAccepted
+    ) {
       console.log('Formular-Daten bereit für Backend:', this.contactData);
       
       this.mailSent = true;
