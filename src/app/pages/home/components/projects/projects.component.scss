@@ -109,7 +109,7 @@
             left: -500px;
         }
 
-        @include respond-to(md) {
+        @media (max-width: 660px) {
             display: none;
         }
     }
@@ -123,7 +123,7 @@
         width: 100%;
         position: relative;
 
-        @media (max-width: 900px) {
+        @media (max-width: 1019px) {
             grid-template-columns: 1fr;
             max-width: 600px; 
         }
@@ -499,10 +499,14 @@
 
         &__person-name {
             font-weight: 400;
+            font-size: clamp(14px, 3.636vw + 2.364px, 16px);
+            line-height: var(--line-height-tight);
         }
 
         &__person-role {
             opacity: 1;
+            font-size: clamp(14px, 3.636vw + 2.364px, 16px);
+            line-height: var(--line-height-tight);
         }
 
         &__controls {
@@ -572,9 +576,8 @@
     &__overlay {
         position: absolute;
         inset: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
         align-items: stretch;
         opacity: 0;
         visibility: hidden;
@@ -629,12 +632,11 @@
         justify-content: center;
         align-items: center;
         gap: 86px;
-        padding-top: clamp(1.5rem, 7vw, 2.5rem);
-        margin-top: 0;
+        min-height: 0;
+        padding: 0;
         opacity: 1;
         visibility: hidden;
         pointer-events: none;
-        min-height: 100px;
 
         @media (max-width: 900px) {
             gap: 60px;
@@ -642,22 +644,10 @@
 
         @media (max-width: 500px) {
             gap: 33px;
-            padding-top: 18px;
-            min-height: 72px;
-        }
-
-        @media (max-width: 440px) {
-            padding-top: 40px;
         }
 
         @media (max-width: 350px) {
             gap: 18px;
-            padding-top: 14px;
-            min-height: 60px;
-        }
-
-        @media (min-width: 500px) {
-            padding-top: 80px;
         }
     }
 
@@ -769,7 +759,7 @@
         gap: 14px;
         justify-content: flex-end;
         min-height: 240px;
-        margin-top: auto;
+        margin-top: 0;
         transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
 
         @media (max-width: 500px) {
@@ -788,7 +778,8 @@
             text-align: center;
 
             @media (max-width: 500px) {
-                font-size: clamp(1.35rem, 6vw, 2.2rem);
+                font-size: clamp(1.25rem, 4.4vw, 1.5rem);
+                line-height: 1.15;
             }
         }
     }
@@ -803,7 +794,7 @@
         text-align: center;
 
         @media (max-width: 500px) {
-            font-size: clamp(1rem, 4vw, 1.4rem);
+            font-size: clamp(0.9375rem, 3.2vw, 1.0625rem);
             line-height: 1.25;
         }
     }

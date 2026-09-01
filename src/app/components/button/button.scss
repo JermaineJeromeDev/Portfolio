@@ -110,7 +110,7 @@
             border: 1px solid var(--clr-primary-1);
             &:hover:not(:disabled) {
                 background-color: var(--clr-primary-1);
-                box-shadow: 0 0 20px rgba(112, 230, 28, 0.3);
+                box-shadow: 0 0 20px var(--clr-primary-1);
             }
         }
     }
@@ -121,7 +121,7 @@
             border: 1px solid var(--clr-secondary);
             &:hover:not(:disabled) {
                 background-color: var(--clr-secondary);
-                box-shadow: 0 0 20px rgba(28, 218, 230, 0.3);
+                box-shadow: 0 0 20px var(--clr-secondary);
             }
         }
     }

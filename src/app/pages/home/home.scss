@@ -40,6 +40,13 @@
         right: -200px;
     }
 
+    @include respond-to(phone-mini) {
+        width: 500px;
+        bottom: -400px;
+        right: -150px;
+        opacity: 0.9;
+    }
+
     &--purple {
         width: 650px;  
         bottom: -800px;       
