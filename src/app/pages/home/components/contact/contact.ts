@@ -124,6 +124,12 @@ export class ContactComponent {
 
   scrollToTop(): void {
     if (typeof window !== 'undefined') {
+      const activeElement = document.activeElement;
+
+      if (activeElement instanceof HTMLElement) {
+        activeElement.blur();
+      }
+
       window.scrollTo({
         top: 0,
         behavior: 'smooth' 

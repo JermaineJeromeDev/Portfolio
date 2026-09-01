@@ -49,6 +49,12 @@ export class SkillsComponent {
   }
 
   scrollToContact(): void {
+    const activeElement = document.activeElement;
+
+    if (activeElement instanceof HTMLElement) {
+      activeElement.blur();
+    }
+
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   }

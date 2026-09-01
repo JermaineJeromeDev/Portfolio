@@ -4,7 +4,7 @@
 .home-layout {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    overflow: clip;
     background-color: var(--bg-dark-3);
 
     &__footer-shadow {

@@ -52,6 +52,10 @@ export class HeaderComponent {
   if (typeof window === 'undefined') {
     return;
   }
+  const activeElement = document.activeElement;
+  if (activeElement instanceof HTMLElement) {
+    activeElement.blur();
+  }
   this.isMenuOpen = false;
   setTimeout(() => {
     const target = document.getElementById(fragment);
@@ -62,6 +66,10 @@ export class HeaderComponent {
 }
 
   scrollToTop(): void {
+    const activeElement = document.activeElement;
+    if (activeElement instanceof HTMLElement) {
+      activeElement.blur();
+    }
     window.scrollTo({
       top: 0,
       behavior: 'smooth'

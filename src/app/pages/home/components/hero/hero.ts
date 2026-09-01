@@ -15,9 +15,18 @@ export class HeroComponent {
       return;
     }
 
+    this.blurActiveElement();
     document.getElementById('contact')?.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
+  }
+
+  private blurActiveElement(): void {
+    const activeElement = document.activeElement;
+
+    if (activeElement instanceof HTMLElement) {
+      activeElement.blur();
+    }
   }
 }
