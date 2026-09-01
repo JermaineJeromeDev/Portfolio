@@ -70,9 +70,9 @@
         "PRIVACY_AFTER": " and agree to the processing of my data as outlined.",
         "SUBMIT_BTN": "Send message :)",
         "SUCCESS_MSG": "Message sent successfully!",
-        "ERROR_NAME": "Please enter your name.",
-        "ERROR_EMAIL": "Please enter a valid email address.",
-        "ERROR_MESSAGE": "Please enter a message.",
+        "ERROR_NAME": "Your name is required.",
+        "ERROR_EMAIL": "Your email is required.",
+        "ERROR_MESSAGE": "Your message is empty.",
         "ERROR_PRIVACY": "Please accept the privacy policy."
     }
 }

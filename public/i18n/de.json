@@ -68,9 +68,9 @@
         "PRIVACY_AFTER": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
         "SUBMIT_BTN": "Nachricht senden :)",
         "SUCCESS_MSG": "Nachricht erfolgreich gesendet!",
-        "ERROR_NAME": "Bitte geben Sie Ihren Namen ein.",
-        "ERROR_EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-        "ERROR_MESSAGE": "Bitte geben Sie eine Nachricht ein.",
+        "ERROR_NAME": "Ihr Name ist erforderlich.",
+        "ERROR_EMAIL": "Ihre E-Mail ist erforderlich.",
+        "ERROR_MESSAGE": "Ihre Nachricht ist leer.",
         "ERROR_PRIVACY": "Bitte akzeptieren Sie die Datenschutzrichtlinie."
     }
 }
