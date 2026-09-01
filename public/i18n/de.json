@@ -57,7 +57,9 @@
     "CONTACT": {
         "TITLE": "Kontakt",
         "TEXT": "Hast du ein Problem zu lösen?",
-        "DESCRIPTION": "Ich suche eine Position in einem Entwicklungsteam als Fullstack-Entwickler, bin aber auch offen für die Unterstützung bei herausfordernden Projekten. Ich entwickle Software durchdacht von der Datenbank bis zur Benutzeroberfläche, mit Fokus auf zuverlässige, wartbare Lösungen, die von Anfang an Mehrwert liefern. Wenn Sie jemanden suchen, der vorausschauend denkt, technische Herausforderungen zuverlässig löst und die Verantwortung für das Endprodukt übernimmt – lassen Sie uns sprechen!",
+        "DESCRIPTION_1": "Ich suche eine Position in einem Entwicklungsteam als Fullstack-Entwickler, bin aber auch offen für die Unterstützung bei herausfordernden Projekten.",
+        "DESCRIPTION_2": "Ich entwickle Software durchdacht von der Datenbank bis zur Benutzeroberfläche, mit Fokus auf zuverlässige, wartbare Lösungen, die von Anfang an Mehrwert liefern.",
+        "DESCRIPTION_3": "Wenn Sie jemanden suchen, der vorausschauend denkt, technische Herausforderungen zuverlässig löst und die Verantwortung für das Endprodukt übernimmt, lassen Sie uns sprechen!",
         "SUBTEXT_START": "Brauchst du einen Fullstack Entwickler?",
         "SUBTEXT_HIGHLIGHT": "Kontaktiere mich!",
         "PLACEHOLDER_NAME": "Dein Name",

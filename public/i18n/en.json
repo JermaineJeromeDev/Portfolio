@@ -59,7 +59,9 @@
     "CONTACT": {
         "TITLE": "Contact",
         "TEXT": "Got a problem to solve?",
-        "DESCRIPTION": "I’m looking to join a development team as a Fullstack Developer and am also open to challenging project support.\n\nI build software thoughtfully from the database to the user interface, with a focus on reliable, maintainable solutions that deliver value from day one.\n\nIf you’re looking for someone who thinks ahead, solves technical challenges reliably, and takes ownership of the end product, let’s talk!",
+        "DESCRIPTION_1": "I’m looking to join a development team as a Fullstack Developer and am also open to challenging project support.",
+        "DESCRIPTION_2": "I build software thoughtfully from the database to the user interface, with a focus on reliable, maintainable solutions that deliver value from day one.",
+        "DESCRIPTION_3": "If you’re looking for someone who thinks ahead, solves technical challenges reliably, and takes ownership of the end product, let’s talk!",
         "SUBTEXT_START": "Need a Fullstack developer?",
         "SUBTEXT_HIGHLIGHT": "Contact me!",
         "PLACEHOLDER_NAME": "Your name",

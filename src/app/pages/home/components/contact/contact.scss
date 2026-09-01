@@ -116,11 +116,16 @@
         font-size: 16px; 
         line-height: 120%;
         color: var(--txt-primary);
-        white-space: pre-line;
+    }
+
+    &__description {
+        @include flexbox(column, flex-start, flex-start, 12px);
+        margin-left: 64px;
     }
 
     &__subtext {
         margin: 0;
+        margin-left: 64px;
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 16px; 
@@ -413,6 +418,14 @@
             gap: 20px;
         }
 
+        &__description {
+            margin-left: 52px;
+        }
+
+        &__subtext {
+            margin-left: 52px;
+        }
+
         &__subheading-box {
             gap: 20px;
         }
@@ -428,6 +441,7 @@
 
         &__scroll-up {
             right: max(clamp(var(--space-lg), 5vw, var(--space-2xl)), calc(50% - 275px));
+            bottom: var(--space-lg);
         }
     }
 
@@ -463,6 +477,14 @@
 
         &__subheading-box {
             gap: 4px;
+        }
+
+        &__description {
+            margin-left: 36px;
+        }
+
+        &__subtext {
+            margin-left: 36px;
         }
 
         &__text-title {
