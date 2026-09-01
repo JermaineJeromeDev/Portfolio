@@ -32,8 +32,26 @@ export class ContactComponent {
     return /^(?=(?:.*\p{L}){2,})[\p{L}\p{M}' -]+$/u.test(name.trim());
   }
 
+  getNameErrorKey(name: string): string {
+    const trimmedName = name.trim();
+
+    if (!trimmedName) {
+      return 'CONTACT.ERROR_NAME_REQUIRED';
+    }
+
+    if (/\d/.test(trimmedName)) {
+      return 'CONTACT.ERROR_NAME_NUMBERS';
+    }
+
+    return 'CONTACT.ERROR_NAME_INVALID';
+  }
+
   isValidEmail(email: string): boolean {
     return /^(?=.{1,254}$)(?=.{1,64}@)[A-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+[A-Z]{2,63}$/i.test(email.trim());
+  }
+
+  getEmailErrorKey(email: string): string {
+    return email.trim() ? 'CONTACT.ERROR_EMAIL_INVALID' : 'CONTACT.ERROR_EMAIL_REQUIRED';
   }
 
   isValidMessage(message: string): boolean {

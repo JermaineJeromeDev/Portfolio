@@ -7,8 +7,13 @@
     width: 100%;
     background-color: transparent;
     padding-block: var(--space-4xl);
-    scroll-margin-top: 109px;
     isolation: isolate;
+
+    &__scroll-anchor {
+        position: absolute;
+        top: 96px;
+        left: 0;
+    }
 
     &__content {
         @include global_content_wrapper();
@@ -140,13 +145,19 @@
     &__form {
         max-width: 550px;
         width: 100%;
-        @include flexbox(column, flex-start, stretch, 32px); 
+        @include flexbox(column, flex-start, stretch, 0); 
     }
 
     &__field {
         width: 100%;
         position: relative;
-        @include flexbox(column, flex-start, stretch, 10px); 
+        @include flexbox(column, flex-start, stretch, 0);
+    }
+
+    &__field-error {
+        display: block;
+        height: 24px;
+        flex: 0 0 24px;
     }
 
     &__input {
@@ -206,7 +217,7 @@
     &__textarea-resize {
         position: absolute;
         right: 6px;
-        bottom: 6px;
+        bottom: 30px;
         width: 24px;
         height: 24px;
         border: 0;
@@ -243,6 +254,9 @@
     }
 
     &__error-msg {
+        position: absolute;
+        left: 0;
+        top: calc(100% - 17px);
         font-family: var(--font-family);
         font-weight: var(--fw-normal);
         font-style: normal;
@@ -253,9 +267,21 @@
         margin-top: -4px;
     }
 
+    &__field &__error-msg {
+        position: static;
+        margin-top: 0;
+    }
+
     &__privacy {
+        position: relative;
         width: 100%;
+        min-height: 49px;
         @include flexbox(column, flex-start, stretch, 12px); 
+    }
+
+    &__form-actions {
+        width: 100%;
+        @include flexbox(column, flex-start, stretch, 12px);
     }
 
     &__checkbox-label {
@@ -346,6 +372,8 @@
     }
 
     &__privacy-error {
+        top: auto;
+        bottom: 0;
         font-size: 14px;
     }
 
@@ -369,7 +397,7 @@
 
     &__scroll-up {
         position: absolute;
-        bottom: var(--space-xl);
+        bottom: var(--space-xs);
         right: max(clamp(var(--space-lg), 5vw, var(--space-2xl)), calc(50% - 552px));
         background: transparent;
         border: none;
@@ -435,7 +463,7 @@
         }
 
         &__form {
-            gap: 24px;
+            gap: 0;
             margin-inline: auto;
         }
 
@@ -447,6 +475,15 @@
 
     @media (max-width: 500px) {
         padding-block: var(--space-3xl);
+
+        &__field-error {
+            height: 48px;
+            flex-basis: 48px;
+        }
+
+        &__textarea-resize {
+            bottom: 54px;
+        }
 
         &__intro {
             gap: 16px;
@@ -494,7 +531,7 @@
         &__form {
             max-width: 340px;
             margin-inline: auto;
-            gap: 12px;
+            gap: 0;
         }
 
         &__input {

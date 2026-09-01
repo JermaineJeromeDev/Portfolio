@@ -1,4 +1,5 @@
-<section class="contact" id="contact" aria-labelledby="contact-title">
+<section class="contact" aria-labelledby="contact-title">
+    <div id="contact" class="contact__scroll-anchor" aria-hidden="true"></div>
     <div class="contact__content">
         <div class="contact__intro">
             <div class="contact__heading">
@@ -35,10 +36,12 @@
                         [attr.aria-invalid]="!isValidName(contactData.name) && nameInput.touched"
                         [class.contact__input--error]="!isValidName(contactData.name) && nameInput.touched"
                         [class.contact__input--valid]="isValidName(contactData.name) && nameInput.touched">
-                    @if (!isValidName(contactData.name) && nameInput.touched) {
-                    <span id="name-error" class="contact__error-msg" role="alert">{{ 'CONTACT.ERROR_NAME' | translate
-                        }}</span>
-                    }
+                    <span class="contact__field-error">
+                        @if (!isValidName(contactData.name) && nameInput.touched) {
+                        <span id="name-error" class="contact__error-msg" role="alert">{{
+                            getNameErrorKey(contactData.name) | translate }}</span>
+                        }
+                    </span>
                 </div>
 
                 <div class="contact__field">
@@ -49,10 +52,12 @@
                         [attr.aria-invalid]="!isValidEmail(contactData.email) && emailInput.touched"
                         [class.contact__input--error]="!isValidEmail(contactData.email) && emailInput.touched"
                         [class.contact__input--valid]="isValidEmail(contactData.email) && emailInput.touched">
-                    @if (!isValidEmail(contactData.email) && emailInput.touched) {
-                    <span id="email-error" class="contact__error-msg" role="alert">{{ 'CONTACT.ERROR_EMAIL' | translate
-                        }}</span>
-                    }
+                    <span class="contact__field-error">
+                        @if (!isValidEmail(contactData.email) && emailInput.touched) {
+                        <span id="email-error" class="contact__error-msg" role="alert">{{
+                            getEmailErrorKey(contactData.email) | translate }}</span>
+                        }
+                    </span>
                 </div>
 
                 <div class="contact__field">
@@ -68,45 +73,49 @@
                         (pointermove)="resizeMessage($event)" (pointerup)="stopMessageResize($event)"
                         (pointercancel)="stopMessageResize($event)" (keydown)="resizeMessageWithKeyboard($event)">
                     </button>
-                    @if (!isValidMessage(contactData.message) && messageInput.touched) {
-                    @if (isMessageEmpty(contactData.message)) {
-                    <span id="message-error" class="contact__error-msg" role="alert">{{
-                        'CONTACT.ERROR_MESSAGE_REQUIRED' | translate }}</span>
-                    } @else {
-                    <span id="message-error" class="contact__error-msg" role="alert">{{
-                        'CONTACT.ERROR_MESSAGE_MIN_LENGTH' | translate }}</span>
-                    }
-                    }
-                </div>
-
-                <div class="contact__privacy">
-                    <label class="contact__checkbox-label">
-                        <input type="checkbox" name="privacyAccepted" [(ngModel)]="contactData.privacyAccepted"
-                            #privacyInput="ngModel" required class="contact__checkbox"
-                            [attr.aria-describedby]="privacyInput.invalid && privacyInput.touched ? 'privacy-error' : null"
-                            [attr.aria-invalid]="privacyInput.invalid && privacyInput.touched">
-                        <span class="contact__checkbox-control" aria-hidden="true"></span>
-                        <span class="contact__privacy-text">
-                            <span class="contact__privacy-before">{{ 'CONTACT.PRIVACY_BEFORE' | translate }}</span>
-                            <span class="contact__privacy-link-wrapper">
-                                <a routerLink="/privacy" class="contact__privacy-link">{{ 'CONTACT.PRIVACY_LINK' |
-                                    translate }}</a>
-                            </span>
-                            <span class="contact__privacy-after">{{ 'CONTACT.PRIVACY_AFTER' | translate }}</span>
-                        </span>
-                    </label>
-                    @if (privacyInput.invalid && privacyInput.touched) {
-                    <span id="privacy-error" class="contact__error-msg contact__privacy-error" role="alert">
-                        {{ 'CONTACT.ERROR_PRIVACY' | translate }}
+                    <span class="contact__field-error">
+                        @if (!isValidMessage(contactData.message) && messageInput.touched) {
+                        @if (isMessageEmpty(contactData.message)) {
+                        <span id="message-error" class="contact__error-msg" role="alert">{{
+                            'CONTACT.ERROR_MESSAGE_REQUIRED' | translate }}</span>
+                        } @else {
+                        <span id="message-error" class="contact__error-msg" role="alert">{{
+                            'CONTACT.ERROR_MESSAGE_MIN_LENGTH' | translate }}</span>
+                        }
+                        }
                     </span>
-                    }
                 </div>
 
-                <div class="contact__submit-wrapper">
-                    <app-button type="submit" variant="primary" color="green"
-                        [disabled]="contactForm.invalid || !isValidName(contactData.name) || !isValidEmail(contactData.email) || !isValidMessage(contactData.message) || !contactData.privacyAccepted">
-                        {{ 'CONTACT.SUBMIT_BTN' | translate }}
-                    </app-button>
+                <div class="contact__form-actions">
+                    <div class="contact__privacy">
+                        <label class="contact__checkbox-label">
+                            <input type="checkbox" name="privacyAccepted" [(ngModel)]="contactData.privacyAccepted"
+                                #privacyInput="ngModel" required class="contact__checkbox"
+                                [attr.aria-describedby]="privacyInput.invalid && privacyInput.touched ? 'privacy-error' : null"
+                                [attr.aria-invalid]="privacyInput.invalid && privacyInput.touched">
+                            <span class="contact__checkbox-control" aria-hidden="true"></span>
+                            <span class="contact__privacy-text">
+                                <span class="contact__privacy-before">{{ 'CONTACT.PRIVACY_BEFORE' | translate }}</span>
+                                <span class="contact__privacy-link-wrapper">
+                                    <a routerLink="/privacy" class="contact__privacy-link">{{ 'CONTACT.PRIVACY_LINK' |
+                                        translate }}</a>
+                                </span>
+                                <span class="contact__privacy-after">{{ 'CONTACT.PRIVACY_AFTER' | translate }}</span>
+                            </span>
+                        </label>
+                        @if (privacyInput.invalid && privacyInput.touched) {
+                        <span id="privacy-error" class="contact__error-msg contact__privacy-error" role="alert">
+                            {{ 'CONTACT.ERROR_PRIVACY' | translate }}
+                        </span>
+                        }
+                    </div>
+
+                    <div class="contact__submit-wrapper">
+                        <app-button type="submit" variant="primary" color="green"
+                            [disabled]="contactForm.invalid || !isValidName(contactData.name) || !isValidEmail(contactData.email) || !isValidMessage(contactData.message) || !contactData.privacyAccepted">
+                            {{ 'CONTACT.SUBMIT_BTN' | translate }}
+                        </app-button>
+                    </div>
                 </div>
 
                 @if (mailSent) {
