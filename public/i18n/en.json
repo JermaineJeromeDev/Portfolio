@@ -45,15 +45,15 @@
         "JOIN_DESC": "Task manager inspiried by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         "CODERR_DESC": "Freelancer platform with Django backend, API functionality, and seamless frontend integration.",
         "VIDEOFLIX_DESC": "Netflix-style streaming platform with secure auth, custom models, and video processing.",
-        "TESTIMONIAL_TEXT_1": "Michael really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
-        "TESTIMONIAL_NAME_1": "V. Schuster",
+        "TESTIMONIAL_TEXT_1": "Jérôme is a very versatile and competent colleague with an exceptionally broad range of expertise. What’s particularly impressive is how confidently he navigates different areas and quickly finds effective solutions, even for complex tasks. Thanks to his versatility and reliable nature, he is a true asset to any team.",
+        "TESTIMONIAL_NAME_1": "Magdalena Laurisch",
         "TESTIMONIAL_ROLE_1": "Team Partner",
-        "TESTIMONIAL_TEXT_2": "Michi was a top team colleague at DA. His positive commitment and willingness to take on responsibility made a significant contribution to us achieving our goals.",
-        "TESTIMONIAL_NAME_2": "E.Eichinger",
+        "TESTIMONIAL_TEXT_2": "Collaborating with Jérôme on the Join project was defined by reliability, deep engagement, and mutual respect. Jérôme constructively contributed his own ideas, took full ownership of the agreed tasks, and actively participated in shared decisions. Even during challenges, we could completely rely on each other and develop fitting solutions together. This made Jérôme a valuable asset to our team.",
+        "TESTIMONIAL_NAME_2": "Denis Nolting",
         "TESTIMONIAL_ROLE_2": "Team Partner",
-        "TESTIMONIAL_TEXT_3": "It was a great pleasure to work with Michael. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.",
-        "TESTIMONIAL_NAME_3": "I.Nuber",
-        "TESTIMONIAL_ROLE_3": "Frontend Engineer"
+        "TESTIMONIAL_TEXT_3": "Jérôme supported me time and again throughout our group work. Developing solutions together felt easy with him because he approached challenges with an open, constructive, and goal-oriented mindset. His approach not only made the collaboration smoother but truly enriched it. I am glad to have had the opportunity to work with him.",
+        "TESTIMONIAL_NAME_3": "Jonathan Janke",
+        "TESTIMONIAL_ROLE_3": "Team Partner"
     },
 
     "CONTACT": {
