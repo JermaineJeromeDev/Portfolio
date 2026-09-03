@@ -277,10 +277,14 @@
     }
 
     &__privacy {
-        position: relative;
         width: 100%;
-        min-height: 49px;
-        @include flexbox(column, flex-start, stretch, 12px); 
+        @include flexbox(column, flex-start, stretch, 0); 
+    }
+
+    &__privacy-error-slot {
+        display: block;
+        height: 24px;
+        flex: 0 0 24px;
     }
 
     &__form-actions {
@@ -290,7 +294,7 @@
 
     &__checkbox-label {
         position: relative;
-        @include flexbox(row, flex-start, center, 8px); 
+        @include flexbox(row, flex-start, center, 10px); 
         cursor: pointer;
     }
 
@@ -353,7 +357,7 @@
         color: var(--txt-primary);
         line-height: 120%;
         letter-spacing: 0;
-        white-space: nowrap;
+        min-width: 0;
     }
 
     &__privacy-link-wrapper {
@@ -376,8 +380,8 @@
     }
 
     &__privacy-error {
-        top: auto;
-        bottom: 0;
+        position: static;
+        margin-top: 0;
         font-size: 14px;
     }
 
@@ -426,7 +430,7 @@
         }
 
         @include respond-to(desktop) {
-            bottom: 64px;
+            bottom: 80px;
         }
     }
 
@@ -469,6 +473,11 @@
         padding-block: var(--space-3xl);
 
         &__field-error {
+            height: 48px;
+            flex-basis: 48px;
+        }
+
+        &__privacy-error-slot {
             height: 48px;
             flex-basis: 48px;
         }

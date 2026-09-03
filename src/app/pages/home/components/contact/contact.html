@@ -103,11 +103,13 @@
                                 <span class="contact__privacy-after">{{ 'CONTACT.PRIVACY_AFTER' | translate }}</span>
                             </span>
                         </label>
-                        @if (privacyInput.invalid && privacyInput.touched) {
-                        <span id="privacy-error" class="contact__error-msg contact__privacy-error" role="alert">
-                            {{ 'CONTACT.ERROR_PRIVACY' | translate }}
+                        <span class="contact__privacy-error-slot">
+                            @if (privacyInput.invalid && privacyInput.touched) {
+                            <span id="privacy-error" class="contact__error-msg contact__privacy-error" role="alert">
+                                {{ 'CONTACT.ERROR_PRIVACY' | translate }}
+                            </span>
+                            }
                         </span>
-                        }
                     </div>
 
                     <div class="contact__submit-wrapper">
