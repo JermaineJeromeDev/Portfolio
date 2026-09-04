@@ -403,10 +403,14 @@
         }
     }
 
+    &__scroll-up-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: var(--space-2xl);
+    }
+
     &__scroll-up {
-        position: absolute;
-        bottom: var(--space-xs);
-        right: max(clamp(var(--space-lg), 5vw, var(--space-2xl)), calc(50% - 552px));
         background: transparent;
         border: none;
         padding: 0;
@@ -429,9 +433,6 @@
             svg path { stroke: var(--clr-primary-1); }
         }
 
-        @include respond-to(desktop) {
-            bottom: 80px;
-        }
     }
 
     @media (min-width: 501px) and (max-width: 900px) {
@@ -469,8 +470,10 @@
         }
 
         &__scroll-up {
-            right: max(clamp(var(--space-lg), 5vw, var(--space-2xl)), calc(50% - 275px));
-            bottom: var(--space-lg);
+            &-wrapper {
+                max-width: 550px;
+                margin-inline: auto;
+            }
         }
     }
 
@@ -574,7 +577,10 @@
         }
 
         &__scroll-up {
-            right: max(clamp(var(--space-lg), 5vw, var(--space-2xl)), calc(50% - 170px));
+            &-wrapper {
+                max-width: 340px;
+                margin-inline: auto;
+            }
         }
     }
 }
