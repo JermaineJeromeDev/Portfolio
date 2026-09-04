@@ -51,5 +51,6 @@
     </div>
 
     <app-menu-overlay [isOpen]="isMenuOpen" [currentLang]="currentLang" (menuClosed)="isMenuOpen = false"
-        (languageChanged)="changeLanguage($event)"></app-menu-overlay>
+        (languageChanged)="changeLanguage($event)"
+        (sectionSelected)="scrollToFragmentWithOffset($event)"></app-menu-overlay>
 </header>

@@ -9,10 +9,6 @@
     padding-block: var(--space-4xl);
     overflow: visible;
 
-    // @media (max-width: 1380px) {
-    //     padding-top: 0;
-    // }
-
     &__scroll-anchor {
         position: absolute;
         left: 0;
@@ -25,6 +21,7 @@
         @include respond-to(tbt) { top: -20px; }
         @include respond-to(md) { top: -50px; }
         @include respond-to(sm) { top: 60px; }
+        @include respond-to(phone) { top: 50px; }
         
     }
 

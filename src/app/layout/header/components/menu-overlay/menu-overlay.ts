@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LogoComponent } from './../../../../components/logo/logo';
 
 @Component({
   selector: 'app-menu-overlay',
   standalone: true,
-  imports: [CommonModule, LogoComponent, TranslatePipe, RouterLink, RouterLinkActive],
+  imports: [CommonModule, LogoComponent, TranslatePipe],
   templateUrl: './menu-overlay.html',
   styleUrls: ['./menu-overlay.scss']
 })
@@ -16,9 +15,16 @@ export class MenuOverlayComponent {
   @Input() currentLang = 'EN';
   @Output() menuClosed = new EventEmitter<void>();
   @Output() languageChanged = new EventEmitter<string>();
+  @Output() sectionSelected = new EventEmitter<string>();
 
   closeMenu(): void {
     this.menuClosed.emit();
+  }
+
+  selectSection(fragment: string, event: MouseEvent): void {
+    event.preventDefault();
+    this.sectionSelected.emit(fragment);
+    this.closeMenu();
   }
 
   selectLanguage(lang: string): void {
