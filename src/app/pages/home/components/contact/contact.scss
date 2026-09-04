@@ -20,8 +20,9 @@
     }
 
     &__content {
-        @include global_content_wrapper();
+        width: min(calc(100% - clamp(3rem, 14vw, 12.5rem)), 1240px);
         margin-inline: auto;
+        box-sizing: border-box;
     }
 
     &__intro {
@@ -66,7 +67,6 @@
 
     &__container {
         width: 100%;
-        max-width: 1104px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 550px);
@@ -435,6 +435,11 @@
     }
 
     @media (min-width: 501px) and (max-width: 900px) {
+        &__content {
+            width: 100%;
+            padding-inline: clamp(var(--space-lg), 5vw, var(--space-2xl));
+        }
+
         padding-top: 140px;
 
         &__title {
@@ -470,6 +475,11 @@
     }
 
     @media (max-width: 500px) {
+        &__content {
+            width: 100%;
+            padding-inline: clamp(var(--space-lg), 5vw, var(--space-2xl));
+        }
+
         &__field-error {
             height: 48px;
             flex-basis: 48px;

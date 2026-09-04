@@ -2,12 +2,13 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ScreenRotateComponent } from './components/screen-rotate/screen-rotate';
+import { Footer } from './layout/footer/footer';
 import { HeaderComponent } from './layout/header/header';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, ScreenRotateComponent],
+  imports: [RouterOutlet, HeaderComponent, Footer, ScreenRotateComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
