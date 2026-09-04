@@ -34,6 +34,8 @@
         @media (max-width: $breakpoint-laptop) { @content; }
     } @else if $size == tbt {
         @media (max-width: $breakpoint-tbt) { @content; }
+    } @else if $size == tablet-wide {
+        @media (max-width: $breakpoint-tablet-wide) { @content; }
     } @else if $size == md {
         @media (max-width: $breakpoint-md) { @content; }
     } @else if $size == sm {
@@ -76,6 +78,8 @@
         @media (min-width: $breakpoint-phone-narrow) { @content; }
     } @else if $size == tbt {
         @media (min-width: $breakpoint-tbt) { @content; }
+    } @else if $size == tablet-wide {
+        @media (min-width: $breakpoint-tablet-wide) { @content; }
     } @else if $size == phone-mini {
         @media (min-width: $breakpoint-phone-mini) { @content; }
     } @else if $size == lg {

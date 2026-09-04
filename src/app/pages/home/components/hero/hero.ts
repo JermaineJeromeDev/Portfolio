@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../../components/button/button';
+import { SocialIconsComponent } from '../../../../components/social-icons/social-icons';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [ButtonComponent, TranslatePipe],
+  imports: [ButtonComponent, SocialIconsComponent, TranslatePipe],
   templateUrl: './hero.html',
   styleUrls: ['./hero.scss'],
 })

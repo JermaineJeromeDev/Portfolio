@@ -252,15 +252,15 @@
         }
     }
 
-    &__icons {
-        @include flexbox(row, flex-start, center, var(--space-md)); 
+    ::ng-deep .socials {
+        @include flexbox(row, flex-start, center, 42px); 
 
         @include respond-to(md) {
             gap: 42px; 
         }
     }
 
-    &__icon-link {
+    ::ng-deep .socials__link {
         transition: transform 0.2s ease-in-out;
         display: flex;
         align-items: center;
