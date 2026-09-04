@@ -41,6 +41,11 @@
         min-height: 35px;
     }
 
+    &__logo-container {
+        @include flexbox(row, flex-start, center, var(--space-md));
+        flex-shrink: 0;
+    }
+
     &__logo {
         cursor: pointer;
         transition: transform 0.3s ease-out;
