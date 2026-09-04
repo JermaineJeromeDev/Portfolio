@@ -57,24 +57,31 @@
         @media (max-width: 1380px) {
             display: block;
             position: absolute;
-            z-index: 3; 
+            z-index: 3;
             left: 0;
             width: 100vw;
             height: auto;
             object-fit: cover;
             pointer-events: none;
-            bottom: 100px;
+            top: 320px;
         }
 
-        @include respond-to(laptop) { bottom: 250px; } // 1024px
-        @media (max-width: 912px) { top: 360px; }
-        @media (max-width: 834px) { top: 350px; }
-        @include respond-to(sm) { top: 450px; } // 576px
-        @include respond-to(phone-wide) { top: 400px; } // 430px
-        // @include respond-to(phone) { top: 400px; } // 414px
-        @include respond-to(phone-narrow) { top: 410px; } // 375px
-        @media (max-width: 344px) { top: 350px; } 
-        @include respond-to(phone-mini) { top: 300px; } // 320px
+        @media (min-width: 1025px) and (max-width: 1380px) and (orientation: landscape) {
+            top: 380px;
+        }
+
+        @include respond-to(laptop) { top: 380px; } 
+        @media (max-width: 912px) { top: 390px; } 
+        @media (max-width: 834px) { top: 410px; } 
+        @include respond-to(md) { top: 420px; } 
+        @include respond-to(sm) { top: 490px; } 
+        @include respond-to(phone-wide) { top: 460px; } 
+        @include respond-to(phone) { top: 450px; }
+        @include respond-to(phone-narrow) { top: 435px; } 
+        @media (max-width: 375px) { top: 430px; } 
+        @include respond-to(xsm) { top: 420px; } 
+        @media (max-width: 344px) { top: 410px; }  
+        @include respond-to(phone-mini) { top: 400px; } 
     }
 
     &__container {
