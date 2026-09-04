@@ -19,9 +19,16 @@
         @include respond-to(laptop) { top: -10px; }
         @media (max-width: 853px) { top: -15px; }
         @include respond-to(tbt) { top: -20px; }
-        @include respond-to(md) { top: -50px; }
-        @include respond-to(sm) { top: 60px; }
-        @include respond-to(phone) { top: 50px; }
+        @include respond-to(md) { top: 20px; }
+        @include respond-to(sm) { top: 150px; }
+        @include respond-to(phone-wide) { top: 150px; }
+        @include respond-to(phone-plus) { top: 150px; }
+        @include respond-to(phone) { top: 160px; }
+        @include respond-to(phone-narrow) { top: 180px; }
+
+        @media (min-width: 1025px) and (max-width: 1380px) and (orientation: landscape) {
+            top: 100px;
+        }
         
     }
 
@@ -63,10 +70,6 @@
             top: 320px;
         }
 
-        @media (min-width: 1025px) and (max-width: 1380px) and (orientation: landscape) {
-            top: 380px;
-        }
-
         @include respond-to(laptop) { top: 380px; } 
         @media (max-width: 912px) { top: 390px; } 
         @media (max-width: 834px) { top: 410px; } 
@@ -79,6 +82,10 @@
         @include respond-to(xsm) { top: 420px; } 
         @media (max-width: 344px) { top: 410px; }  
         @include respond-to(phone-mini) { top: 400px; } 
+
+        @media (min-width: 1025px) and (max-width: 1380px) and (orientation: landscape) {
+            top: 450px;
+        }
     }
 
     &__container {
@@ -120,23 +127,22 @@
         @include respond-to(phone-narrow) { margin-top: -40px; }
         @media (max-width: 344px) { margin-top: -60px; }
         @include respond-to(phone-mini) { margin-top: -80px; }
+
+        @media (min-width: 1025px) and (max-width: 1380px) and (orientation: landscape) {
+            margin-top: 96px;
+        }
     }
 
     &__title {
         font-family: var(--font-family);
         font-weight: var(--fw-bold);
-        font-size: clamp(2.5rem, 5vw, var(--fs-section-title)); 
+        font-size: var(--fs-section-title-responsive);
         line-height: var(--line-height-tight); 
         color: var(--txt-primary);
         margin-bottom: var(--space-xl);
 
         @media (max-width: 1380px) {
-            font-size: clamp(2.5rem, 10vw, 3.75rem);
             margin-bottom: clamp(var(--space-lg), 4vw, var(--space-xl));
-        }
-
-        @media (max-width: 375px) {
-            font-size: clamp(2.5rem, 12vw, 3.25rem);
         }
     }
 

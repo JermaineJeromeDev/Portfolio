@@ -15,13 +15,12 @@
         left: 0;
         top: 80px; 
 
-        @include respond-to(laptop) {
-            top: 75px; 
-        }
-
-        @include respond-to(md) {
-            top: -10px; 
-        }
+        @include respond-to(laptop) { top: 75px; }
+        @include respond-to(md) { top: 125px; }
+        @include respond-to(phone-wide) { top: 120px; }
+        @include respond-to(phone-plus) { top: 120px; }
+        @include respond-to(phone) { top: 110px; }
+        @include respond-to(phone-narrow) { top: 110px; }
     }
 
     &__intro {
@@ -66,7 +65,7 @@
     &__title {
         margin: 0;
         font-family: var(--font-family);
-        font-size: clamp(2.5rem, 1.07rem + 7.14vw, 5.625rem);
+        font-size: var(--fs-section-title-responsive);
         font-weight: var(--fw-bold);
         line-height: 120%;
         letter-spacing: 0;
@@ -392,7 +391,6 @@
             }
 
             &__title {
-                font-size: 45px;
                 font-weight: var(--fw-bold);
                 line-height: 120%;
                 letter-spacing: 0;

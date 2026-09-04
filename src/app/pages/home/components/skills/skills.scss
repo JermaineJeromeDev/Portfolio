@@ -16,6 +16,18 @@
         top: 70px; 
 
         @include respond-to(desktop) { top: -26px; }
+        @include respond-to(laptop) { top: 100px; }
+        @include respond-to(tablet-wide) { top: 40px; }
+        @include respond-to(tbt) { top: 90px; }
+        @include respond-to(md) { top: 125px; }
+        @include respond-to(phone-wide) { top: 120px; }
+        @include respond-to(phone-plus) { top: 120px; }
+        @include respond-to(phone) { top: 120px; }
+        @include respond-to(phone-narrow) { top: 120px; }
+
+        @media (min-width: 1025px) and (max-width: 1380px) and (orientation: landscape) {
+            top: 80px;
+        }
     }
 
     @include respond-to(desktop) {
@@ -509,7 +521,7 @@
     &__title {
         font-family: var(--font-family);
         font-weight: var(--fw-bold);
-        font-size: clamp(2rem, 1rem + 5.56vw, var(--fs-hero-title));
+        font-size: var(--fs-section-title-responsive);
         line-height: var(--line-height-tight); 
         color: var(--txt-primary);
         margin: 0;

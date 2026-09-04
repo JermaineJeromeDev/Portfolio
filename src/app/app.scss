@@ -5,7 +5,8 @@
 
 @media (max-width: 768px) and (max-height: 622px) and (orientation: landscape) {
 	app-header,
-	main {
+	main,
+	app-footer {
 		display: none;
 	}
 }
