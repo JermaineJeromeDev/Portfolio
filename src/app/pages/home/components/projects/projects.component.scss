@@ -6,14 +6,13 @@
     position: relative;
     z-index: 3;
     margin-inline: auto;
-    padding-block: var(--space-xl);
+    padding-bottom: var(--space-4xl);
     isolation: isolate;
-    padding-top: clamp(4.5rem, 8vw, 7rem);
     
     &__scroll-anchor {
         position: absolute;
         left: 0;
-        top: 96px; 
+        top: 80px; 
 
         @include respond-to(laptop) {
             top: 75px; 

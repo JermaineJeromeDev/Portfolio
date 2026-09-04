@@ -6,7 +6,7 @@
     z-index: 3;
     width: 100%;
     background-color: transparent;
-    padding-block: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
     isolation: isolate;
 
     &__scroll-anchor {
@@ -470,8 +470,6 @@
     }
 
     @media (max-width: 500px) {
-        padding-block: var(--space-3xl);
-
         &__field-error {
             height: 48px;
             flex-basis: 48px;

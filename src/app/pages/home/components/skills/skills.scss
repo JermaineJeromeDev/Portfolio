@@ -6,32 +6,19 @@
     z-index: 3;
     width: 100%;
     height: auto;
+    padding-bottom: var(--space-4xl);
     overflow: visible;
 
     &__scroll-anchor {
         position: absolute;
         left: 0;
-        top: -30px; 
+        top: 70px; 
 
         @include respond-to(desktop) { top: -26px; }
-        @include respond-to(laptop) { top: 0; }
-        @include respond-to(phone-wide) { top: -30px; }
     }
 
     @include respond-to(desktop) {
-        @include flexbox(row, space-between, flex-start, var(--space-xl));
-    }
-
-    @include respond-to(lg) {
-        padding-top: 8px;
-    }
-
-    @include respond-to(md) {
-        padding-top: 85px;
-    }
-
-    @include respond-to(phone-wide) {
-        padding-top: 64px;
+        @include flexbox(row, space-between, flex-start, var(--space-4xl));
     }
 
     &__container {
