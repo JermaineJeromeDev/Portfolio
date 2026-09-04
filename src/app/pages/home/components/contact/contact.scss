@@ -72,7 +72,7 @@
         grid-template-columns: minmax(0, 1fr) minmax(0, 550px);
         gap: clamp(3rem, 8vw, 6.25rem);
 
-        @media (max-width: 900px) {
+        @include respond-to(laptop) {
             @include flexbox(column, flex-start, stretch, var(--space-3xl));
         }
     }
@@ -80,6 +80,12 @@
     &__info {
         max-width: 454px;
         @include flexbox(column, flex-start, flex-start, clamp(20px, 2vw, 24px)); 
+
+        @include respond-to(laptop) {
+            width: 100%;
+            max-width: 550px;
+            margin-inline: auto;
+        }
     }
 
     &__subheading-box {
@@ -150,6 +156,10 @@
         max-width: 550px;
         width: 100%;
         @include flexbox(column, flex-start, stretch, 0); 
+
+        @include respond-to(laptop) {
+            margin-inline: auto;
+        }
     }
 
     &__field {
@@ -408,6 +418,11 @@
         justify-content: flex-end;
         width: 100%;
         margin-top: var(--space-2xl);
+
+        @include respond-to(laptop) {
+            max-width: 550px;
+            margin-inline: auto;
+        }
     }
 
     &__scroll-up {
