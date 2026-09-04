@@ -68,5 +68,12 @@
         bottom: -300px;       
         right: -250px;        
         opacity: 0.9;  
+
+        @include respond-to(phone-wide) {
+            width: 700px;
+            bottom: 0;
+            left: 105px;
+            opacity: 0.8;
+        }
     }
 }
