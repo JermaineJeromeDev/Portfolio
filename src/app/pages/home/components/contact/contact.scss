@@ -407,6 +407,15 @@
         text-align: center;
     }
 
+    &__success-toast {
+        margin-top: 12px;
+        color: var(--clr-primary-1);
+        font-family: var(--font-family);
+        font-size: var(--fs-sm);
+        line-height: var(--line-height-tight);
+        text-align: center;
+    }
+
     &__submit-wrapper {
         width: 100%;
         @include flexbox(row, center, center, 0);

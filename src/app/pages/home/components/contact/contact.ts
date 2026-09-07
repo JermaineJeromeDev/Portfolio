@@ -16,7 +16,7 @@ import { ButtonComponent } from '../../../../components/button/button';
 })
 export class ContactComponent {
   private readonly http = inject(HttpClient);
-  private readonly formspreeEndpoint = 'https://formspree.io/f/x1jepgon';
+  private readonly formspreeEndpoint = 'https://formspree.io/f/xljepgon';
   readonly messageHeight = signal<number | null>(null);
   private readonly minimumMessageHeight = 202;
   private messageResizeStartY = 0;
@@ -34,12 +34,16 @@ export class ContactComponent {
   isSubmitting = false;
   submitError = false;
 
-  isValidName(name: string): boolean {
-    return /^(?=(?:.*\p{L}){2,})[\p{L}\p{M}' -]+$/u.test(name.trim());
+  private normalize(value: string | null | undefined): string {
+    return value?.trim() ?? '';
   }
 
-  getNameErrorKey(name: string): string {
-    const trimmedName = name.trim();
+  isValidName(name: string | null | undefined): boolean {
+    return /^(?=(?:.*\p{L}){2,})[\p{L}\p{M}' -]+$/u.test(this.normalize(name));
+  }
+
+  getNameErrorKey(name: string | null | undefined): string {
+    const trimmedName = this.normalize(name);
 
     if (!trimmedName) {
       return 'CONTACT.ERROR_NAME_REQUIRED';
@@ -52,20 +56,20 @@ export class ContactComponent {
     return 'CONTACT.ERROR_NAME_INVALID';
   }
 
-  isValidEmail(email: string): boolean {
-    return /^(?=.{1,254}$)(?=.{1,64}@)[A-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+[A-Z]{2,63}$/i.test(email.trim());
+  isValidEmail(email: string | null | undefined): boolean {
+    return /^(?=.{1,254}$)(?=.{1,64}@)[A-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+[A-Z]{2,63}$/i.test(this.normalize(email));
   }
 
-  getEmailErrorKey(email: string): string {
-    return email.trim() ? 'CONTACT.ERROR_EMAIL_INVALID' : 'CONTACT.ERROR_EMAIL_REQUIRED';
+  getEmailErrorKey(email: string | null | undefined): string {
+    return this.normalize(email) ? 'CONTACT.ERROR_EMAIL_INVALID' : 'CONTACT.ERROR_EMAIL_REQUIRED';
   }
 
-  isValidMessage(message: string): boolean {
-    return message.trim().length >= 10;
+  isValidMessage(message: string | null | undefined): boolean {
+    return this.normalize(message).length >= 10;
   }
 
-  isMessageEmpty(message: string): boolean {
-    return message.trim().length === 0;
+  isMessageEmpty(message: string | null | undefined): boolean {
+    return this.normalize(message).length === 0;
   }
 
   startMessageResize(event: PointerEvent, textarea: HTMLTextAreaElement): void {
@@ -123,17 +127,22 @@ export class ContactComponent {
 
       try {
         await firstValueFrom(this.http.post(this.formspreeEndpoint, {
-          name: this.contactData.name.trim(),
-          email: this.contactData.email.trim(),
-          message: this.contactData.message.trim(),
+          name: this.normalize(this.contactData.name),
+          email: this.normalize(this.contactData.email),
+          message: this.normalize(this.contactData.message),
           privacyAccepted: this.contactData.privacyAccepted,
         }, {
           headers: { Accept: 'application/json' },
         }));
 
         this.mailSent = true;
-        form.resetForm();
-        this.contactData.privacyAccepted = false;
+        this.contactData = {
+          name: '',
+          email: '',
+          message: '',
+          privacyAccepted: false,
+        };
+        form.resetForm(this.contactData);
 
         setTimeout(() => this.mailSent = false, 4000);
       } catch {
