@@ -1,1 +1,89 @@
-<p>legal-notice works!</p>
+<div class="legal content-wrapper">
+    <header class="legal__intro">
+        <div class="legal__heading">
+            <span class="legal__divider" aria-hidden="true"></span>
+            <div class="legal__title-box">
+                <h1 class="legal__title">{{ 'LEGAL.TITLE' | translate }}</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="legal__main-content">
+        <section class="legal__section legal__section--imprint">
+            <h2 class="legal__subtitle legal__subtitle--imprint">{{ 'LEGAL.IMPRINT' | translate }}</h2>
+            <ul class="legal__list">
+                <li>{{ 'LEGAL.STUDENT_NAMES' | translate }}</li>
+                <li>{{ 'LEGAL.ADDRESS' | translate }}</li>
+                <li>{{ 'LEGAL.POSTCODE' | translate }}</li>
+            </ul>
+
+            <div class="legal__sub-block">
+                <h3 class="legal__mini-title">{{ 'LEGAL.EXPLORING_BOARD' | translate }}</h3>
+                <p class="legal__text">{{ 'LEGAL.EMAIL' | translate }}</p>
+            </div>
+        </section>
+
+        <section class="legal__section">
+            <h2 class="legal__subtitle">{{ 'LEGAL.ACCEPTANCE_TITLE' | translate }}</h2>
+            <p class="legal__text">
+                {{ 'LEGAL.ACCEPTANCE_BEFORE' | translate }} <span class="legal__highlight">Portfolio</span>
+                {{ 'LEGAL.ACCEPTANCE_AFTER' | translate }}
+            </p>
+        </section>
+
+        <section class="legal__section">
+            <h2 class="legal__subtitle">{{ 'LEGAL.SCOPE_TITLE' | translate }}</h2>
+            <p class="legal__text">
+                <span class="legal__highlight">Portfolio</span> {{ 'LEGAL.SCOPE_BEFORE_PRODUCT' | translate }}
+                <span class="legal__highlight">Developer Akademie GmbH</span>{{ 'LEGAL.SCOPE_AFTER_COMPANY' | translate
+                }}
+            </p>
+            <p class="legal__text">
+                {{ 'LEGAL.SCOPE_DESIGN_BEFORE' | translate }} <span class="legal__highlight">Portfolio</span>
+                {{ 'LEGAL.SCOPE_DESIGN_MIDDLE' | translate }}
+                <span class="legal__highlight">Developer Akademie GmbH</span>{{ 'LEGAL.SCOPE_DESIGN_AFTER_COMPANY' |
+                translate }}
+            </p>
+        </section>
+
+        <section class="legal__section">
+            <h2 class="legal__subtitle">{{ 'LEGAL.PROPRIETARY_TITLE' | translate }}</h2>
+            <p class="legal__text">
+                {{ 'LEGAL.PROPRIETARY_BEFORE_COMPANY' | translate }}
+                <span class="legal__highlight">Developer Akademie GmbH</span>{{ 'LEGAL.PROPRIETARY_MIDDLE' | translate
+                }}
+                <span class="legal__highlight">Portfolio</span>{{ 'LEGAL.PROPRIETARY_AFTER_PRODUCT' | translate }}
+            </p>
+        </section>
+
+        <section class="legal__section">
+            <h2 class="legal__subtitle">{{ 'LEGAL.USE_TITLE' | translate }}</h2>
+            <p class="legal__text">
+                <span class="legal__highlight">Portfolio</span> {{ 'LEGAL.USE_BEFORE_PRODUCT' | translate }}
+                <span class="legal__highlight">Portfolio</span> {{ 'LEGAL.USE_AFTER_PRODUCT' | translate }}
+                <span class="legal__highlight">Portfolio</span>.
+            </p>
+        </section>
+
+        <section class="legal__section">
+            <h2 class="legal__subtitle">{{ 'LEGAL.DISCLAIMER_TITLE' | translate }}</h2>
+            <p class="legal__text">
+                <span class="legal__highlight">Portfolio</span> {{ 'LEGAL.DISCLAIMER_BEFORE_PRODUCT' | translate }}
+                <span class="legal__highlight">Developer Akademie</span>{{ 'LEGAL.DISCLAIMER_AFTER_COMPANY' | translate
+                }}
+                <span class="legal__highlight">Portfolio</span>.
+            </p>
+        </section>
+
+        <section class="legal__section">
+            <h2 class="legal__subtitle">{{ 'LEGAL.INDEMNITY_TITLE' | translate }}</h2>
+            <p class="legal__text">
+                {{ 'LEGAL.INDEMNITY_BEFORE_COMPANY' | translate }}
+                <span class="legal__highlight">Developer Akademie</span>{{ 'LEGAL.INDEMNITY_MIDDLE' | translate }}
+                <span class="legal__highlight">Portfolio</span> {{ 'LEGAL.INDEMNITY_AFTER_PRODUCT' | translate }}
+            </p>
+            <p class="legal__text">{{ 'LEGAL.CONTACT' | translate }}</p>
+            <p class="legal__text legal__date">{{ 'LEGAL.DATE' | translate }}</p>
+        </section>
+    </div>
+</div>
