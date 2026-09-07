@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../../components/button/button';
 
+/** Defines the data required to render a portfolio project. */
 interface Project {
   id: number;
   name: string;
@@ -13,6 +14,7 @@ interface Project {
   image: string;          
 }
 
+/** Defines the data required to render one testimonial slide. */
 interface Testimonial {
   textKey: string;
   nameKey: string;
@@ -21,6 +23,7 @@ interface Testimonial {
   mobileLineWidth: number;
 }
 
+/** Displays portfolio projects and provides testimonial navigation. */
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -55,16 +58,19 @@ export class ProjectsComponent {
     }
   ];
 
+  /** Opens an external project URL in a new browser tab. */
   openLink(url: string): void {
     if (typeof window !== 'undefined') {
       window.open(url, '_blank', 'noopener');
     }
   }
 
+  /** Selects a testimonial by its zero-based index. */
   setTestimonial(index: number): void {
     this.currentTestimonialIndex = index;
   }
 
+  /** Moves the testimonial carousel to the previous item. */
   prevTestimonial(): void {
     this.currentTestimonialIndex = 
       this.currentTestimonialIndex === 0 
@@ -72,6 +78,7 @@ export class ProjectsComponent {
         : this.currentTestimonialIndex - 1;
   }
 
+  /** Moves the testimonial carousel to the next item. */
   nextTestimonial(): void {
     this.currentTestimonialIndex = 
       this.currentTestimonialIndex === this.testimonials.length - 1 

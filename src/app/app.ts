@@ -6,6 +6,7 @@ import { SeoService } from './core/services/seo.service';
 import { Footer } from './layout/footer/footer';
 import { HeaderComponent } from './layout/header/header';
 
+/** Root component that initializes global language and SEO services. */
 @Component({
   selector: 'app-root',
   standalone: true,

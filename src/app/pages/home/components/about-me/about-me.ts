@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { IconComponent } from '../../../../components/icon/icon';
 
+/** Presents the About Me content and optimized profile imagery. */
 @Component({
   selector: 'app-about-me',
   standalone: true,

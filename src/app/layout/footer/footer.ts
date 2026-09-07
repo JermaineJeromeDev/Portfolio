@@ -4,6 +4,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { LogoComponent } from '../../components/logo/logo';
 import { SocialIconsComponent } from '../../components/social-icons/social-icons';
 
+/** Renders the site footer, legal link, and social navigation. */
 @Component({
   selector: 'app-footer',
   standalone: true, 
@@ -13,5 +14,6 @@ import { SocialIconsComponent } from '../../components/social-icons/social-icons
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Footer {
+  /** Current calendar year displayed in the copyright notice. */
   readonly currentYear: number = new Date().getFullYear();
 }

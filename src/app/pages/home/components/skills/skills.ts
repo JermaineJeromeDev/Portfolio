@@ -4,9 +4,11 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../../components/button/button';
 import { SkillsIconComponent } from './components/skills-icon/skills-icon';
 
+/** Describes one skill and its icon key. */
 interface Skill { name: string; icon: string; }
 export type SkillTab = 'frontend' | 'backend' | 'devsecops';
 
+/** Displays skill categories and their responsive interaction states. */
 @Component({
   selector: 'app-skills',
   standalone: true,
@@ -44,10 +46,12 @@ export class SkillsComponent {
     { name: 'DRF', icon: 'drf' }
   ];
 
+  /** Selects the skill category shown in the tab panel. */
   setActiveTab(tab: SkillTab): void {
     this.activeTab = tab;
   }
 
+  /** Scrolls to the contact section from the skills call to action. */
   scrollToContact(): void {
     const activeElement = document.activeElement;
 
@@ -59,6 +63,7 @@ export class SkillsComponent {
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   }
 
+  /** Toggles the mobile tooltip for the highlighted skill. */
   toggleTooltip(event: Event): void {
     if (window.innerWidth > 991) {
       return;
@@ -68,6 +73,7 @@ export class SkillsComponent {
     this.isTooltipVisible = !this.isTooltipVisible;
   }
 
+  /** Closes the mobile tooltip when the user clicks outside the highlighted skill. */
   @HostListener('document:click', ['$event'])
   closeTooltip(event?: Event): void {
     if (window.innerWidth > 991) {

@@ -3,6 +3,7 @@ import { Component, Inject, Input, OnChanges, PLATFORM_ID } from '@angular/core'
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SKILLS_ICON_DATA } from './skills-icon-data';
 
+/** Renders a skill icon from the centralized SVG data map. */
 @Component({
   selector: 'app-skills-icon',
   template: `
@@ -46,6 +47,7 @@ export class SkillsIconComponent implements OnChanges {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
+  /** Refreshes sanitized SVG content when the requested icon changes. */
   ngOnChanges(): void {
     if (!this.isBrowser) {
       return;

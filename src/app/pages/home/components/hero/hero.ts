@@ -11,6 +11,7 @@ import { SocialIconsComponent } from '../../../../components/social-icons/social
   styleUrls: ['./hero.scss'],
 })
 export class HeroComponent {
+  /** Scrolls to the contact section after removing focus from the active control. */
   scrollToContact(): void {
     if (typeof document === 'undefined') {
       return;
@@ -23,6 +24,7 @@ export class HeroComponent {
     });
   }
 
+  /** Removes focus from the active element before smooth scrolling. */
   private blurActiveElement(): void {
     const activeElement = document.activeElement;
 

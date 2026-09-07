@@ -7,6 +7,7 @@ import { LogoComponent } from '../../components/logo/logo';
 import { LanguageService, SupportedLanguage } from '../../core/services/language.service';
 import { MenuOverlayComponent } from './components/menu-overlay/menu-overlay';
 
+/** Provides desktop and mobile navigation plus language switching. */
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -24,25 +25,30 @@ export class HeaderComponent {
   constructor(private readonly languageService: LanguageService) {
   }
 
+  /** Returns the active language in the format used by the UI toggle. */
   get currentLang(): 'EN' | 'DE' {
     return this.languageService.currentLanguage().toUpperCase() as 'EN' | 'DE';
   }
 
+  /** Toggles the mobile navigation overlay. */
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  /** Closes the mobile menu when the viewport becomes desktop-sized. */
   onWindowResize(): void {
     if (window.innerWidth > this.mobileMenuMaxWidth && this.isMenuOpen) {
       this.isMenuOpen = false;
     }
   }
 
+  /** Changes the application language using the shared language service. */
   changeLanguage(lang: string): void {
     const language: SupportedLanguage = lang.toUpperCase() === 'DE' ? 'de' : 'en';
     this.languageService.setLanguage(language);
   }
 
+  /** Scrolls to a page fragment after closing the mobile menu. */
   scrollToFragmentWithOffset(fragment: string): void {
   if (typeof window === 'undefined') {
     return;
@@ -60,6 +66,7 @@ export class HeaderComponent {
   }, 200);
 }
 
+  /** Returns the page to the top and removes focus from the active control. */
   scrollToTop(): void {
     const activeElement = document.activeElement;
     if (activeElement instanceof HTMLElement) {

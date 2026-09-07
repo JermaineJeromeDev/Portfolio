@@ -17,16 +17,19 @@ export class MenuOverlayComponent {
   @Output() languageChanged = new EventEmitter<string>();
   @Output() sectionSelected = new EventEmitter<string>();
 
+  /** Closes the mobile navigation overlay. */
   closeMenu(): void {
     this.menuClosed.emit();
   }
 
+  /** Selects a page fragment and closes the overlay. */
   selectSection(fragment: string, event: MouseEvent): void {
     event.preventDefault();
     this.sectionSelected.emit(fragment);
     this.closeMenu();
   }
 
+  /** Emits a language selection and closes the overlay. */
   selectLanguage(lang: string): void {
     this.languageChanged.emit(lang); 
     this.closeMenu(); 

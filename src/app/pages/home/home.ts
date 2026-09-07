@@ -7,6 +7,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills';
 
 
+/** Composes the portfolio landing page sections. */
 @Component({
   selector: 'app-home',
   standalone: true,
