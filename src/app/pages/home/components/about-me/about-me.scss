@@ -40,7 +40,7 @@
         object-fit: contain; 
         left: 50%;
         transform: translateX(-50%);
-        top: 620px;
+        top: 640px;
         pointer-events: none;
         display: block;
 
@@ -230,7 +230,7 @@
             transform: scale(2.2);
             transform-origin: bottom center;
             filter: contrast(125%) brightness(90%) drop-shadow(0px 0px 40px rgba(151, 71, 255, 0.25));
-            top: 230px; 
+            top: 235px; 
 
             @media (max-width: 1380px) { 
                 position: absolute;
