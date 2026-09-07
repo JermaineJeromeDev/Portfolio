@@ -11,6 +11,12 @@
         "PORTFOLIO": "Portfolio",
         "CONTACT": "Kontakt"
     },
+    "SEO": {
+        "HOME_TITLE": "Jermaine Jérôme Bärwolf | Fullstack-Entwickler",
+        "HOME_DESCRIPTION": "Portfolio von Jermaine Jérôme Bärwolf, Fullstack-Entwickler aus Erfurt.",
+        "LEGAL_TITLE": "Impressum | Jermaine Jérôme Bärwolf",
+        "LEGAL_DESCRIPTION": "Impressum und Informationen zur Portfolio-Website."
+    },
     "ABOUT": {
     "TITLE": "Über mich",
     "INTRO_GREETING": "Hallo, ich bin Jermaine Jérôme!",

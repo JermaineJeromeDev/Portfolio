@@ -13,6 +13,13 @@
         "CONTACT": "Contact"
     },
 
+    "SEO": {
+        "HOME_TITLE": "Jermaine Jérôme Bärwolf | Fullstack Developer",
+        "HOME_DESCRIPTION": "Portfolio of Jermaine Jérôme Bärwolf, a Fullstack Developer from Erfurt.",
+        "LEGAL_TITLE": "Legal Notice | Jermaine Jérôme Bärwolf",
+        "LEGAL_DESCRIPTION": "Legal notice and information about the Portfolio website."
+    },
+
     "ABOUT": {
         "TITLE": "About me",
         "INTRO_GREETING": "Hey there, I'm Jermaine Jérôme!",
