@@ -72,6 +72,7 @@
         "PRIVACY_AFTER": " and agree to the processing of my data as outlined.",
         "SUBMIT_BTN": "Send message :)",
         "SUCCESS_MSG": "Message sent successfully!",
+        "ERROR_SUBMIT": "Oops! Something went wrong. Please try again later.",
         "ERROR_NAME_REQUIRED": "Your name is required.",
         "ERROR_NAME_NUMBERS": "Numbers are not allowed.",
         "ERROR_NAME_INVALID": "Please enter at least two letters.",

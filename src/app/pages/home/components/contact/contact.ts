@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { firstValueFrom } from 'rxjs';
 import { ButtonComponent } from '../../../../components/button/button';
 
 @Component({
@@ -13,6 +15,8 @@ import { ButtonComponent } from '../../../../components/button/button';
   styleUrls: ['./contact.scss']
 })
 export class ContactComponent {
+  private readonly http = inject(HttpClient);
+  private readonly formspreeEndpoint = 'https://formspree.io/f/x1jepgon';
   readonly messageHeight = signal<number | null>(null);
   private readonly minimumMessageHeight = 202;
   private messageResizeStartY = 0;
@@ -27,6 +31,8 @@ export class ContactComponent {
   };
 
   mailSent = false;
+  isSubmitting = false;
+  submitError = false;
 
   isValidName(name: string): boolean {
     return /^(?=(?:.*\p{L}){2,})[\p{L}\p{M}' -]+$/u.test(name.trim());
@@ -104,7 +110,7 @@ export class ContactComponent {
     this.messageHeight.set(Math.max(this.minimumMessageHeight, currentHeight + heightChange));
   }
 
-  onSubmit(form: NgForm): void {
+  async onSubmit(form: NgForm): Promise<void> {
     if (
       form.valid &&
       this.isValidName(this.contactData.name) &&
@@ -112,13 +118,29 @@ export class ContactComponent {
       this.isValidMessage(this.contactData.message) &&
       this.contactData.privacyAccepted
     ) {
-      console.log('Formular-Daten bereit für Backend:', this.contactData);
-      
-      this.mailSent = true;
-      form.resetForm();
-      this.contactData.privacyAccepted = false;
+      this.isSubmitting = true;
+      this.submitError = false;
 
-      setTimeout(() => this.mailSent = false, 4000);
+      try {
+        await firstValueFrom(this.http.post(this.formspreeEndpoint, {
+          name: this.contactData.name.trim(),
+          email: this.contactData.email.trim(),
+          message: this.contactData.message.trim(),
+          privacyAccepted: this.contactData.privacyAccepted,
+        }, {
+          headers: { Accept: 'application/json' },
+        }));
+
+        this.mailSent = true;
+        form.resetForm();
+        this.contactData.privacyAccepted = false;
+
+        setTimeout(() => this.mailSent = false, 4000);
+      } catch {
+        this.submitError = true;
+      } finally {
+        this.isSubmitting = false;
+      }
     }
   }
 

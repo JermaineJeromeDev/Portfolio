@@ -401,6 +401,12 @@
         font-size: 14px;
     }
 
+    &__submit-error {
+        position: static;
+        margin-top: 12px;
+        text-align: center;
+    }
+
     &__submit-wrapper {
         width: 100%;
         @include flexbox(row, center, center, 0);

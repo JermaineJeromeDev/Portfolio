@@ -70,6 +70,7 @@
         "PRIVACY_AFTER": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
         "SUBMIT_BTN": "Nachricht senden :)",
         "SUCCESS_MSG": "Nachricht erfolgreich gesendet!",
+        "ERROR_SUBMIT": "Ups! Etwas ist schiefgelaufen. Bitte versuche es später noch einmal.",
         "ERROR_NAME_REQUIRED": "Ihr Name ist erforderlich.",
         "ERROR_NAME_NUMBERS": "Zahlen sind nicht erlaubt.",
         "ERROR_NAME_INVALID": "Bitte geben Sie mindestens zwei Buchstaben ein.",

@@ -114,11 +114,17 @@
 
                     <div class="contact__submit-wrapper">
                         <app-button type="submit" variant="primary" color="green"
-                            [disabled]="contactForm.invalid || !isValidName(contactData.name) || !isValidEmail(contactData.email) || !isValidMessage(contactData.message) || !contactData.privacyAccepted">
+                            [disabled]="isSubmitting || contactForm.invalid || !isValidName(contactData.name) || !isValidEmail(contactData.email) || !isValidMessage(contactData.message) || !contactData.privacyAccepted">
                             {{ 'CONTACT.SUBMIT_BTN' | translate }}
                         </app-button>
                     </div>
                 </div>
+
+                @if (submitError) {
+                <div class="contact__error-msg contact__submit-error" role="alert">
+                    {{ 'CONTACT.ERROR_SUBMIT' | translate }}
+                </div>
+                }
 
                 @if (mailSent) {
                 <div class="contact__success-toast" role="alert">
