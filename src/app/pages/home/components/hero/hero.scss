@@ -261,13 +261,13 @@
     }
 
     ::ng-deep .socials__link {
-        transition: transform 0.2s ease-in-out;
+        transition: transform 100ms ease-out;
         display: flex;
         align-items: center;
         justify-content: center;
 
         &:hover {
-            transform: translateY(-4px) scale(1.1); 
+            transform: scale(1.333333);
         }
 
         svg {
