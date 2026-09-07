@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { ScreenRotateComponent } from './components/screen-rotate/screen-rotate';
+import { LanguageService } from './core/services/language.service';
+import { SeoService } from './core/services/seo.service';
 import { Footer } from './layout/footer/footer';
 import { HeaderComponent } from './layout/header/header';
 
@@ -14,12 +15,11 @@ import { HeaderComponent } from './layout/header/header';
 })
 export class App {
   protected readonly title = signal('portfolio');
+  private readonly languageService = inject(LanguageService);
+  private readonly seoService = inject(SeoService);
 
-  constructor(private translate: TranslateService) {
-    this.translate.addLangs(['en', 'de']);
-    this.translate.setFallbackLang('en');
-
-    const browserLang = this.translate.getBrowserLang() ?? 'en';
-    this.translate.use(browserLang === 'de' ? 'de' : 'en');
+  constructor() {
+    this.languageService.initialize();
+    this.seoService.initialize();
   }
 }

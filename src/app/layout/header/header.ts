@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../components/button/button';
 import { LogoComponent } from '../../components/logo/logo';
+import { LanguageService, SupportedLanguage } from '../../core/services/language.service';
 import { MenuOverlayComponent } from './components/menu-overlay/menu-overlay';
 
 @Component({
@@ -18,16 +19,13 @@ import { MenuOverlayComponent } from './components/menu-overlay/menu-overlay';
 })
 export class HeaderComponent {
   isMenuOpen = false;
-  currentLang: 'EN' | 'DE' = 'EN';
   private readonly mobileMenuMaxWidth = 768;
 
-  constructor(private translate: TranslateService) {
-    this.translate.onLangChange.subscribe(({ lang }) => {
-      this.currentLang = lang.toUpperCase() === 'DE' ? 'DE' : 'EN';
-    });
+  constructor(private readonly languageService: LanguageService) {
+  }
 
-    const activeLang = this.translate.getCurrentLang() ?? this.translate.getBrowserLang() ?? 'en';
-    this.currentLang = activeLang.toUpperCase() === 'DE' ? 'DE' : 'EN';
+  get currentLang(): 'EN' | 'DE' {
+    return this.languageService.currentLanguage().toUpperCase() as 'EN' | 'DE';
   }
 
   toggleMenu(): void {
@@ -41,11 +39,8 @@ export class HeaderComponent {
   }
 
   changeLanguage(lang: string): void {
-    const normalizedLang = lang.toUpperCase() === 'DE' ? 'DE' : 'EN';
-    const langCode = normalizedLang === 'DE' ? 'de' : 'en';
-
-    this.translate.use(langCode);
-    this.currentLang = normalizedLang;
+    const language: SupportedLanguage = lang.toUpperCase() === 'DE' ? 'de' : 'en';
+    this.languageService.setLanguage(language);
   }
 
   scrollToFragmentWithOffset(fragment: string): void {
