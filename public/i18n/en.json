@@ -91,7 +91,7 @@
         "ADDRESS": "Sofioter Straße 5",
         "POSTCODE": "99091 Erfurt",
         "EXPLORING_BOARD": "Exploring the Board",
-        "EMAIL": "Email: [Email]",
+        "EMAIL": "Email:",
         "ACCEPTANCE_TITLE": "Acceptance of terms",
         "ACCEPTANCE_BEFORE": "By accessing and using",
         "ACCEPTANCE_AFTER": "(Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.",
@@ -115,7 +115,7 @@
         "INDEMNITY_BEFORE_COMPANY": "You agree to indemnify, defend and hold harmless us, the listed students, the",
         "INDEMNITY_MIDDLE": ", and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of",
         "INDEMNITY_AFTER_PRODUCT": "and/or your breach of this Legal Notice.",
-        "CONTACT": "For any questions or notices, please contact us at [Contact Email].",
+        "CONTACT_BEFORE": "For any questions or notices, please contact us at",
         "DATE": "Date: September 08, 2026"
     }
 }

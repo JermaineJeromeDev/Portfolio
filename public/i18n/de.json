@@ -89,7 +89,7 @@
         "ADDRESS": "Sofioter Straße 5",
         "POSTCODE": "99091 Erfurt",
         "EXPLORING_BOARD": "Exploring the Board",
-        "EMAIL": "E-Mail: [E-Mail]",
+        "EMAIL": "E-Mail:",
         "ACCEPTANCE_TITLE": "Akzeptanz der Bedingungen",
         "ACCEPTANCE_BEFORE": "Durch den Zugriff auf und die Nutzung von",
         "ACCEPTANCE_AFTER": "(Produkt) erkennst du die folgenden Bedingungen sowie alle Richtlinien, Leitfäden oder Änderungen an, die dir von Zeit zu Zeit vorgelegt werden können. Wir, die aufgeführten Studierenden, können die Bedingungen jederzeit ohne vorherige Ankündigung aktualisieren oder ändern.",
@@ -113,7 +113,7 @@
         "INDEMNITY_BEFORE_COMPANY": "Du erklärst dich damit einverstanden, uns, die aufgeführten Studierenden, die",
         "INDEMNITY_MIDDLE": "sowie unsere verbundenen Unternehmen, Partner, leitenden Angestellten, Geschäftsführer, Vertreter und Mitarbeitenden von allen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen (einschließlich angemessener Rechtskosten) freizustellen, die aus deiner Nutzung von",
         "INDEMNITY_AFTER_PRODUCT": "und/oder deinem Verstoß gegen dieses Impressum entstehen.",
-        "CONTACT": "Bei Fragen oder Hinweisen kontaktiere uns bitte unter [Kontakt-E-Mail].",
+        "CONTACT_BEFORE": "Bei Fragen oder Hinweisen kontaktiere uns bitte unter",
         "DATE": "Datum: 08. September 2026"
     }
 }
