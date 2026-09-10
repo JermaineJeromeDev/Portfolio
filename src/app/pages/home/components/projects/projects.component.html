@@ -61,18 +61,14 @@
         }
     </div>
 
-    <!-- Das Testimonial-Karussell aus Figma -->
     <div class="projects__testimonial-wrapper">
-
         <div class="projects__testimonial-container">
-            <!-- 1. Die grüne Zitat-Box links -->
             <aside class="projects__testimonial" aria-label="Team feedback">
                 <img class="projects__testimonial-quote" src="shapes/testimonial-quote.svg" alt="" aria-hidden="true">
                 <p class="projects__testimonial-text">
                     {{ testimonials[currentTestimonialIndex].textKey | translate }}
                 </p>
 
-                <!-- Der Name und die Rolle direkt neben der lila Linie -->
                 <div class="projects__testimonial-meta-row">
                     <span class="projects__testimonial-line"
                         [style.width.px]="testimonials[currentTestimonialIndex].mobileLineWidth"
@@ -86,16 +82,13 @@
                 </div>
             </aside>
 
-            <!-- 2. Das freistehende runde Profilbild rechts -->
             <div class="projects__avatar">
                 <img [src]="testimonials[currentTestimonialIndex].avatar"
                     [alt]="testimonials[currentTestimonialIndex].nameKey" class="projects__avatar-img">
             </div>
         </div>
 
-        <!-- 3. Die Slider-Steuerung darunter zentriert -->
         <div class="projects__controls" aria-label="Testimonial navigation">
-            <!-- Linker Pfeil -->
             <button class="projects__arrow-btn projects__arrow-btn--left" type="button" aria-label="Previous slide"
                 (click)="prevTestimonial()">
                 <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +98,6 @@
                 </svg>
             </button>
 
-            <!-- Die 3 Punkte in der Mitte -->
             <div class="projects__dots">
                 @for (item of testimonials; track $index) {
                 <button class="projects__control" [ngClass]="{
@@ -119,7 +111,6 @@
                 }
             </div>
 
-            <!-- Rechter Pfeil -->
             <button class="projects__arrow-btn projects__arrow-btn--right" type="button" aria-label="Next slide"
                 (click)="nextTestimonial()">
                 <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">

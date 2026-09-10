@@ -92,7 +92,7 @@ export class ProjectsComponent {
       name: 'El Pollo Loco', 
       techStack: ['JavaScript', 'HTML', 'CSS'],
       descriptionKey: 'PROJECTS.POLLO_DESC',
-      liveLink: 'https://deine-domain.de',
+      liveLink: 'https://jermainejeromedev.github.io/El-Pollo-Loco/',
       githubLink: 'https://github.com/JermaineJeromeDev/El-Pollo-Loco',
       image: 'img/el-pollo-loco.png'
     },
@@ -101,7 +101,7 @@ export class ProjectsComponent {
       name: 'Join', 
       techStack: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Supabase'],
       descriptionKey: 'PROJECTS.JOIN_DESC',
-      liveLink: 'https://deine-domain.de',
+      liveLink: 'https://jermainejeromedev.github.io/Join/',
       githubLink: 'https://github.com/JermaineJeromeDev/Join',
       image: 'img/join.png'
     },
@@ -110,7 +110,7 @@ export class ProjectsComponent {
       name: 'Coderr', 
       techStack: ['Python', 'Django', 'DRF', 'REST API'], 
       descriptionKey: 'PROJECTS.CODERR_DESC',
-      liveLink: 'https://deine-domain.de', 
+      liveLink: 'https://coderr-v4g3.onrender.com/', 
       githubLink: 'https://github.com/JermaineJeromeDev/Coderr',
       image: 'img/coderr.png'
     },
@@ -119,7 +119,7 @@ export class ProjectsComponent {
       name: 'Videoflix', 
       techStack: ['Python', 'Django', 'DRF', 'PostgreSQL', 'Redis', 'Docker'], 
       descriptionKey: 'PROJECTS.VIDEOFLIX_DESC',
-      liveLink: 'https://deine-domain.de',
+      liveLink: 'https://videoflix-frontend-five.vercel.app/',
       githubLink: 'https://github.com/JermaineJeromeDev/Videoflix',
       image: 'img/videoflix.png'
     }
