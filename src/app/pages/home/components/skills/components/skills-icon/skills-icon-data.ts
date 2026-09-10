@@ -1,3 +1,7 @@
+/**
+ * A centralized data map containing sanitized raw SVG path strings for skill icons.
+ * All paths should ideally be optimized to fit inside a unified canvas bounding box.
+ */
 export const SKILLS_ICON_DATA: Record<string, string> = {
     'html': '<path d="M30 48.534L43.86 44.766L45.729 24.432H21.078L20.466 17.67H46.344L47.025 11.037H12.975L14.883 31.071H38.343L37.56 39.669L30 41.67L22.44 39.669L21.966 34.137H15.156L16.143 44.769L30 48.534ZM3 0H57L52.131 54L30 60L7.869 54L3 0Z" fill="white"/>',
     

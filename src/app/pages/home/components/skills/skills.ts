@@ -4,11 +4,22 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../../components/button/button';
 import { SkillsIconComponent } from './components/skills-icon/skills-icon';
 
-/** Describes one skill and its icon key. */
-interface Skill { name: string; icon: string; }
+/**
+ * Describes one skill and its icon key.
+ */
+interface Skill { 
+  name: string; 
+  icon: string; 
+}
+
+/**
+ * Supported skill category tab types.
+ */
 export type SkillTab = 'frontend' | 'backend' | 'devsecops';
 
-/** Displays skill categories and their responsive interaction states. */
+/**
+ * Displays skill categories and their responsive interaction states.
+ */
 @Component({
   selector: 'app-skills',
   standalone: true,
@@ -17,10 +28,13 @@ export type SkillTab = 'frontend' | 'backend' | 'devsecops';
   styleUrls: ['./skills.scss'],
 })
 export class SkillsComponent {
+  /** The currently selected skill category tab. */
   activeTab: SkillTab = 'frontend';
 
+  /** Controls the visibility of the mobile information tooltip. */
   isTooltipVisible: boolean = false;
 
+  /** List of frontend development skills. */
   frontendSkills: Skill[] = [
     { name: 'HTML', icon: 'html' },
     { name: 'CSS', icon: 'css' },
@@ -34,6 +48,7 @@ export class SkillsComponent {
     { name: 'Material Design', icon: 'material-design' }
   ];
 
+  /** List of backend development skills. */
   backendSkills: Skill[] = [
     { name: 'Python', icon: 'python' },
     { name: 'Django', icon: 'django' },
@@ -42,17 +57,25 @@ export class SkillsComponent {
     { name: 'Docker', icon: 'docker' },
   ];
 
+  /** List of DevSecOps and deployment skills. */
   devSecOpsSkills: Skill[] = [
     { name: 'Shell-Scripting', icon: 'shell-scripting' },
     { name: 'DRF', icon: 'drf' }
   ];
 
-  /** Selects the skill category shown in the tab panel. */
+  /**
+   * Selects the skill category shown in the tab panel.
+   * 
+   * @param tab - The skill tab identifier to set as active.
+   */
   setActiveTab(tab: SkillTab): void {
     this.activeTab = tab;
   }
 
-  /** Scrolls to the contact section from the skills call to action. */
+  /**
+   * Removes focus from the active element and smoothly scrolls down
+   * to the contact section anchor.
+   */
   scrollToContact(): void {
     const activeElement = document.activeElement;
 
@@ -64,7 +87,12 @@ export class SkillsComponent {
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  /** Toggles the mobile tooltip for the highlighted skill. */
+  /**
+   * Toggles the mobile tooltip visibility state for the highlighted skill.
+   * Prevents interaction on desktop viewports.
+   * 
+   * @param event - The triggering click or touch event.
+   */
   toggleTooltip(event: Event): void {
     if (window.innerWidth > 991) {
       return;
@@ -74,7 +102,12 @@ export class SkillsComponent {
     this.isTooltipVisible = !this.isTooltipVisible;
   }
 
-  /** Closes the mobile tooltip when the user clicks outside the highlighted skill. */
+  /**
+   * Closes the mobile tooltip when the user clicks anywhere outside 
+   * the cyan highlighted skill item wrapper.
+   * 
+   * @param event - The global document click event context.
+   */
   @HostListener('document:click', ['$event'])
   closeTooltip(event?: Event): void {
     if (window.innerWidth > 991) {
