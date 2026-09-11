@@ -95,7 +95,7 @@ export class ProjectsComponent {
       name: 'Join', 
       techStack: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Supabase'],
       descriptionKey: 'PROJECTS.JOIN_DESC',
-      liveLink: 'https://jermainejeromedev.github.io/Join/',
+      liveLink: 'https://join-iota-three.vercel.app',
       githubLink: 'https://github.com/JermaineJeromeDev/Join',
       image: 'img/join.png'
     },
