@@ -104,7 +104,7 @@ export class ProjectsComponent {
       name: 'Coderr', 
       techStack: ['Python', 'Django', 'DRF', 'REST API'], 
       descriptionKey: 'PROJECTS.CODERR_DESC',
-      liveLink: 'https://coderr-v4g3.onrender.com/', 
+      liveLink: 'https://coderr-production-4519.up.railway.app', 
       githubLink: 'https://github.com/JermaineJeromeDev/Coderr',
       image: 'img/coderr.png'
     },
