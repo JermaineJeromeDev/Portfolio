@@ -30,7 +30,10 @@
                     }
                     <div class="skills__item skills__item--cyan" (click)="toggleTooltip($event)">
                         <app-skills-icon name="continually-learning"></app-skills-icon>
-                        <span>Continually<br>learning</span>
+                        <span>
+                            {{ 'SKILLS.CONTINUALLY_LEARNING_1' | translate }}<br>
+                            {{ 'SKILLS.CONTINUALLY_LEARNING_2' | translate }}
+                        </span>
                         <div class="skills__tooltip" [class.is-visible]="isTooltipVisible">
                             <div class="skills__tooltip-content">
                                 <p>{{ 'SKILLS.CONTINUALLY_LEARNING_TOOLTIP' | translate }}</p>
