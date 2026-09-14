@@ -48,6 +48,7 @@
             background-image: url('/shapes/purple-shadow-about-me.svg');
             left: 0;
             transform: translateY(-50%) translateX(-45%);
+            filter: blur(24px);
 
             @media (min-width: 1441px) {
                 width: 1000px;
@@ -91,6 +92,7 @@
             background-image: url('/shapes/blue-shadow-version-b.svg');
             right: 0;
             transform: translateY(-58%) translateX(65%);
+            filter: blur(15px);
 
             @media (min-width: 1441px) {
                 width: 1250px;
