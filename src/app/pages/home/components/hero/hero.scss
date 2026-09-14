@@ -278,34 +278,36 @@
     }
 
     &__scroll-wrapper {
-        height: 160px; 
-        @include flexbox(column, flex-end, center, 3px);
-        margin-right: clamp(1.5rem, 4vw, 4rem);
+    height: 160px; 
+    @include flexbox(column, flex-end, center, 3px);
+    margin-right: clamp(1.5rem, 4vw, 4rem);
+    pointer-events: none;
 
-        svg {
-            width: 28px;
-            height: 28px;
-            flex-shrink: 0;
-            transform: rotate(90deg);
-        }
+    svg {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        transform: rotate(90deg);
     }
+}
 
-    &__scroll-text {
-        font-family: var(--font-family);
-        font-size: var(--fs-lg);
-        font-weight: var(--fw-normal);
-        color: var(--txt-primary);
-        white-space: nowrap;
-        line-height: var(--line-height-tight);
-        
-        writing-mode: vertical-rl; 
-        letter-spacing: 0.1em; 
-    }
+&__scroll-text {
+    font-family: var(--font-family);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-normal);
+    color: var(--txt-primary);
+    white-space: nowrap;
+    line-height: var(--line-height-tight);
+    
+    writing-mode: vertical-rl; 
+    letter-spacing: 0.1em; 
+}
 
-    &__scroll-arrow {
-        color: var(--txt-primary);
-        display: block;
-    }
+&__scroll-arrow {
+    color: var(--txt-primary);
+    display: block;
+}
+
 
     @include respond-to(md) {
         padding-top: 60px;
