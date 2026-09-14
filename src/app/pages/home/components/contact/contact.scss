@@ -94,17 +94,21 @@
         }
     }
 
+    $subheading-gap: 32px;
+    $line-width: 32px;
+    $line-offset: calc(-1 * clamp(var(--space-lg), 5vw, var(--space-2xl)));
+
     &__subheading-box {
-        @include flexbox(row, flex-start, center, 32px); 
+        @include flexbox(row, flex-start, center, $subheading-gap); 
         width: 100%;
     }
 
     &__subheading-line {
         display: block;
-        width: 32px;
+        width: $line-width;
         height: 0;
         position: relative;
-        margin-left: calc(-1 * clamp(var(--space-lg), 5vw, var(--space-2xl)));
+        margin-left: $line-offset;
         border: 2px solid var(--clr-secondary);
         border-radius: var(--radius-pill);
         flex-shrink: 0;
@@ -130,6 +134,12 @@
         color: var(--txt-primary);
     }
 
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1rem, 2vw, 24px);
+    }
+
     &__text {
         margin: 0;
         font-family: var(--font-family);
@@ -139,23 +149,9 @@
         color: var(--txt-primary);
     }
 
-    &__description {
-        @include flexbox(column, flex-start, flex-start, 12px);
-        margin-left: clamp(36px, 5.8vw, 64px);
-    }
-
+    &__description, 
     &__subtext {
-        margin: 0;
-        margin-left: clamp(36px, 5.8vw, 64px);
-        font-family: var(--font-family);
-        font-weight: 400;
-        font-size: 16px; 
-        line-height: 120%;
-        color: var(--txt-primary);
-
-        strong {
-            font-weight: 700;
-        }
+        padding-left: calc(#{$line-width} + #{$subheading-gap} + #{$line-offset}); 
     }
 
     &__form {
