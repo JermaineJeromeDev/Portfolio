@@ -231,6 +231,9 @@
             transform-origin: bottom center;
             filter: contrast(125%) brightness(90%) drop-shadow(0px 0px 40px rgba(151, 71, 255, 0.25));
             top: 235px; 
+            pointer-events: none; 
+            user-select: none;
+            -webkit-user-drag: none;
 
             @media (max-width: 1380px) { 
                 position: absolute;
