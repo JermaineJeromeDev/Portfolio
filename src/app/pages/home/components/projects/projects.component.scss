@@ -237,7 +237,7 @@
         border-radius: var(--radius-pill);
         width: 220px;
         height: 220px;
-        border: none;
+        border: 4px solid var(--clr-primary-1);
         background: var(--bg-dark-1);
         flex-shrink: 0;
         box-shadow: none;
