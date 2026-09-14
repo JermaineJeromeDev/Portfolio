@@ -5,33 +5,31 @@
     position: relative;
     z-index: 3;
     width: 100%;
-    height: auto;
-    padding-top: var(--space-4xl);
-    padding-bottom: var(--space-4xl);
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 0; 
     overflow: visible;
+    display: flex;
+    align-items: center;     
+    justify-content: center; 
+
+    @include respond-to(lg) {
+        min-height: auto;
+        height: auto;
+        display: block; 
+        padding-top: var(--space-4xl);   
+        padding-bottom: var(--space-4xl);
+    }
 
     &__scroll-anchor {
         position: absolute;
         left: 0;
-        top: 70px; 
+        top: 40px;
 
-        @include respond-to(desktop) { top: -26px; }
-        @include respond-to(laptop) { top: 100px; }
-        @include respond-to(tablet-wide) { top: 40px; }
-        @include respond-to(tbt) { top: 90px; }
-        @include respond-to(md) { top: 125px; }
-        @include respond-to(phone-wide) { top: 120px; }
-        @include respond-to(phone-plus) { top: 120px; }
-        @include respond-to(phone) { top: 120px; }
-        @include respond-to(phone-narrow) { top: 120px; }
-
-        @media (min-width: 1025px) and (max-width: 1380px) and (orientation: landscape) {
-            top: 80px;
-        }
-    }
-
-    @include respond-to(desktop) {
-        @include flexbox(row, space-between, flex-start, var(--space-4xl));
+        @include respond-to(desktop) { top: -30px; }
+        @include respond-to(laptop) { top: -20px; }
+        @media(max-width: 834px) { top: 80px; }
+        @include respond-to(md) { top: 135px; }
     }
 
     &__container {
@@ -41,12 +39,11 @@
         z-index: 2; 
         padding-left: clamp(2.5rem, 6.5vw, 6.25rem);
         padding-right: clamp(var(--space-lg), 5vw, var(--space-2xl));
-        @include flexbox(row, space-between, flex-start, 80px);
+        
+        @include flexbox(row, space-between, center, 80px);
 
         @include respond-to(laptop) {
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            margin-top: 44px;
+            gap: 44px; 
         }
         
         @include respond-to(lg) {
@@ -487,13 +484,14 @@
         max-width: 480px;
         width: 100%;
         @include flexbox(column, flex-start, flex-start, 40px);
-        margin-top: 200px;
 
         @include respond-to(desktop) {
             gap: var(--space-xl);
             flex: 1 1 440px;
-            margin-top: 72px;
+            margin-bottom: 200px;
         }
+
+        @media(max-width: 1280px) { margin-bottom: 180px; }
 
         @include respond-to(laptop) {
             gap: 12px;
