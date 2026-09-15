@@ -1,6 +1,9 @@
 <div class="legal content-wrapper">
     <header class="legal__intro">
         <div class="legal__heading">
+            <a class="legal__back-button" routerLink="/" aria-label="Back to home">
+                <img ngSrc="/icons/arrow-circle-left.svg" width="39" height="39" alt="" />
+            </a>
             <span class="legal__divider" aria-hidden="true"></span>
             <div class="legal__title-box">
                 <h1 class="legal__title">{{ 'LEGAL.TITLE' | translate }}</h1>
@@ -74,7 +77,8 @@
             <h2 class="legal__subtitle">{{ 'LEGAL.DISCLAIMER_TITLE' | translate }}</h2>
             <p class="legal__text">
                 <span class="legal__highlight">Portfolio</span> {{ 'LEGAL.DISCLAIMER_BEFORE_PRODUCT' | translate }}
-                <span class="legal__highlight">Developer Akademie GmbH</span>{{ 'LEGAL.DISCLAIMER_AFTER_COMPANY' | translate
+                <span class="legal__highlight">Developer Akademie GmbH</span>{{ 'LEGAL.DISCLAIMER_AFTER_COMPANY' |
+                translate
                 }}
                 <span class="legal__highlight">Portfolio</span>.
             </p>

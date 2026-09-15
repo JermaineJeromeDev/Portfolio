@@ -123,5 +123,69 @@
         "INDEMNITY_AFTER_PRODUCT": "und/oder deinem Verstoß gegen dieses Impressum entstehen.",
         "CONTACT_BEFORE": "Bei Fragen oder Hinweisen kontaktiere uns bitte unter",
         "DATE": "Datum: 08. September 2026"
+    },
+
+    "PRIVACY": {
+        "TITLE": "Datenschutzerklärung",
+        "EFFECTIVE_DATE": "In Kraft getreten am: 11.09.2026",
+        "INTRO": {
+            "TITLE": "Einführung und organisatorische Informationen",
+            "P1": "Ich, Jermaine Jérôme Bärwolf, bin bestrebt, meine Kunden und Kontakte nach besten Kräften zu betreuen. Ein Teil meiner Verpflichtung beinhaltet den verantwortungsvollen Umgang mit personenbezogenen Daten, die über meine Website jermaine-jerome-baerwolf.de und damit verbundene Interaktionen erfasst werden. Meine Hauptziele bei der Verarbeitung dieser Informationen sind:",
+            "L1": "Verbesserung des Nutzererlebnisses auf unserer Plattform durch Verständnis der Kundenbedürfnisse und -präferenzen.",
+            "L2": "Bereitstellung zeitnaher Unterstützung und Beantwortung von Anfragen oder Serviceanforderungen.",
+            "L3": "Optimierung meiner Produkte und Dienstleistungen, um den sich ändernden Anforderungen gerecht zu werden.",
+            "L4": "Durchführung notwendiger Geschäftsabläufe, wie z. B. Rechnungsstellung und Kontoverwaltung.",
+            "P2": "Es entspricht meinen Grundsätzen, personenbezogene Daten mit größtem Respekt für Privatsphäre und Sicherheit zu verarbeiten. Ich halte mich an alle relevanten Vorschriften und Richtlinien, um sicherzustellen, dass die von mir verwalteten Daten vor unbefugtem Zugriff, Offenlegung, Änderung und Zerstörung geschützt sind. Meine Praktiken sind darauf ausgelegt, die Vertraulichkeit und Integrität Ihrer persönlichen Daten zu gewährleisten.",
+            "P3": "Ich habe keinen offiziellen Datenschutzbeauftragten (DPO) bestellt, bin jedoch uneingeschränkt bestrebt, Ihre Datenschutzbedenken zu klären. Sollten Sie Fragen haben oder weitere Informationen benötigen, können Sie mich unter jermainejerome.dev@gmail.com oder +49 1794414015 kontaktieren.",
+            "P4": "Ihre Privatsphäre ist meine Priorität. Ich verpflichte mich, Ihre personenbezogenen Daten transparent und unter Beachtung Ihrer Sicherheit zu verarbeiten. Diese Verpflichtung erstreckt sich auch auf die Zusammenarbeit mit Drittanbietern, die Daten in meinem Auftrag verarbeiten. Alle Aktivitäten werden in strikter Übereinstimmung mit den geltenden Datenschutzgesetzen durchgeführt."
+        },
+        "SCOPE": {
+            "TITLE": "Geltungsbereich",
+            "P1": "Diese Datenschutzerklärung dient dem Schutz der personenbezogenen Daten aller Beteiligten, einschließlich Website-Besucher, registrierter Nutzer und Kunden. Unabhängig davon, ob Sie meine Website jermaine-jerome-baerwolf.de lediglich besuchen, meine Dienste als registrierter Nutzer nutzen oder als geschätzter Kunde mit mir interagieren, stelle ich sicher, dass Ihre Daten nach höchsten Standards verarbeitet werden."
+        },
+        "DATA": {
+            "TITLE": "Datenerhebung und -verarbeitung",
+            "P1": "Mein Engagement für Transparenz und Datenschutz erstreckt sich auch auf die Art und Weise, wie ich Ihre Daten erhebe und verwende. Ich erfasse personenbezogene Daten durch verschiedene Interaktionen, unter anderem, wenn Sie meine digitalen Web-Dienste nutzen oder mir direkt Informationen zukommen lassen.",
+            "P2": "Die folgende Liste führt die Arten von personenbezogenen Daten auf, die verarbeitet werden können:",
+            "L1": "IP-Adresse",
+            "L2": "Betriebssystem und Version",
+            "L3": "Browser-Informationen und Sprache",
+            "P3": "Bitte beachten Sie, dass nur Informationen verarbeitet werden, die für die Erbringung meiner Dienstleistungen, die Erfüllung rechtlicher Verpflichtungen oder die Verbesserung Ihres Nutzererlebnisses unbedingt erforderlich sind.",
+            "P4": "Ich verwende personenbezogene Daten verantwortungsbewusst und ethisch, um die von mir angebotenen Dienste zu verbessern und ein Höchstmaß an Zufriedenheit zu gewährleisten. Hier sind die wichtigsten Verwendungszwecke:",
+            "P5": "• Authentifizierung und Sicherheit (Erkennung von Angriffen)",
+            "P6": "• Auslieferung von Inhalten (Stabilität der Webseite)",
+            "P7": "Ich bin bestrebt, sicherzustellen, dass Ihre Daten ausschließlich für die Zwecke verwendet werden, für die sie erhoben wurden und die Sie autorisiert haben."
+        },
+        "STORAGE": {
+            "TITLE": "Datenspeicherung und -schutz",
+            "SUB1": "Datenspeicherung",
+            "P1": "Personenbezogene Daten werden auf sicheren Servern in Deutschland (DE) gespeichert. Bei Diensten, die einen internationalen Datentransfer erfordern, stelle ich sicher, dass diese Transfers den geltenden Gesetzen entsprechen.",
+            "P2": "Hosting-Partner: Ich arbeite mit renommierten Hosting-Anbietern (IONOS) zusammen, die sich zum Einsatz modernster Sicherheitsmaßnahmen verpflichten. Diese Partner werden auf Basis ihrer Einhaltung strenger Datenschutzstandards ausgewählt.",
+            "SUB2": "Datenschutzmaßnahmen",
+            "P3": "Verschlüsselung: Zum Schutz der Daten während der Übertragung und im Ruhezustand setze ich robuste Verschlüsselungstechnologien (SSL/HTTPS) ein.",
+            "P4": "Zugriffskontrolle: Der Zugriff auf personenbezogene Daten ist streng auf autorisierte Personen beschränkt, die eine berechtigte geschäftliche Notwendigkeit haben. Berechtigungen werden regelmäßig überprüft.",
+            "SUB3": "Auftragsverarbeitungsverträge",
+            "P5": "Wenn Daten an Drittanbieter weitergegeben werden, erfolgt dies im Rahmen von Auftragsverarbeitungsverträgen (AVV), die eine Verwaltung gemäß der DSGVO und anderer relevanter Datenschutzgesetze garantieren."
+        },
+        "CONTROL": {
+            "TITLE": "Transparenz und Kontrolle",
+            "P1": "Ich glaube an Transparenz und daran, Ihnen die Kontrolle über Ihre personenbezogenen Daten zu geben. Sie werden stets über wesentliche Änderungen meiner Praktiken informiert und haben, wo zutreffend, die Möglichkeit, diesen Änderungen zuzustimmen.",
+            "P2": "Ihr Vertrauen ist mir wichtig. Bei Fragen oder Bedenken bezüglich der Weitergabe von Daten wenden Sie sich bitte an jermainejerome.dev@gmail.com oder +49 1794414015."
+        },
+        "RIGHTS": {
+            "TITLE": "Nutzerrechte und Wahlmöglichkeiten",
+            "P1": "Ich anerkenne und respektiere Ihre Rechte bezüglich Ihrer personenbezogenen Daten gemäß der Datenschutz-Grundverordnung (DSGVO). Nachfolgend finden Sie eine Übersicht Ihrer Rechte:",
+            "SUB1": "Ihre Rechte",
+            "L1": "Recht auf Auskunft (Art. 15 DSGVO): Sie haben das Recht, Auskunft über Ihre von mir verarbeiteten personenbezogenen Daten zu verlangen.",
+            "L2": "Recht auf Berichtigung (Art. 16 DSGVO): Sie können unverzüglich die Berichtigung unrichtiger oder Vervollständigung Ihrer bei mir gespeicherten Daten verlangen.",
+            "L3": "Recht auf Löschung (Art. 17 DSGVO): Sie haben das Recht, die Löschung Ihrer Daten zu verlangen, wenn diese für die Zwecke nicht mehr notwendig sind.",
+            "L4": "Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO): Sie können unter bestimmten Bedingungen die Einschränkung der Datenverarbeitung verlangen.",
+            "L5": "Recht auf Datenübertragbarkeit (Art. 20 DSGVO): Sie haben das Recht, Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.",
+            "L6": "Recht auf Widerspruch (Art. 21 DSGVO): Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, gegen die Verarbeitung Widerspruch einzulegen.",
+            "L7": "Recht auf Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO): Sie können eine einmal erteilte Einwilligung jederzeit mir gegenüber widerrufen.",
+            "L8": "Recht auf Beschwerde (Art. 77 DSGVO): Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.",
+            "SUB2": "Ausübung Ihrer Rechte",
+            "P2": "Um eines dieser Rechte auszuüben, kontaktieren Sie mich bitte unter jermainejerome.dev@gmail.com oder +49 1794414015. Ich werde auf Ihre Anfrage in Übereinstimmung mit den gesetzlichen Fristen reagieren. Bitte beachten Sie, dass in einigen Fällen eine Verifizierung Ihrer Identität erforderlich sein kann, um die Sicherheit Ihrer Daten zu gewährleisten."
+        }
     }
 }
