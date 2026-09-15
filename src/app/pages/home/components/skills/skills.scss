@@ -569,7 +569,11 @@
         @include respond-to(phone-wide) { margin-top: -100px; }
         @include respond-to(phone) { margin-top: -130px; gap: 4px; }
         @include respond-to(phone-narrow) { margin-top: -150px; }
-        @include respond-to(phone-mini) { margin-top: -165px; }
+        @include respond-to(phone-mini) {
+            box-sizing: border-box;
+            margin-top: -165px;
+            padding-right: var(--space-md);
+        }
     }
 
     &__cta-title {
