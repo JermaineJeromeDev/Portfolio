@@ -53,6 +53,8 @@
             margin: 0 auto;
             gap: 22px;
         }
+
+        @include respond-to(xsm) { padding: 24px; }
     }
 
     &__tech-zone {
