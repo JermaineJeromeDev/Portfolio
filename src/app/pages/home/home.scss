@@ -23,6 +23,140 @@
     }
 }
 
+app-hero {
+    position: relative;
+    z-index: 4;
+}
+
+.home-hero-blob {
+    position: absolute;
+    top: 50dvh;
+    z-index: 3;
+    display: block;
+    width: calc(880px + (100vw - #{$breakpoint-xxl}) * 0.3);
+    height: calc(880px + (100vw - #{$breakpoint-xxl}) * 0.3);
+    pointer-events: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &--purple {
+        left: 0;
+        background-image: url('/shapes/purple-shadow-about-me.svg');
+        filter: blur(24px);
+        transform: translateY(-50%) translateX(-45%);
+    }
+
+    &--cyan {
+        right: 0;
+        background-image: url('/shapes/blue-shadow-version-b.svg');
+        filter: blur(15px);
+        transform: translateY(-58%) translateX(65%);
+    }
+
+    @media (min-width: 1441px) {
+        &--purple {
+            width: 1000px;
+            height: 1000px;
+            left: 40%;
+            transform: translateY(-50%) translateX(calc(-50% - 720px + 200px));
+        }
+
+        &--cyan {
+            width: 1250px;
+            height: 1250px;
+            left: 50%;
+            right: auto;
+            transform: translateY(-50%) translateX(calc(-10% + 720px - 250px));
+        }
+    }
+
+    @media (min-width: 821px) and (max-width: 1200px) {
+        &--purple {
+            width: 830px;
+            height: 830px;
+            top: 55dvh;
+        }
+
+        &--cyan {
+            width: 900px;
+            height: 900px;
+            top: 70dvh;
+        }
+    }
+
+    @include respond-to(tbt) {
+        &--purple {
+            width: clamp(800px, 70vw, 850px);
+            height: clamp(800px, 70vw, 850px);
+            transform: translateY(-50%) translateX(-55%);
+        }
+
+        &--cyan {
+            width: clamp(850px, 70vw, 850px);
+            height: clamp(850px, 70vw, 850px);
+            transform: translateY(-45%) translateX(70%);
+        }
+    }
+
+    @include respond-to(md) {
+        &--purple {
+            width: clamp(650px, 65vw, 750px);
+            height: clamp(650px, 65vw, 750px);
+            top: 45dvh;
+            transform: translateY(-55%) translateX(-30%);
+        }
+
+        &--cyan {
+            width: clamp(750px, 70vw, 850px);
+            height: clamp(750px, 70vw, 850px);
+            transform: translateY(-45%) translateX(64%);
+        }
+    }
+
+    @include respond-to(sm) {
+        &--purple {
+            width: clamp(450px, 65vw, 620px);
+            height: clamp(450px, 65vw, 620px);
+            top: 42dvh;
+            transform: translateY(-50%) translateX(-40%);
+        }
+
+        &--cyan {
+            width: clamp(600px, 70vw, 680px);
+            height: clamp(600px, 70vw, 680px);
+            top: 65dvh;
+            transform: translateY(-50%) translateX(55%);
+        }
+    }
+
+    @include respond-to(phone-narrow) {
+        &--purple {
+            width: min(96vw, 360px);
+            height: min(96vw, 360px);
+        }
+
+        &--cyan {
+            width: min(115vw, 430px);
+            height: min(115vw, 430px);
+        }
+    }
+
+    @include respond-to(xsm) {
+        &--purple {
+            width: min(96vw, 360px);
+            height: min(96vw, 360px);
+            transform: translateY(-48%) translateX(-30%);
+        }
+
+        &--cyan {
+            width: min(115vw, 430px);
+            height: min(115vw, 430px);
+            transform: translateY(-50%) translateX(60%);
+        }
+    }
+}
+
 .skills-section-container {
     position: relative; 
     width: 100%;
