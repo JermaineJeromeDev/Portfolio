@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../components/button/button';
 import { LogoComponent } from '../../components/logo/logo';
@@ -19,6 +19,8 @@ import { MenuOverlayComponent } from './components/menu-overlay/menu-overlay';
   }
 })
 export class HeaderComponent {
+  private readonly router = inject(Router);
+
   isMenuOpen = false;
   private readonly mobileMenuMaxWidth = 768;
 
@@ -66,8 +68,13 @@ export class HeaderComponent {
   }, 200);
 }
 
-  /** Returns the page to the top and removes focus from the active control. */
-  scrollToTop(): void {
+  /** Navigates to the homepage and returns the viewport to its beginning. */
+  navigateToHome(): void {
+    void this.router.navigate(['/']).then(() => {
+      if (typeof window === 'undefined') {
+        return;
+      }
+
     const activeElement = document.activeElement;
     if (activeElement instanceof HTMLElement) {
       activeElement.blur();
@@ -75,6 +82,7 @@ export class HeaderComponent {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
+    });
     });
   }
 }
