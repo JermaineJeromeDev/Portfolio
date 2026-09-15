@@ -488,6 +488,11 @@
             gap: 20px;
         }
 
+        &__description,
+        &__subtext {
+            padding-left: calc(#{$line-width} + 20px + #{$line-offset});
+        }
+
         &__text-title {
             font-size: clamp(1.625rem, 3vw, 1.75rem);
         }
