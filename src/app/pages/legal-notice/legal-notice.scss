@@ -2,7 +2,7 @@
 @use '../../../styles/mixins' as *;
 
 .legal {
-    padding-top: clamp(6rem, 10vw, 10rem); 
+    padding-top: 160px;
     padding-bottom: var(--space-4xl);
     width: 100%;
     background-color: var(--bg-dark-3); 
@@ -50,11 +50,13 @@
         width: 39px;
         height: 39px;
         place-items: center;
+        background-color: var(--clr-primary-2);
+        mask: url('/icons/arrow-circle-left.svg') center / contain no-repeat;
+        -webkit-mask: url('/icons/arrow-circle-left.svg') center / contain no-repeat;
+        transition: background-color 200ms ease-in-out;
 
-        img {
-            width: 39px;
-            height: 39px;
-            object-fit: contain;
+        &:hover {
+            background-color: var(--clr-primary-1);
         }
 
         &:focus-visible {
@@ -206,7 +208,8 @@
 
         &__title {
             font-family: 'Inter', sans-serif;
-            font-size: 42px;
+            font-size: clamp(2.25rem, 12.8vw, 42px);
+            white-space: nowrap;
         }
 
         &__divider {

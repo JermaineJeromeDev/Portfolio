@@ -43,11 +43,13 @@
 	width: 39px;
 	height: 39px;
 	place-items: center;
+	background-color: var(--clr-primary-2);
+	mask: url('/icons/arrow-circle-left.svg') center / contain no-repeat;
+	-webkit-mask: url('/icons/arrow-circle-left.svg') center / contain no-repeat;
+	transition: background-color 200ms ease-in-out;
 
-	img {
-		width: 39px;
-		height: 39px;
-		object-fit: contain;
+	&:hover {
+		background-color: var(--clr-primary-1);
 	}
 
 	&:focus-visible {
@@ -159,7 +161,8 @@
 		grid-column: 1;
 		grid-row: 2;
 		font-family: 'Inter', sans-serif;
-		font-size: 42px;
+		font-size: clamp(2rem, 11.5vw, 42px);
+		white-space: nowrap;
 	}
 
 	.privacy-line {
