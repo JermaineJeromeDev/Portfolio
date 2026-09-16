@@ -52,6 +52,7 @@ export class SkillsComponent {
   backendSkills: Skill[] = [
     { name: 'Python', icon: 'python' },
     { name: 'Django', icon: 'django' },
+    { name: 'SQL', icon: 'sql' },
     { name: 'PostgreSQL', icon: 'postgresql' },
     { name: 'Redis', icon: 'redis' },
     { name: 'Docker', icon: 'docker' },
