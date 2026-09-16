@@ -86,7 +86,7 @@ export class ProjectsComponent {
       name: 'El Pollo Loco', 
       techStack: ['JavaScript', 'HTML', 'CSS'],
       descriptionKey: 'PROJECTS.POLLO_DESC',
-      liveLink: 'https://jermainejeromedev.github.io/El-Pollo-Loco/',
+      liveLink: 'https://el-pollo-loco.jermaine-jerome-baerwolf.de',
       githubLink: 'https://github.com/JermaineJeromeDev/El-Pollo-Loco',
       image: 'img/el-pollo-loco.png'
     },
