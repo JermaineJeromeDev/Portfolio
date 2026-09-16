@@ -95,7 +95,7 @@ export class ProjectsComponent {
       name: 'Join', 
       techStack: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Supabase'],
       descriptionKey: 'PROJECTS.JOIN_DESC',
-      liveLink: 'https://join-iota-three.vercel.app',
+      liveLink: 'https://join.jermaine-jerome-baerwolf.de',
       githubLink: 'https://github.com/JermaineJeromeDev/Join',
       image: 'img/join.png'
     },
@@ -104,7 +104,7 @@ export class ProjectsComponent {
       name: 'Coderr', 
       techStack: ['Python', 'Django', 'DRF', 'REST API'], 
       descriptionKey: 'PROJECTS.CODERR_DESC',
-      liveLink: 'https://coderr-production-4519.up.railway.app', 
+      liveLink: 'https://coderr.jermaine-jerome-baerwolf.de', 
       githubLink: 'https://github.com/JermaineJeromeDev/Coderr',
       image: 'img/coderr.png'
     },
@@ -113,7 +113,7 @@ export class ProjectsComponent {
       name: 'Videoflix', 
       techStack: ['Python', 'Django', 'DRF', 'PostgreSQL', 'Redis', 'Docker'], 
       descriptionKey: 'PROJECTS.VIDEOFLIX_DESC',
-      liveLink: 'https://videoflix-frontend-five.vercel.app/',
+      liveLink: 'https://videoflix.jermaine-jerome-baerwolf.de',
       githubLink: 'https://github.com/JermaineJeromeDev/Videoflix',
       image: 'img/videoflix.png'
     }
