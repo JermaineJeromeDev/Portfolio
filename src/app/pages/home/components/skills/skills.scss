@@ -153,6 +153,15 @@
 
         @include respond-to(desktop) { height: auto; }
         @include respond-to(lg) { order: 4; min-height: 495px; }
+
+        @include respond-to(md) {
+            height: 520px;
+            min-height: 0;
+        }
+
+        @include respond-to(sm) {
+            height: 680px;
+        }
     }
 
     &__grid {
@@ -179,8 +188,8 @@
             grid-auto-rows: max-content; 
         }
 
-        @include respond-to(phone) {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+        @include respond-to(sm) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             row-gap: 12px;
             column-gap: 10px;
         }
@@ -435,11 +444,10 @@
             line-height: var(--line-height-tight); 
             text-align: center;
             color: var(--txt-primary);
-            white-space: normal;
-            padding-inline: var(--space-xs);
-            
-            word-break: normal; 
-            overflow-wrap: anywhere; 
+            white-space: nowrap;
+            padding-inline: 0;
+            word-break: keep-all;
+            overflow-wrap: normal;
 
             @include respond-to(desktop) {
                 font-size: 14px; 
@@ -541,6 +549,18 @@
             order: 5;
             align-items: center; 
             text-align: center;
+        }
+
+        @include respond-to(md) { margin-top: 40px; }
+
+        @media (min-width: 441px) and (max-width: 576px) {
+            margin-top: 80px;
+        }
+
+        @include respond-to(phone-wide) { margin-top: 0; }
+
+        @media (min-width: 415px) and (max-width: 440px) {
+            margin-top: 40px;
         }
 
         @include respond-to(phone) { gap: 4px; }
