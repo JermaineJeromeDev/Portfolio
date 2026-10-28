@@ -42,12 +42,12 @@ export class SkillsComponent {
   { name: 'TypeScript', icon: 'typescript' },
   { name: 'Angular', icon: 'angular' },
   { name: 'React', icon: 'react' },
-  { name: 'Material Design', icon: 'material-design' },
   { name: 'REST-API', icon: 'rest-api' },
   { name: 'Firebase', icon: 'firebase' },
   { name: 'Supabase', icon: 'supabase' },
   { name: 'Git', icon: 'git' },
-  { name: 'Scrum', icon: 'scrum' }
+  { name: 'Scrum', icon: 'scrum' },
+  { name: 'Material Design', icon: 'material-design' },
 ];
 
   /** List of backend development skills. */
