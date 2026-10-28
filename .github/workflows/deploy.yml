@@ -23,20 +23,21 @@ jobs:
 
       # 3. NPM-Pakete sauber installieren
       - name: Install Dependencies
-        run: npm install
+        run:
+          npm install
 
-      # 4. Das Angular-Projekt für die Produktion kompilieren
+          # 4. Das Angular-Projekt für die Produktion kompilieren
       - name: Build Angular App
         run: npm run build
 
-      # 5. Den Inhalt des browser-Ordners automatisch per SFTP auf den Linux-Server laden
+      # 5. Die gebauten Dateien per echtem SFTP auf deinen Linux-Server schieben
       - name: Deploy to Server via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.SERVER_HOST }}
+          host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          protocol: sftp
           port: 22
-          local-dir: dist/portfolio/browser/
-          server-dir: /var/www/jermaine-jerome-baerwolf.de/
+          source: 'dist/portfolio/browser/*'
+          target: '/var/www/jermaine-jerome-baerwolf.de/'
+          strip_components: 3
