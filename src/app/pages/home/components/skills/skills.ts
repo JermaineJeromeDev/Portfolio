@@ -36,33 +36,42 @@ export class SkillsComponent {
 
   /** List of frontend development skills. */
   frontendSkills: Skill[] = [
-    { name: 'HTML', icon: 'html' },
-    { name: 'CSS', icon: 'css' },
-    { name: 'JavaScript', icon: 'javascript' },
-    { name: 'TypeScript', icon: 'typescript' },
-    { name: 'Angular', icon: 'angular' },
-    { name: 'Supabase', icon: 'supabase' },
-    { name: 'Git', icon: 'git' },
-    { name: 'REST-API', icon: 'rest-api' },
-    { name: 'Scrum', icon: 'scrum' },
-    { name: 'Material Design', icon: 'material-design' }
-  ];
+  { name: 'HTML', icon: 'html' },
+  { name: 'CSS', icon: 'css' },
+  { name: 'JavaScript', icon: 'javascript' },
+  { name: 'TypeScript', icon: 'typescript' },
+  { name: 'Angular', icon: 'angular' },
+  { name: 'React', icon: 'react' },
+  { name: 'Material Design', icon: 'material-design' },
+  { name: 'REST-API', icon: 'rest-api' },
+  { name: 'Firebase', icon: 'firebase' },
+  { name: 'Supabase', icon: 'supabase' },
+  { name: 'Git', icon: 'git' },
+  { name: 'Scrum', icon: 'scrum' }
+];
 
   /** List of backend development skills. */
   backendSkills: Skill[] = [
-    { name: 'Python', icon: 'python' },
-    { name: 'Django', icon: 'django' },
-    { name: 'SQL', icon: 'sql' },
-    { name: 'PostgreSQL', icon: 'postgresql' },
-    { name: 'Redis', icon: 'redis' },
-    { name: 'Docker', icon: 'docker' },
-  ];
+  { name: 'Python', icon: 'python' },
+  { name: 'Django', icon: 'django' },
+  { name: 'DRF', icon: 'drf' },
+  { name: 'Flask', icon: 'flask' },
+  { name: 'SQL', icon: 'sql' },
+  { name: 'PostgreSQL', icon: 'postgresql' },
+  { name: 'Redis', icon: 'redis' }
+];
 
   /** List of DevSecOps and deployment skills. */
   devSecOpsSkills: Skill[] = [
-    { name: 'Shell-Scripting', icon: 'shell-scripting' },
-    { name: 'DRF', icon: 'drf' }
-  ];
+  { name: 'Linux', icon: 'linux' },
+  { name: 'Shell-Scripting', icon: 'shell-scripting' },
+  { name: 'Docker', icon: 'docker' },
+  { name: 'YAML', icon: 'yaml' },
+  { name: 'CI/CD', icon: 'ci-cd' },
+  { name: 'Cloud Deployment', icon: 'cloud-deployment' },
+  { name: 'Heroku', icon: 'heroku' },
+  { name: 'Application Security', icon: 'application-security' }
+];
 
   /**
    * Selects the skill category shown in the tab panel.
